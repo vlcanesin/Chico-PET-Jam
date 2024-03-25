@@ -1,8 +1,80 @@
-[gd_scene format=3 uid="uid://r6tpqlaxacs2"]
+[gd_scene load_steps=16 format=3 uid="uid://r6tpqlaxacs2"]
+
+[ext_resource type="Texture2D" uid="uid://ddw04dmmrt44i" path="res://assets/sprites/chico/spritesheet-chico1.png" id="1_fxkqi"]
+[ext_resource type="Script" path="res://chico/chico.gd" id="1_iifu8"]
+[ext_resource type="Texture2D" uid="uid://c5arlwultyasm" path="res://assets/sprites/chico/spritesheet-chico1-flipped.png" id="2_pb10n"]
+[ext_resource type="Texture2D" uid="uid://c2wpmpwvp0lsm" path="res://assets/sprites/chico/spritesheet-chico2.png" id="2_xtqr0"]
+[ext_resource type="Texture2D" uid="uid://2cyt7m1ps887" path="res://assets/sprites/chico/spritesheet-chico2-flipped.png" id="3_53ljx"]
+[ext_resource type="Texture2D" uid="uid://cjcle816afhv4" path="res://assets/sprites/chico/spritesheet-chico3.png" id="3_a5gc7"]
+[ext_resource type="Texture2D" uid="uid://cxjmfitkccqys" path="res://assets/sprites/chico/spritesheet-chico3-flipped.png" id="4_k41rk"]
+[ext_resource type="Texture2D" uid="uid://devru7kp1jfbr" path="res://assets/sprites/chico/spritesheet-chico4.png" id="4_xrydu"]
+[ext_resource type="Texture2D" uid="uid://cr3pkml1mxybu" path="res://assets/sprites/chico/spritesheet-chico4-flipped.png" id="5_cyiuh"]
+[ext_resource type="Texture2D" uid="uid://bulsdcrhb60m4" path="res://assets/sprites/chico/spritesheet-chico5.png" id="5_w7imb"]
+[ext_resource type="Texture2D" uid="uid://di2vhefouxvlf" path="res://assets/sprites/chico/spritesheet-chico5-flipped.png" id="6_i4laa"]
+[ext_resource type="Texture2D" uid="uid://c1ohggrnklejv" path="res://assets/sprites/chico/spritesheet-chico6.png" id="6_v4x1n"]
+[ext_resource type="Texture2D" uid="uid://b88o3uvkvojo8" path="res://assets/sprites/chico/spritesheet-chico6-flipped.png" id="7_diwxp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aoagg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pb10n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_53ljx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k41rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cyiuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i4laa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_diwxp")
+}],
+"loop": true,
+"name": &"left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fxkqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xtqr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a5gc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xrydu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w7imb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v4x1n")
+}],
+"loop": true,
+"name": &"right",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opx01"]
+size = Vector2(145, 124)
 
 [node name="Chico" type="CharacterBody2D"]
+position = Vector2(589, 327)
+script = ExtResource("1_iifu8")
 
-[node name="Label" type="Label" parent="."]
-offset_right = 112.0
-offset_bottom = 23.0
-text = "Eu sou o Chico"
+[node name="WalkSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aoagg")
+animation = &"right"
+frame_progress = 0.900956
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 2)
+shape = SubResource("RectangleShape2D_opx01")
