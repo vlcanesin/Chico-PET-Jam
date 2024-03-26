@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3857yr2eyjnp"]
+
+[ext_resource type="Texture2D" uid="uid://ctuvmjcsil0mv" path="res://assets/sprites/localidades/spawn.png" id="1_1oi8u"]
+
+[node name="SpawnFisicaLetras" type="Node2D"]
+
+[node name="Spawn" type="Sprite2D" parent="."]
+position = Vector2(104, 320)
+texture = ExtResource("1_1oi8u")

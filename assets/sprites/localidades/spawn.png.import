@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctmfackcucead"
-path="res://.godot/imported/Galeria.png-6664e07b3cb51e8c34237b9f2a765746.ctex"
+uid="uid://ctuvmjcsil0mv"
+path="res://.godot/imported/spawn.png-943796e36e08b24578794f0f0bbc0d16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menu/Icones/Galeria.png"
-dest_files=["res://.godot/imported/Galeria.png-6664e07b3cb51e8c34237b9f2a765746.ctex"]
+source_file="res://assets/sprites/localidades/spawn.png"
+dest_files=["res://.godot/imported/spawn.png-943796e36e08b24578794f0f0bbc0d16.ctex"]
 
 [params]
 
