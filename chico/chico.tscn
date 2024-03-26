@@ -67,7 +67,7 @@ animations = [{
 size = Vector2(145, 124)
 
 [node name="Chico" type="CharacterBody2D"]
-position = Vector2(589, 327)
+position = Vector2(575, 395)
 script = ExtResource("1_iifu8")
 
 [node name="WalkSprite" type="AnimatedSprite2D" parent="."]
