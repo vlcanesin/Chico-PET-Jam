@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3857yr2eyjnp"]
+[gd_scene load_steps=3 format=3 uid="uid://d3857yr2eyjnp"]
 
 [ext_resource type="Texture2D" uid="uid://ctuvmjcsil0mv" path="res://assets/sprites/localidades/spawn.png" id="1_1oi8u"]
+[ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_2aga1"]
 
 [node name="SpawnFisicaLetras" type="Node2D"]
 
@@ -8,3 +9,6 @@
 position = Vector2(84, 324.25)
 scale = Vector2(1, 1.01328)
 texture = ExtResource("1_1oi8u")
+
+[node name="Chico" parent="." instance=ExtResource("2_2aga1")]
+position = Vector2(688, 400)
