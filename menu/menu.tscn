@@ -17,10 +17,10 @@ script = ExtResource("1_qxv16")
 
 [node name="fundoMenu" type="TextureRect" parent="."]
 layout_mode = 2
-offset_right = 1152.0
+offset_left = -56.0
+offset_right = 1163.0
 offset_bottom = 648.0
 texture = ExtResource("6_loo0f")
-expand_mode = 2
 
 [node name="Chico" type="TextureRect" parent="."]
 layout_mode = 2

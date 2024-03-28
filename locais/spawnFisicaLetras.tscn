@@ -5,6 +5,6 @@
 [node name="SpawnFisicaLetras" type="Node2D"]
 
 [node name="Spawn" type="Sprite2D" parent="."]
-position = Vector2(88, 325)
-scale = Vector2(1, 1.00938)
+position = Vector2(84, 324.25)
+scale = Vector2(1, 1.01328)
 texture = ExtResource("1_1oi8u")

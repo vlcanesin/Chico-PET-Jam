@@ -20,7 +20,7 @@ func _on_continuar_botao_pressed():
 
 
 func _on_galeria_botao_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://locais/achievements.tscn")
 
 
 func _on_sair_botao_pressed():
