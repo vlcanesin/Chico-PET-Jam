@@ -6,7 +6,7 @@
 [node name="Main_tscn" type="Node2D"]
 
 [node name="NPC_1" parent="." instance=ExtResource("1_xlmg4")]
-position = Vector2(-257, -98)
+position = Vector2(314, 282)
 
 [node name="Chico" parent="." instance=ExtResource("2_hyv0t")]
-position = Vector2(821, 366)
+position = Vector2(810, 391)

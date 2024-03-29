@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://r6tpqlaxacs2"]
+[gd_scene load_steps=20 format=3 uid="uid://r6tpqlaxacs2"]
 
 [ext_resource type="Texture2D" uid="uid://ddw04dmmrt44i" path="res://assets/sprites/chico/spritesheet-chico1.png" id="1_fxkqi"]
 [ext_resource type="Script" path="res://chico/chico.gd" id="1_iifu8"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://di2vhefouxvlf" path="res://assets/sprites/chico/spritesheet-chico5-flipped.png" id="6_i4laa"]
 [ext_resource type="Texture2D" uid="uid://c1ohggrnklejv" path="res://assets/sprites/chico/spritesheet-chico6.png" id="6_v4x1n"]
 [ext_resource type="Texture2D" uid="uid://b88o3uvkvojo8" path="res://assets/sprites/chico/spritesheet-chico6-flipped.png" id="7_diwxp"]
+[ext_resource type="Texture2D" uid="uid://csd2k1mf3es54" path="res://assets/sprites/baloes/thought_left.png" id="14_5gwr0"]
+[ext_resource type="Texture2D" uid="uid://cnahr5hkc58vm" path="res://assets/sprites/baloes/thoght_right.png" id="14_oywci"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aoagg"]
 animations = [{
@@ -69,8 +71,27 @@ size = Vector2(140, 126)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opx01"]
 size = Vector2(218, 159)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_2jl3f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_5gwr0")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_oywci")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
 [node name="Chico" type="CharacterBody2D"]
-position = Vector2(575, 395)
+position = Vector2(0, 11)
 script = ExtResource("1_iifu8")
 
 [node name="WalkSprite" type="AnimatedSprite2D" parent="."]
@@ -88,3 +109,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]
 position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_opx01")
+
+[node name="Thought" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.05176e-05, -105)
+scale = Vector2(0.325352, 0.325352)
+sprite_frames = SubResource("SpriteFrames_2jl3f")
+animation = &"right"

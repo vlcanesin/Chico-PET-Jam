@@ -15,3 +15,7 @@ func _process(delta):
 		_sprite.play("idle")
 	else:
 		_sprite.play("speak")
+
+
+func _on_actionable_area_entered(area):
+	pass # Replace with function body.

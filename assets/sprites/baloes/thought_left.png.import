@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g46i3h1yuipv"
-path="res://.godot/imported/npc1_idle2.png-c94869957d37f89b0d808445d479a6f1.ctex"
+uid="uid://csd2k1mf3es54"
+path="res://.godot/imported/thought_left.png-09d1198b257b4883bcaaf8f13263f7b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/npc_1/npc1_idle2.png"
-dest_files=["res://.godot/imported/npc1_idle2.png-c94869957d37f89b0d808445d479a6f1.ctex"]
+source_file="res://assets/sprites/baloes/thought_left.png"
+dest_files=["res://.godot/imported/thought_left.png-09d1198b257b4883bcaaf8f13263f7b8.ctex"]
 
 [params]
 
