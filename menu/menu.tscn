@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh0j684fyuft1"]
+
+[ext_resource type="Script" path="res://menu/menu.gd" id="1_qxv16"]
+[ext_resource type="Texture2D" uid="uid://c5arlwultyasm" path="res://assets/sprites/chico/spritesheet-chico1-flipped.png" id="2_i8ktw"]
+[ext_resource type="Texture2D" uid="uid://ddw04dmmrt44i" path="res://assets/sprites/chico/spritesheet-chico1.png" id="2_l0jn3"]
+[ext_resource type="Theme" uid="uid://cxyika655yov1" path="res://menu/defaultBotao.tres" id="4_7tfmg"]
+[ext_resource type="Texture2D" uid="uid://gkojgkr4pe2q" path="res://assets/sprites/localidades/spawnMenu.png" id="6_loo0f"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qxv16")
+
+[node name="fundoMenu" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = -56.0
+offset_right = 1163.0
+offset_bottom = 648.0
+texture = ExtResource("6_loo0f")
+
+[node name="Chico" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 600.0
+offset_top = 336.0
+offset_right = 760.0
+offset_bottom = 496.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("2_i8ktw")
+stretch_mode = 2
+
+[node name="tituloJogo" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 96.0
+offset_top = 104.0
+offset_right = 528.0
+offset_bottom = 264.0
+texture = ExtResource("2_l0jn3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 128.0
+offset_top = 272.0
+offset_right = 464.0
+offset_bottom = 432.0
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="novoJogoBotao" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_7tfmg")
+text = "Novo Jogo"
+
+[node name="continuarBotao" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_7tfmg")
+text = "Continuar"
+
+[node name="galeriaBotao" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_7tfmg")
+text = "Galeria"
+
+[node name="sairBotao" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_7tfmg")
+text = "Sair"
+
+[connection signal="pressed" from="VBoxContainer/novoJogoBotao" to="." method="_on_novo_jogo_botao_pressed"]
+[connection signal="pressed" from="VBoxContainer/continuarBotao" to="." method="_on_continuar_botao_pressed"]
+[connection signal="pressed" from="VBoxContainer/galeriaBotao" to="." method="_on_galeria_botao_pressed"]
+[connection signal="pressed" from="VBoxContainer/sairBotao" to="." method="_on_sair_botao_pressed"]
