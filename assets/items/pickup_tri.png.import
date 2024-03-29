@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3p2y6pxiwygd"
-path="res://.godot/imported/npc2_speak1.png-f6c4cd23aeb7b36b262c7a06d5cba7ad.ctex"
+uid="uid://b2l0g6w4q6e0"
+path="res://.godot/imported/pickup_tri.png-fd8f0cbc84df9b382711e2336ec4fb54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/npc_2/npc2_speak1.png"
-dest_files=["res://.godot/imported/npc2_speak1.png-f6c4cd23aeb7b36b262c7a06d5cba7ad.ctex"]
+source_file="res://assets/items/pickup_tri.png"
+dest_files=["res://.godot/imported/pickup_tri.png-fd8f0cbc84df9b382711e2336ec4fb54.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3p2y6pxiwygd"
-path="res://.godot/imported/npc2_speak1.png-f6c4cd23aeb7b36b262c7a06d5cba7ad.ctex"
+uid="uid://c46bsqvbo32p1"
+path="res://.godot/imported/NovoJogo.png-41b44184ba0931159d1b89edd01d37fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/npc_2/npc2_speak1.png"
-dest_files=["res://.godot/imported/npc2_speak1.png-f6c4cd23aeb7b36b262c7a06d5cba7ad.ctex"]
+source_file="res://assets/sprites/IconesMenu/NovoJogo.png"
+dest_files=["res://.godot/imported/NovoJogo.png-41b44184ba0931159d1b89edd01d37fe.ctex"]
 
 [params]
 

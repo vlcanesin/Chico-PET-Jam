@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://de5csqefuyqhi"
+=======
+uid="uid://1hfm3qlmwayw"
+>>>>>>> main
 path="res://.godot/imported/npc1_speak2.png-375124251ec102dd158098cfd6a97804.ctex"
 metadata={
 "vram_texture": false

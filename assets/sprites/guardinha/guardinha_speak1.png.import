@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3p2y6pxiwygd"
-path="res://.godot/imported/npc2_speak1.png-f6c4cd23aeb7b36b262c7a06d5cba7ad.ctex"
+uid="uid://c0gslb2mb4fdg"
+path="res://.godot/imported/guardinha_speak1.png-cb74d93a7d1ed3c02cf3da5e39ebec60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/npc_2/npc2_speak1.png"
-dest_files=["res://.godot/imported/npc2_speak1.png-f6c4cd23aeb7b36b262c7a06d5cba7ad.ctex"]
+source_file="res://assets/sprites/guardinha/guardinha_speak1.png"
+dest_files=["res://.godot/imported/guardinha_speak1.png-cb74d93a7d1ed3c02cf3da5e39ebec60.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3p2y6pxiwygd"
-path="res://.godot/imported/npc2_speak1.png-f6c4cd23aeb7b36b262c7a06d5cba7ad.ctex"
+uid="uid://ctuvmjcsil0mv"
+path="res://.godot/imported/spawn.png-943796e36e08b24578794f0f0bbc0d16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/npc_2/npc2_speak1.png"
-dest_files=["res://.godot/imported/npc2_speak1.png-f6c4cd23aeb7b36b262c7a06d5cba7ad.ctex"]
+source_file="res://assets/sprites/localidades/spawn.png"
+dest_files=["res://.godot/imported/spawn.png-943796e36e08b24578794f0f0bbc0d16.ctex"]
 
 [params]
 

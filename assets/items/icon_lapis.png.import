@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3p2y6pxiwygd"
-path="res://.godot/imported/npc2_speak1.png-f6c4cd23aeb7b36b262c7a06d5cba7ad.ctex"
+uid="uid://cerykm05yu3a4"
+path="res://.godot/imported/icon_lapis.png-6e79d04b8ee4f25be66ab94a990491ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/npc_2/npc2_speak1.png"
-dest_files=["res://.godot/imported/npc2_speak1.png-f6c4cd23aeb7b36b262c7a06d5cba7ad.ctex"]
+source_file="res://assets/items/icon_lapis.png"
+dest_files=["res://.godot/imported/icon_lapis.png-6e79d04b8ee4f25be66ab94a990491ed.ctex"]
 
 [params]
 
