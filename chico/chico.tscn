@@ -78,3 +78,12 @@ frame_progress = 0.900956
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.5, 2)
 shape = SubResource("RectangleShape2D_opx01")
+
+[node name="Camera" type="Camera2D" parent="."]
+offset = Vector2(0, -110)
+limit_left = -1000
+drag_horizontal_enabled = true
+drag_left_margin = 0.45
+drag_right_margin = 0.45
+editor_draw_limits = true
+editor_draw_drag_margin = true
