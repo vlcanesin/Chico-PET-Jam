@@ -1,8 +1,8 @@
 ~ start
-do startDialogue()
+
 
 Aluno: Oi, Chico!
 Aluno: Essa é a minha segunda fala!
 
-do endDialogue()
+
 => END

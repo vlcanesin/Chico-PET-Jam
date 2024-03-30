@@ -18,11 +18,11 @@ config/icon="res://sprites/icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-npc1_manager="*res://npc/npc1_manager.gd"
+DialogueGlobals="*res://common/dialogue_globals.gd"
 
 [dialogue_manager]
 
-general/states=["NPC1", "npc1_manager"]
+general/states=["NPC1", "npc1_manager", "DialogueGlobals"]
 
 [display]
 
