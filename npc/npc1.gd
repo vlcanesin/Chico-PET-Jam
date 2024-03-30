@@ -7,12 +7,8 @@ func _ready():
 	pass
 
 func _process(_delta):
+	if DialogueGlobals.npc1_speak == true:
+		_sprite_state = "speak"
+	else:
+		_sprite_state = "idle"
 	_sprite.play(_sprite_state)
-
-func _on_dialogue_manager_start_dialogue():
-	#print("Entrei no diálogo")
-	_sprite_state = "speak"
-
-func _on_dialogue_manager_end_dialogue():
-	#print("Saí no diálogo")
-	_sprite_state = "idle"
