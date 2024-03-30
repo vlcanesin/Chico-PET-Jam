@@ -13,7 +13,7 @@ config_version=5
 config/name="instancing"
 run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.2")
-config/icon="res://sprites/icon.svg"
+config/icon="res://icon.svg"
 
 [autoload]
 
@@ -30,7 +30,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/markdownlabel/plugin.cfg")
 
 [importer_defaults]
 

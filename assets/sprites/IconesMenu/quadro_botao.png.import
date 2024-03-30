@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buw81jwln7f8t"
-path="res://.godot/imported/npc_1_idle.png-6bbcce15f36b1f1a7203cb8be11cb065.ctex"
+uid="uid://bt3yfwkanf7kq"
+path="res://.godot/imported/quadro_botao.png-4978536bda9aaf42a26a8f5be85b9ddd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/npc_1/npc_1_idle.png"
-dest_files=["res://.godot/imported/npc_1_idle.png-6bbcce15f36b1f1a7203cb8be11cb065.ctex"]
+source_file="res://assets/sprites/IconesMenu/quadro_botao.png"
+dest_files=["res://.godot/imported/quadro_botao.png-4978536bda9aaf42a26a8f5be85b9ddd.ctex"]
 
 [params]
 
