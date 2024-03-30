@@ -1,0 +1,353 @@
+[gd_scene load_steps=35 format=3 uid="uid://cepicnrc56pes"]
+
+[ext_resource type="FontFile" uid="uid://bo0gtln8hpyk" path="res://assets/fonts/Rev Mini Pixel.ttf" id="1_b5rl1"]
+[ext_resource type="Script" path="res://addons/markdownlabel/markdownlabel.gd" id="2_1euvc"]
+[ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h1_format.gd" id="3_tt8mv"]
+[ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h2_format.gd" id="4_7q8d5"]
+[ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h3_format.gd" id="5_jy2qi"]
+[ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h4_format.gd" id="6_6crpb"]
+[ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h5_format.gd" id="7_kokus"]
+[ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h6_format.gd" id="8_oo7yq"]
+
+[sub_resource type="Theme" id="Theme_lcvnd"]
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_selected_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/selection_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/table_border = Color(0, 0, 0, 1)
+RichTextLabel/colors/table_even_row_bg = Color(0, 0, 0, 1)
+RichTextLabel/colors/table_odd_row_bg = Color(0, 0, 0, 1)
+RichTextLabel/constants/line_separation = 0
+RichTextLabel/constants/outline_size = 0
+RichTextLabel/constants/shadow_offset_x = 0
+RichTextLabel/constants/shadow_offset_y = 0
+RichTextLabel/constants/shadow_outline_size = 0
+RichTextLabel/constants/table_h_separation = 0
+RichTextLabel/constants/table_v_separation = 0
+RichTextLabel/constants/text_highlight_h_padding = 0
+RichTextLabel/constants/text_highlight_v_padding = 0
+RichTextLabel/font_sizes/bold_font_size = 24
+RichTextLabel/font_sizes/bold_italics_font_size = 16
+RichTextLabel/font_sizes/italics_font_size = 16
+RichTextLabel/font_sizes/mono_font_size = 16
+RichTextLabel/font_sizes/normal_font_size = 16
+RichTextLabel/fonts/bold_font = ExtResource("1_b5rl1")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_b5rl1")
+RichTextLabel/fonts/italics_font = ExtResource("1_b5rl1")
+RichTextLabel/fonts/mono_font = ExtResource("1_b5rl1")
+RichTextLabel/fonts/normal_font = ExtResource("1_b5rl1")
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = null
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bfnvo"]
+
+[sub_resource type="Resource" id="Resource_8kbdi"]
+resource_local_to_scene = true
+script = ExtResource("3_tt8mv")
+font_size = 2.285
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_fvyct"]
+resource_local_to_scene = true
+script = ExtResource("4_7q8d5")
+font_size = 1.714
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_f0yvr"]
+resource_local_to_scene = true
+script = ExtResource("5_jy2qi")
+font_size = 1.428
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_3oasj"]
+resource_local_to_scene = true
+script = ExtResource("6_6crpb")
+font_size = 1.142
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_u68f6"]
+resource_local_to_scene = true
+script = ExtResource("7_kokus")
+font_size = 1.0
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_h4rle"]
+resource_local_to_scene = true
+script = ExtResource("8_oo7yq")
+font_size = 0.857
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_c6cy0"]
+resource_local_to_scene = true
+script = ExtResource("3_tt8mv")
+font_size = 2.285
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_i7dcr"]
+resource_local_to_scene = true
+script = ExtResource("4_7q8d5")
+font_size = 1.714
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_s144u"]
+resource_local_to_scene = true
+script = ExtResource("5_jy2qi")
+font_size = 1.428
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_bledp"]
+resource_local_to_scene = true
+script = ExtResource("6_6crpb")
+font_size = 1.142
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_eiene"]
+resource_local_to_scene = true
+script = ExtResource("7_kokus")
+font_size = 1.0
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_k67yl"]
+resource_local_to_scene = true
+script = ExtResource("8_oo7yq")
+font_size = 0.857
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_skl3t"]
+resource_local_to_scene = true
+script = ExtResource("3_tt8mv")
+font_size = 2.285
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_ioi3b"]
+resource_local_to_scene = true
+script = ExtResource("4_7q8d5")
+font_size = 1.714
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_k5hmb"]
+resource_local_to_scene = true
+script = ExtResource("5_jy2qi")
+font_size = 1.428
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_iyth4"]
+resource_local_to_scene = true
+script = ExtResource("6_6crpb")
+font_size = 1.142
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_33jcb"]
+resource_local_to_scene = true
+script = ExtResource("7_kokus")
+font_size = 1.0
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_6b8ee"]
+resource_local_to_scene = true
+script = ExtResource("8_oo7yq")
+font_size = 0.857
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_mubox"]
+resource_local_to_scene = true
+script = ExtResource("3_tt8mv")
+font_size = 2.285
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_qs4xu"]
+resource_local_to_scene = true
+script = ExtResource("4_7q8d5")
+font_size = 1.714
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_vcig3"]
+resource_local_to_scene = true
+script = ExtResource("5_jy2qi")
+font_size = 1.428
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_uujun"]
+resource_local_to_scene = true
+script = ExtResource("6_6crpb")
+font_size = 1.142
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_mjfe0"]
+resource_local_to_scene = true
+script = ExtResource("7_kokus")
+font_size = 1.0
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_hqulx"]
+resource_local_to_scene = true
+script = ExtResource("8_oo7yq")
+font_size = 0.857
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[node name="QuestMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = SubResource("Theme_lcvnd")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 250.0
+texture = SubResource("ViewportTexture_bfnvo")
+region_rect = Rect2(0, 0, 400, 400)
+
+[node name="Quests" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 15.0
+offset_right = 233.0
+offset_bottom = 51.0
+bbcode_enabled = true
+text = "[font_size=36]Quests:[/font_size]"
+script = ExtResource("2_1euvc")
+markdown_text = "#Quests:"
+h1 = SubResource("Resource_8kbdi")
+h2 = SubResource("Resource_fvyct")
+h3 = SubResource("Resource_f0yvr")
+h4 = SubResource("Resource_3oasj")
+h5 = SubResource("Resource_u68f6")
+h6 = SubResource("Resource_h4rle")
+
+[node name="ProvaCalculo" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 60.0
+offset_right = 1.0
+offset_bottom = -90.0
+bbcode_enabled = true
+text = "[b]- A prova de cálculo[/b]"
+fit_content = true
+context_menu_enabled = true
+script = ExtResource("2_1euvc")
+markdown_text = "**- A prova de cálculo**"
+h1 = SubResource("Resource_c6cy0")
+h2 = SubResource("Resource_i7dcr")
+h3 = SubResource("Resource_s144u")
+h4 = SubResource("Resource_bledp")
+h5 = SubResource("Resource_eiene")
+h6 = SubResource("Resource_k67yl")
+
+[node name="PegueLapis" type="RichTextLabel" parent="NinePatchRect/ProvaCalculo"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 28.0
+offset_right = 237.0
+offset_bottom = 49.0
+bbcode_enabled = true
+text = "[ul]Pegue um lápis[/ul]"
+script = ExtResource("2_1euvc")
+markdown_text = "- Pegue um lápis"
+h1 = SubResource("Resource_skl3t")
+h2 = SubResource("Resource_ioi3b")
+h3 = SubResource("Resource_k5hmb")
+h4 = SubResource("Resource_iyth4")
+h5 = SubResource("Resource_33jcb")
+h6 = SubResource("Resource_6b8ee")
+
+[node name="Estudar" type="RichTextLabel" parent="NinePatchRect/ProvaCalculo"]
+offset_left = 7.0
+offset_top = 49.0
+offset_right = 250.0
+offset_bottom = 70.0
+bbcode_enabled = true
+text = "[ul]Estude na biblioteca do INF[/ul]"
+script = ExtResource("2_1euvc")
+markdown_text = "- Estude na biblioteca do INF"
+h1 = SubResource("Resource_skl3t")
+h2 = SubResource("Resource_ioi3b")
+h3 = SubResource("Resource_k5hmb")
+h4 = SubResource("Resource_iyth4")
+h5 = SubResource("Resource_33jcb")
+h6 = SubResource("Resource_6b8ee")
+
+[node name="BebaAgua" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 137.0
+offset_right = 169.0
+offset_bottom = 177.0
+bbcode_enabled = true
+text = "[b]- Beba água[/b]"
+script = ExtResource("2_1euvc")
+markdown_text = "**- Beba água**"
+h1 = SubResource("Resource_mubox")
+h2 = SubResource("Resource_qs4xu")
+h3 = SubResource("Resource_vcig3")
+h4 = SubResource("Resource_uujun")
+h5 = SubResource("Resource_mjfe0")
+h6 = SubResource("Resource_hqulx")
+
+[node name="PegueTRI" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 168.0
+offset_right = 249.0
+offset_bottom = 247.0
+bbcode_enabled = true
+text = "[b]- Pegue o TRI \"emprestado\"[/b]"
+script = ExtResource("2_1euvc")
+markdown_text = "**- Pegue o TRI \"emprestado\"**"
+h1 = SubResource("Resource_mubox")
+h2 = SubResource("Resource_qs4xu")
+h3 = SubResource("Resource_vcig3")
+h4 = SubResource("Resource_uujun")
+h5 = SubResource("Resource_mjfe0")
+h6 = SubResource("Resource_hqulx")
