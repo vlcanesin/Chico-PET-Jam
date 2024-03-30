@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8ygmanc3epd4"]
+[gd_scene load_steps=5 format=3 uid="uid://b8ygmanc3epd4"]
 
 [ext_resource type="PackedScene" uid="uid://c3q0nr25ltj0k" path="res://npc/npc1.tscn" id="1_xlmg4"]
+[ext_resource type="Script" path="res://quests/QuestMenu.gd" id="2_34e7f"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_hyv0t"]
+[ext_resource type="PackedScene" uid="uid://cepicnrc56pes" path="res://quests/QuestMenu.tscn" id="3_h0rcn"]
 
 [node name="Main_tscn" type="Node2D"]
+
+[node name="QuestMenu" parent="." instance=ExtResource("3_h0rcn")]
+offset_left = 1091.0
+offset_top = -25.0
+offset_right = 1091.0
+offset_bottom = -25.0
+script = ExtResource("2_34e7f")
 
 [node name="NPC_1" parent="." instance=ExtResource("1_xlmg4")]
 position = Vector2(314, 282)
