@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 200.0
+@export var SPEED : float = 300.0
 
 @onready var _walk_sprite = $WalkSprite
 
