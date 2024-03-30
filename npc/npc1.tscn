@@ -1,18 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3q0nr25ltj0k"]
+[gd_scene load_steps=11 format=3 uid="uid://c3q0nr25ltj0k"]
 
 [ext_resource type="Script" path="res://npc/npc1.gd" id="1_aumqw"]
-[ext_resource type="Texture2D" uid="uid://cqlg6prh646h2" path="res://assets/sprites/npc_1/npc1_idle1.png" id="1_mxsjs"]
 [ext_resource type="Texture2D" uid="uid://g46i3h1yuipv" path="res://assets/sprites/npc_1/npc1_idle2.png" id="2_2i1ng"]
+[ext_resource type="Texture2D" uid="uid://i3mtf8povk6" path="res://assets/sprites/npc_1/ase/npc1_idle1.png" id="2_urm5s"]
 [ext_resource type="Texture2D" uid="uid://cwo71wmvmxot5" path="res://assets/sprites/npc_1/npc1_speak1.png" id="3_tbf85"]
 [ext_resource type="Texture2D" uid="uid://bb3j7np0o5du4" path="res://assets/sprites/npc_1/npc1_speak2.png" id="4_emnye"]
 [ext_resource type="PackedScene" uid="uid://c1cmn04k5c4ts" path="res://common/actionable.tscn" id="5_n7ln7"]
 [ext_resource type="Resource" uid="uid://d4hov2bl3xx4f" path="res://npc/npc1.dialogue" id="6_ntvva"]
+[ext_resource type="Script" path="res://npc/npc1_manager.gd" id="8_1w2lf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_52ikt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_mxsjs")
+"texture": ExtResource("2_urm5s")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_2i1ng")
@@ -42,8 +43,6 @@ script = ExtResource("1_aumqw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_52ikt")
 animation = &"idle"
-frame = 1
-frame_progress = 0.892606
 
 [node name="Actionable" parent="." instance=ExtResource("5_n7ln7")]
 dialogue_resource = ExtResource("6_ntvva")
@@ -52,3 +51,6 @@ trigger_thought = "escutar"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_3x1uw")
+
+[node name="DialogueManager" type="Node2D" parent="."]
+script = ExtResource("8_1w2lf")

@@ -11,7 +11,7 @@ var thought: String = ""
 @onready var _content_sprite = $Thought/Content
 @onready var actionable_finder: Area2D = $ActionableFinder
 
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if Input.is_action_just_pressed("ui_accept"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
