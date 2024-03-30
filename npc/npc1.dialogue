@@ -1,0 +1,10 @@
+~ start
+set in_conversation = true
+set npc1_speak = true
+
+Aluno: Oi, Chico!
+Aluno: Essa é a minha segunda fala!
+
+set npc1_speak = false
+set in_conversation = false
+=> END

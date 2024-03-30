@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://r6tpqlaxacs2"]
+[gd_scene load_steps=21 format=3 uid="uid://r6tpqlaxacs2"]
 
 [ext_resource type="Texture2D" uid="uid://ddw04dmmrt44i" path="res://assets/sprites/chico/spritesheet-chico1.png" id="1_fxkqi"]
 [ext_resource type="Script" path="res://chico/chico.gd" id="1_iifu8"]
@@ -13,6 +13,39 @@
 [ext_resource type="Texture2D" uid="uid://di2vhefouxvlf" path="res://assets/sprites/chico/spritesheet-chico5-flipped.png" id="6_i4laa"]
 [ext_resource type="Texture2D" uid="uid://c1ohggrnklejv" path="res://assets/sprites/chico/spritesheet-chico6.png" id="6_v4x1n"]
 [ext_resource type="Texture2D" uid="uid://b88o3uvkvojo8" path="res://assets/sprites/chico/spritesheet-chico6-flipped.png" id="7_diwxp"]
+[ext_resource type="Texture2D" uid="uid://csd2k1mf3es54" path="res://assets/sprites/baloes/thought_left.png" id="14_5gwr0"]
+[ext_resource type="Texture2D" uid="uid://cnahr5hkc58vm" path="res://assets/sprites/baloes/thoght_right.png" id="14_oywci"]
+[ext_resource type="Texture2D" uid="uid://7xm8phmr78it" path="res://assets/sprites/baloes/orelha.webp" id="16_8v1i7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s5qrt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_8v1i7")
+}],
+"loop": true,
+"name": &"escutar",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2jl3f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_5gwr0")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_oywci")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opx01"]
 size = Vector2(145, 139)
@@ -67,8 +100,23 @@ animations = [{
 }]
 
 [node name="Chico" type="CharacterBody2D"]
-position = Vector2(589, 327)
+position = Vector2(0, 11)
 script = ExtResource("1_iifu8")
+
+[node name="Thought" type="Node2D" parent="."]
+
+[node name="Content" type="AnimatedSprite2D" parent="Thought"]
+z_index = 1
+position = Vector2(4.76837e-07, -114)
+scale = Vector2(0.050176, 0.050176)
+sprite_frames = SubResource("SpriteFrames_s5qrt")
+animation = &"escutar"
+
+[node name="Balloon" type="AnimatedSprite2D" parent="Thought"]
+position = Vector2(-3.05176e-05, -105)
+scale = Vector2(0.325352, 0.325352)
+sprite_frames = SubResource("SpriteFrames_2jl3f")
+animation = &"right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1.5)
@@ -78,7 +126,14 @@ one_way_collision_margin = 0.0
 [node name="WalkSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aoagg")
 animation = &"right"
-frame_progress = 0.900956
+
+[node name="ActionableFinder" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_opx01")
 
 [node name="Camera" type="Camera2D" parent="."]
 offset = Vector2(0, -110)

@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://i23o3wru3t15"]
+[gd_scene load_steps=3 format=3 uid="uid://b8ygmanc3epd4"]
+
+[ext_resource type="PackedScene" uid="uid://c3q0nr25ltj0k" path="res://npc/npc1.tscn" id="1_xlmg4"]
+[ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_hyv0t"]
 
 [node name="Main_tscn" type="Node2D"]
+
+[node name="NPC_1" parent="." instance=ExtResource("1_xlmg4")]
+position = Vector2(314, 282)
+
+[node name="Chico" parent="." instance=ExtResource("2_hyv0t")]
+position = Vector2(810, 391)
