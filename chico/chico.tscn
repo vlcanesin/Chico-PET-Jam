@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://c1ohggrnklejv" path="res://assets/sprites/chico/spritesheet-chico6.png" id="6_v4x1n"]
 [ext_resource type="Texture2D" uid="uid://b88o3uvkvojo8" path="res://assets/sprites/chico/spritesheet-chico6-flipped.png" id="7_diwxp"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opx01"]
+size = Vector2(145, 139)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_aoagg"]
 animations = [{
 "frames": [{
@@ -63,18 +66,27 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_opx01"]
-size = Vector2(145, 124)
-
 [node name="Chico" type="CharacterBody2D"]
 position = Vector2(589, 327)
 script = ExtResource("1_iifu8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_opx01")
+one_way_collision_margin = 0.0
 
 [node name="WalkSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aoagg")
 animation = &"right"
 frame_progress = 0.900956
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, 2)
-shape = SubResource("RectangleShape2D_opx01")
+[node name="Camera" type="Camera2D" parent="."]
+offset = Vector2(0, -110)
+limit_left = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_left_margin = 0.45
+drag_right_margin = 0.45
+editor_draw_limits = true
+editor_draw_drag_margin = true

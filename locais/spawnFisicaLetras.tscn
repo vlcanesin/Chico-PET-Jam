@@ -1,10 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3857yr2eyjnp"]
+[gd_scene load_steps=4 format=3 uid="uid://d3857yr2eyjnp"]
 
 [ext_resource type="Texture2D" uid="uid://ctuvmjcsil0mv" path="res://assets/sprites/localidades/spawn.png" id="1_1oi8u"]
+[ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_34yms"]
+[ext_resource type="PackedScene" uid="uid://cfe0q32vvc5ms" path="res://prefabs/paredesInvisiveis.tscn" id="3_4ia64"]
 
 [node name="SpawnFisicaLetras" type="Node2D"]
 
 [node name="Spawn" type="Sprite2D" parent="."]
-position = Vector2(84, 324.25)
+position = Vector2(2416, 328)
 scale = Vector2(1, 1.01328)
 texture = ExtResource("1_1oi8u")
+
+[node name="Chico" parent="." instance=ExtResource("2_34yms")]
+position = Vector2(3027, 438)
+
+[node name="ParedesInvisiveis" parent="." instance=ExtResource("3_4ia64")]
+position = Vector2(2774, 405)
+
+[node name="ParedesInvisiveis2" parent="." instance=ExtResource("3_4ia64")]
+position = Vector2(3226, 406)
