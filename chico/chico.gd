@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-const SPEED = 200.0
 var orientation: String = "right"
 var has_actionable_collision: bool = false
 var thought: String = ""
+
+@export var SPEED : float = 300.0
 
 @onready var _walk_sprite = $WalkSprite
 @onready var _thought_node = $Thought
