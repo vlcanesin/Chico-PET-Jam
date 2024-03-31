@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=2 format=3 uid="uid://jqjexqdmv3hf"]
+=======
+[gd_scene load_steps=2 format=3 uid="uid://qrksu8tbyb85"]
+>>>>>>> main
 
 [ext_resource type="Script" path="res://common/height_actionable.gd" id="1_5xhtn"]
 
