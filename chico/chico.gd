@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
 var orientation: String = "right"
-var has_actionable_collision: bool = false
 var thought: String = ""
+
+# OBS: não está como constante pois pode variar de cena pra cena
+var default_height: int = 438
 
 @export var SPEED : float = 300.0
 
@@ -11,6 +13,7 @@ var thought: String = ""
 @onready var _balloon_sprite = $Thought/Balloon
 @onready var _content_sprite = $Thought/Content
 @onready var actionable_finder: Area2D = $ActionableFinder
+@onready var height_finder: Area2D = $HeightFinder
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -21,6 +24,7 @@ func _unhandled_input(_event):
 
 func _process(delta):
 	_process_movement(delta)
+	_process_height()
 	_process_thought()
 		
 func _process_movement(delta) -> void:
@@ -35,8 +39,14 @@ func _process_movement(delta) -> void:
 	else:
 		_walk_sprite.stop()
 
+func _process_height():
+	var height_actionables = height_finder.get_overlapping_areas()
+	if height_actionables.size() > 0:
+		position.y = default_height + height_actionables[0].get_height()
+
 func _process_thought() -> void:
 	var actionables = actionable_finder.get_overlapping_areas()
+	var has_actionable_collision: bool = false
 	if actionables.size() > 0:
 		thought = actionables[0].get_trigger_thought()
 		has_actionable_collision = true
