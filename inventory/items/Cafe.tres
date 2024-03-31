@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://onjll32yafa5"]
+
+[ext_resource type="Script" path="res://inventory/inventoryItem.gd" id="1_yx7eg"]
+[ext_resource type="Texture2D" uid="uid://ca1vkcs5kv75w" path="res://assets/items/icon_cafe.png" id="2_23kak"]
+
+[resource]
+script = ExtResource("1_yx7eg")
+name = "Cafe"
+texture = ExtResource("2_23kak")

@@ -8,6 +8,8 @@ var default_height: int = 438
 
 @export var SPEED : float = 300.0
 
+@export var inventory: Inventory
+
 @onready var _walk_sprite = $WalkSprite
 @onready var _thought_node = $Thought
 @onready var _balloon_sprite = $Thought/Balloon
