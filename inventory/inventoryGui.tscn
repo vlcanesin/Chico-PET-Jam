@@ -17,6 +17,8 @@ offset_right = 319.0
 offset_bottom = 79.0
 texture = ExtResource("1_5fb5e")
 region_rect = Rect2(8.5, 0, 259, 275)
+patch_margin_top = 50
+patch_margin_bottom = 50
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
 layout_mode = 1
