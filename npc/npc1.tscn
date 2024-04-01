@@ -45,7 +45,7 @@ animation = &"idle"
 
 [node name="Actionable" parent="." instance=ExtResource("5_n7ln7")]
 dialogue_resource = ExtResource("6_ntvva")
-trigger_thought = "escutar"
+trigger_thought = "seta-dir"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 position = Vector2(0, -1)

@@ -55,12 +55,12 @@ func _process_thought() -> void:
 	
 	if has_actionable_collision:
 		if orientation == "right":
-			_thought_node.position.x = 120
+			_balloon_sprite.flip_h = false
 			_balloon_sprite.play("right")
 			_play_thought_content()
 		else:
-			_thought_node.position.x = -120
-			_balloon_sprite.play("left")
+			_balloon_sprite.flip_h = true
+			_balloon_sprite.play("right")
 			_play_thought_content()
 		_thought_node.visible = true
 	else:
@@ -69,12 +69,8 @@ func _process_thought() -> void:
 		_thought_node.visible = false
 
 func _play_thought_content() -> void:
-	match thought:
-		"escutar":
-			if orientation == "right":
-				_content_sprite.position.x = 6
-			else:
-				_content_sprite.position.x = -6
-			_content_sprite.play("escutar")
-		_:
-			assert(false)  # throws error
+	if orientation == "right":
+		_content_sprite.position.x = -10
+	else:
+		_content_sprite.position.x = 10
+	_content_sprite.play(thought)
