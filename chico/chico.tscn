@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://r6tpqlaxacs2"]
+[gd_scene load_steps=34 format=3 uid="uid://r6tpqlaxacs2"]
 
 [ext_resource type="Texture2D" uid="uid://ddw04dmmrt44i" path="res://assets/sprites/chico/spritesheet-chico1.png" id="1_fxkqi"]
 [ext_resource type="Script" path="res://chico/chico.gd" id="1_iifu8"]
@@ -18,6 +18,14 @@
 [ext_resource type="Texture2D" uid="uid://di2vhefouxvlf" path="res://assets/sprites/chico/spritesheet-chico5-flipped.png" id="6_i4laa"]
 [ext_resource type="Texture2D" uid="uid://c1ohggrnklejv" path="res://assets/sprites/chico/spritesheet-chico6.png" id="6_v4x1n"]
 [ext_resource type="Texture2D" uid="uid://b88o3uvkvojo8" path="res://assets/sprites/chico/spritesheet-chico6-flipped.png" id="7_diwxp"]
+[ext_resource type="Texture2D" uid="uid://5lag34mykugf" path="res://assets/sprites/chico/chico-mija1.png" id="7_uwvmk"]
+[ext_resource type="Texture2D" uid="uid://bgad338h46sx" path="res://assets/sprites/chico/chico-mija2.png" id="8_dqoxg"]
+[ext_resource type="Texture2D" uid="uid://ceu2khfx0x4tl" path="res://assets/sprites/chico/chico-mija3.png" id="9_wrapk"]
+[ext_resource type="Texture2D" uid="uid://cyleuq8noq1sa" path="res://assets/sprites/chico/chico-mija4.png" id="10_uh2oc"]
+[ext_resource type="Texture2D" uid="uid://baax5bt4cgf5h" path="res://assets/sprites/chico/chico-mija5.png" id="11_vtnev"]
+[ext_resource type="Texture2D" uid="uid://3em7tdjjp55r" path="res://assets/sprites/chico/chico-mija6.png" id="12_io56i"]
+[ext_resource type="Texture2D" uid="uid://c7tyjmay02fuj" path="res://assets/sprites/chico/chico-mija7.png" id="13_ccl14"]
+[ext_resource type="Texture2D" uid="uid://cgrd3rx4r8tnf" path="res://assets/sprites/chico/chico-mija8.png" id="14_txjr1"]
 [ext_resource type="Texture2D" uid="uid://dwi6au1e7vkcy" path="res://assets/sprites/chico/chico-dorme1.png" id="19_h0pwb"]
 [ext_resource type="Texture2D" uid="uid://cuvdpd2ermsel" path="res://assets/sprites/chico/chico-dorme2.png" id="20_gh764"]
 
@@ -80,6 +88,35 @@ size = Vector2(145, 139)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aoagg"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_uwvmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dqoxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wrapk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uh2oc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vtnev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_io56i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ccl14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_txjr1")
+}],
+"loop": true,
+"name": &"MIJAR",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_pb10n")
@@ -167,8 +204,9 @@ one_way_collision_margin = 0.0
 
 [node name="WalkSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aoagg")
-animation = &"sleep"
-frame_progress = 0.859717
+animation = &"MIJAR"
+frame = 3
+frame_progress = 0.15855
 
 [node name="ActionableFinder" type="Area2D" parent="."]
 collision_layer = 0
@@ -199,4 +237,7 @@ editor_draw_drag_margin = true
 
 [node name="SleepTimer" type="Timer" parent="."]
 
+[node name="MIJOTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="SleepTimer" to="." method="_on_sleep_timer_timeout"]
+[connection signal="timeout" from="MIJOTimer" to="." method="_on_MIJO_timer_timeout"]
