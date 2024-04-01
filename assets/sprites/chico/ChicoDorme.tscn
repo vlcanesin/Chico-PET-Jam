@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://gbcfsgi7kgf"]
+
+[ext_resource type="Texture2D" uid="uid://buxhxffjcpw1u" path="res://assets/sprites/chico/chico-dorme1.png" id="1_2m6hx"]
+[ext_resource type="Texture2D" uid="uid://cp65qo2f6fyql" path="res://assets/sprites/chico/chico-dorme2.png" id="2_7dd6s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xsny5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2m6hx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7dd6s")
+}],
+"loop": true,
+"name": &"dorme",
+"speed": 0.8
+}]
+
+[node name="SleepSprite" type="AnimatedSprite2D"]
+position = Vector2(361, 51)
+sprite_frames = SubResource("SpriteFrames_xsny5")
+animation = &"dorme"
+frame_progress = 0.568235
