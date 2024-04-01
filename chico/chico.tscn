@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://r6tpqlaxacs2"]
+[gd_scene load_steps=39 format=3 uid="uid://r6tpqlaxacs2"]
 
 [ext_resource type="Texture2D" uid="uid://ddw04dmmrt44i" path="res://assets/sprites/chico/spritesheet-chico1.png" id="1_fxkqi"]
 [ext_resource type="Script" path="res://chico/chico.gd" id="1_iifu8"]
@@ -28,6 +28,10 @@
 [ext_resource type="Texture2D" uid="uid://cgrd3rx4r8tnf" path="res://assets/sprites/chico/chico-mija8.png" id="14_txjr1"]
 [ext_resource type="Texture2D" uid="uid://dwi6au1e7vkcy" path="res://assets/sprites/chico/chico-dorme1.png" id="19_h0pwb"]
 [ext_resource type="Texture2D" uid="uid://cuvdpd2ermsel" path="res://assets/sprites/chico/chico-dorme2.png" id="20_gh764"]
+[ext_resource type="Texture2D" uid="uid://ch28jj30a7vtw" path="res://assets/sprites/latido/latido1.png" id="29_n8xn4"]
+[ext_resource type="Texture2D" uid="uid://cv6t42bti4oh5" path="res://assets/sprites/latido/latido2.png" id="30_xxcv7"]
+[ext_resource type="Texture2D" uid="uid://24ehwgjwd8kl" path="res://assets/sprites/latido/latido3.png" id="31_c2dh4"]
+[ext_resource type="Texture2D" uid="uid://cgxglu1tucd40" path="res://assets/sprites/latido/latido4.png" id="32_fb4xe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s5qrt"]
 animations = [{
@@ -178,6 +182,26 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80qcb"]
 size = Vector2(20, 173)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_mmni2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_n8xn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_xxcv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_c2dh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_fb4xe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
 [node name="Chico" type="CharacterBody2D"]
 position = Vector2(0, 11)
 script = ExtResource("1_iifu8")
@@ -239,5 +263,17 @@ editor_draw_drag_margin = true
 
 [node name="MIJOTimer" type="Timer" parent="."]
 
+[node name="BarkTimer" type="Timer" parent="."]
+
+[node name="BarkBark" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13)
+scale = Vector2(0.56875, 0.56875)
+sprite_frames = SubResource("SpriteFrames_mmni2")
+frame = 2
+frame_progress = 0.010869
+
+[node name="BarkSound" type="AudioStreamPlayer" parent="."]
+
 [connection signal="timeout" from="SleepTimer" to="." method="_on_sleep_timer_timeout"]
 [connection signal="timeout" from="MIJOTimer" to="." method="_on_MIJO_timer_timeout"]
+[connection signal="timeout" from="BarkTimer" to="." method="_on_bark_timer_timeout"]

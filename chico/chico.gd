@@ -1,17 +1,20 @@
 extends CharacterBody2D
 
 const SLEEP_TIMEOUT: float = 10.0 
-const MIJO_LENGTH: float = float(8)/12
+const MIJO_LENGTH: float = 8.0/12
+const BARK_LENGTH: float = 4.0/8
 
 var default_height: int = 438  # OBS: não está como constante pois pode variar de cena pra cena
 var orientation: String = "right"
 var thought: String = ""
 var is_sleeping: bool = true
 var is_MIJANDO: bool = false
+var is_barking: bool = false
 
 @export var SPEED : float = 300.0
 
 @onready var _walk_sprite = $WalkSprite
+@onready var _bark_bark = $BarkBark
 @onready var _thought_node = $Thought
 @onready var _balloon_sprite = $Thought/Balloon
 @onready var _content_sprite = $Thought/Content
@@ -19,6 +22,7 @@ var is_MIJANDO: bool = false
 @onready var height_finder: Area2D = $HeightFinder
 @onready var sleep_timer: Timer = $SleepTimer
 @onready var MIJO_timer: Timer = $MIJOTimer
+@onready var bark_timer: Timer = $BarkTimer
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -32,11 +36,17 @@ func _unhandled_input(_event):
 		_fix_orientation()
 		_walk_sprite.play("MIJAR")
 		_reset_MIJO_timer()
-	if Input.is_key_pressed(KEY_L):
-		print("Latir")
+	if Input.is_key_pressed(KEY_L) and not is_sleeping:
+		is_sleeping = false
+		is_barking = true
+		_bark_bark.visible = true
+		_bark_bark.play("default")
+		_reset_bark_timer()
 
 func _ready():
 	sleep_timer.start(0)  # Começa dormindo
+	_walk_sprite.play("sleep")
+	_bark_bark.visible = false
 
 func _process(delta):
 	if not DialogueGlobals.in_dialogue:
@@ -50,6 +60,9 @@ func _process(delta):
 func _reset_MIJO_timer(time: float = MIJO_LENGTH):
 	MIJO_timer.start(time)
 
+func _reset_bark_timer(time: float = BARK_LENGTH):
+	bark_timer.start(time)
+
 func _reset_sleep_timer(time: float = SLEEP_TIMEOUT):
 	sleep_timer.start(time)
 	#print("Timer set to:", time)
@@ -60,20 +73,30 @@ func _fix_orientation():
 	else:
 		_walk_sprite.flip_h = false
 
+func _fix_bark_position():
+	if orientation == "left":
+		_bark_bark.flip_h = true
+		_bark_bark.position.x = -86
+	else:
+		_bark_bark.flip_h = false
+		_bark_bark.position.x = 86
+
 func _process_movement(delta) -> void:
 	if Input.is_action_pressed("ui_right"):
 		is_sleeping = false
 		_reset_sleep_timer()
 		orientation = "right"
-		_walk_sprite.flip_h = false
+		_fix_orientation()
+		_fix_bark_position()
 		_walk_sprite.play("right")
 		position.x += SPEED*delta
 	elif Input.is_action_pressed("ui_left"):
 		is_sleeping = false
 		_reset_sleep_timer()
 		orientation = "left"
-		_walk_sprite.flip_h = false
-		_walk_sprite.play("left")
+		_fix_orientation()
+		_fix_bark_position()
+		_walk_sprite.play("right")
 		position.x -= SPEED*delta
 	elif not is_sleeping and not is_MIJANDO:
 		_walk_sprite.stop()
@@ -120,7 +143,12 @@ func _on_sleep_timer_timeout():
 	_walk_sprite.play("sleep")
 
 func _on_MIJO_timer_timeout():
-	print("asdasd")
 	MIJO_timer.stop()
 	_walk_sprite.stop()
 	is_MIJANDO = false
+
+func _on_bark_timer_timeout():
+	_bark_bark.visible = false
+	bark_timer.stop()
+	_bark_bark.stop()
+	is_barking = false
