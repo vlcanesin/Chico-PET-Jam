@@ -47,6 +47,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_lvmkq")
+}],
+"loop": true,
+"name": &"pensar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_2l8w7")
 }],
 "loop": true,
@@ -128,10 +136,10 @@ script = ExtResource("1_iifu8")
 
 [node name="Content" type="AnimatedSprite2D" parent="Thought"]
 z_index = 1
-position = Vector2(0.293543, -105.622)
-scale = Vector2(0.553659, 0.553659)
+position = Vector2(0.0176786, -107.305)
+scale = Vector2(0.266229, 0.266229)
 sprite_frames = SubResource("SpriteFrames_s5qrt")
-animation = &"interagir"
+animation = &"pensar"
 
 [node name="Balloon" type="AnimatedSprite2D" parent="Thought"]
 position = Vector2(-3.8147e-06, -102)
