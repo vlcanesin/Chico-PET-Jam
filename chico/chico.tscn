@@ -182,3 +182,7 @@ drag_left_margin = 0.45
 drag_right_margin = 0.45
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="SleepTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SleepTimer" to="." method="_on_sleep_timer_timeout"]

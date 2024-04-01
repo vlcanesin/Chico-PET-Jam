@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
+const SLEEP_TIMEOUT: float = 10.0 
+
+var default_height: int = 438  # OBS: não está como constante pois pode variar de cena pra cena
 var orientation: String = "right"
 var thought: String = ""
-
-# OBS: não está como constante pois pode variar de cena pra cena
-var default_height: int = 438
 
 @export var SPEED : float = 300.0
 
@@ -14,6 +14,7 @@ var default_height: int = 438
 @onready var _content_sprite = $Thought/Content
 @onready var actionable_finder: Area2D = $ActionableFinder
 @onready var height_finder: Area2D = $HeightFinder
+@onready var sleep_timer: Timer = $SleepTimer
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -23,16 +24,25 @@ func _unhandled_input(_event):
 			return
 
 func _process(delta):
-	_process_movement(delta)
-	_process_height()
-	_process_thought()
-		
+	if not DialogueGlobals.in_dialogue:
+		_process_movement(delta)
+		_process_height()
+		_process_thought()
+	else:
+		_thought_node.visible = false
+		_reset_timer()
+
+func _reset_timer(time: float = SLEEP_TIMEOUT):
+	sleep_timer.start(time)
+	
 func _process_movement(delta) -> void:
 	if Input.is_action_pressed("ui_right"):
+		_reset_timer()
 		orientation = "right"
 		_walk_sprite.play("right")
 		position.x += SPEED*delta
 	elif Input.is_action_pressed("ui_left"):
+		_reset_timer()
 		orientation = "left"
 		_walk_sprite.play("left")
 		position.x -= SPEED*delta
@@ -74,3 +84,6 @@ func _play_thought_content() -> void:
 	else:
 		_content_sprite.position.x = 10
 	_content_sprite.play(thought)
+
+func _on_sleep_timer_timeout():
+	_walk_sprite.play("sleep")

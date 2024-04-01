@@ -1,4 +1,4 @@
 extends Node
 
-var in_conversation: bool = false
+var in_dialogue: bool = false
 var npc1_speak: bool = false
