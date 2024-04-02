@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyleuq8noq1sa"
-path="res://.godot/imported/chico-mija4.png-4aa01492007d7baf522c067e5c28cc7a.ctex"
+uid="uid://xh8e0lpg11qy"
+path="res://.godot/imported/fisica.png-5a13c8ca38dec0b072d8decb6c696956.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/chico/chico-mija4.png"
-dest_files=["res://.godot/imported/chico-mija4.png-4aa01492007d7baf522c067e5c28cc7a.ctex"]
+source_file="res://assets/sprites/localidades/fisica.png"
+dest_files=["res://.godot/imported/fisica.png-5a13c8ca38dec0b072d8decb6c696956.ctex"]
 
 [params]
 

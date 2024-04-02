@@ -7,7 +7,7 @@ func _ready():
 	pass
 
 func _process(_delta):
-	if DialogueGlobals.npc1_speak == true:
+	if DialogueGlobals.walter_speak == true:
 		_sprite_state = "speak"
 	else:
 		_sprite_state = "idle"

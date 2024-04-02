@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.2")
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 DialogueGlobals="*res://common/dialogue_globals.gd"
+LogicGlobals="*res://common/logic_globals.gd"
 
 [dialogue_manager]
 
@@ -67,7 +68,7 @@ toggleInventory={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://npc/npc1.dialogue")
+locale/translations_pot_files=PackedStringArray("res://npc/npcs_calculo/calculo.dialogue")
 
 [layer_names]
 

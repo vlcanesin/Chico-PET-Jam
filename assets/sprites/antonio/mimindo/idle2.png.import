@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyleuq8noq1sa"
-path="res://.godot/imported/chico-mija4.png-4aa01492007d7baf522c067e5c28cc7a.ctex"
+uid="uid://csmivtktd4ff"
+path="res://.godot/imported/idle2.png-548d4e9f7f89f69a8d4834a536c5e396.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/chico/chico-mija4.png"
-dest_files=["res://.godot/imported/chico-mija4.png-4aa01492007d7baf522c067e5c28cc7a.ctex"]
+source_file="res://assets/sprites/antonio/mimindo/idle2.png"
+dest_files=["res://.godot/imported/idle2.png-548d4e9f7f89f69a8d4834a536c5e396.ctex"]
 
 [params]
 

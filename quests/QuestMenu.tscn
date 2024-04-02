@@ -304,16 +304,16 @@ h4 = SubResource("Resource_bledp")
 h5 = SubResource("Resource_eiene")
 h6 = SubResource("Resource_k67yl")
 
-[node name="PegueLapis" type="RichTextLabel" parent="Quadro/ProvaCalculo"]
+[node name="Estudar" type="RichTextLabel" parent="Quadro/ProvaCalculo"]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 28.0
-offset_right = 237.0
+offset_right = 250.0
 offset_bottom = 49.0
 bbcode_enabled = true
-text = "[ul]Pegue um lápis[/ul]"
+text = "[ul]Estude na biblioteca do INF[/ul]"
 script = ExtResource("2_1euvc")
-markdown_text = "- Pegue um lápis"
+markdown_text = "- Estude na biblioteca do INF"
 h1 = SubResource("Resource_skl3t")
 h2 = SubResource("Resource_ioi3b")
 h3 = SubResource("Resource_k5hmb")
@@ -321,16 +321,16 @@ h4 = SubResource("Resource_iyth4")
 h5 = SubResource("Resource_33jcb")
 h6 = SubResource("Resource_6b8ee")
 
-[node name="Estudar" type="RichTextLabel" parent="Quadro/ProvaCalculo"]
+[node name="PegueLapis" type="RichTextLabel" parent="Quadro/ProvaCalculo"]
 layout_mode = 0
 offset_left = 7.0
-offset_top = 49.0
-offset_right = 250.0
-offset_bottom = 70.0
+offset_top = 48.0
+offset_right = 237.0
+offset_bottom = 69.0
 bbcode_enabled = true
-text = "[ul]Estude na biblioteca do INF[/ul]"
+text = "[ul]Pegue um lápis[/ul]"
 script = ExtResource("2_1euvc")
-markdown_text = "- Estude na biblioteca do INF"
+markdown_text = "- Pegue um lápis"
 h1 = SubResource("Resource_skl3t")
 h2 = SubResource("Resource_ioi3b")
 h3 = SubResource("Resource_k5hmb")
@@ -373,6 +373,7 @@ h5 = SubResource("Resource_mjfe0")
 h6 = SubResource("Resource_hqulx")
 
 [node name="BotaoQuests" type="NinePatchRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 278.0
 offset_bottom = 95.0
