@@ -127,6 +127,7 @@ func _process_thought() -> void:
 		has_actionable_collision = false
 	
 	if has_actionable_collision:
+		_thought_node.visible = true
 		if orientation == "right":
 			_balloon_sprite.flip_h = false
 			_balloon_sprite.play("right")
@@ -135,11 +136,10 @@ func _process_thought() -> void:
 			_balloon_sprite.flip_h = true
 			_balloon_sprite.play("right")
 			_play_thought_content()
-		_thought_node.visible = true
 	else:
+		_thought_node.visible = false
 		_balloon_sprite.stop()
 		_content_sprite.stop()
-		_thought_node.visible = false
 
 func _play_thought_content() -> void:
 	if orientation == "right":

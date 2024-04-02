@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 DialogueGlobals="*res://common/dialogue_globals.gd"
+LogicGlobals="*res://common/logic_globals.gd"
 
 [dialogue_manager]
 

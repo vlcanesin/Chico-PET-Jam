@@ -27,5 +27,8 @@ Walter: Mano, não é tão difícil ir pra biblioteca estudar...
 
 set walter_speak = false
 set walter_speak = false
+
+set LogicGlobals.unlock_calc_study = true
+
 set in_dialogue = false
 => END
