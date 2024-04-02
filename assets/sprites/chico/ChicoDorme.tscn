@@ -21,4 +21,4 @@ animations = [{
 position = Vector2(361, 51)
 sprite_frames = SubResource("SpriteFrames_xsny5")
 animation = &"dorme"
-frame_progress = 0.568235
+frame_progress = 0.303133

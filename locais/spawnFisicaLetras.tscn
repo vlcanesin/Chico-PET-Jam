@@ -1,14 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3857yr2eyjnp"]
+[gd_scene load_steps=10 format=3 uid="uid://d3857yr2eyjnp"]
 
 [ext_resource type="Texture2D" uid="uid://ctuvmjcsil0mv" path="res://assets/sprites/localidades/spawn.png" id="1_1oi8u"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_34yms"]
 [ext_resource type="PackedScene" uid="uid://qrksu8tbyb85" path="res://common/height_actionable.tscn" id="2_xfo38"]
 [ext_resource type="PackedScene" uid="uid://cfe0q32vvc5ms" path="res://prefabs/paredesInvisiveis.tscn" id="3_4ia64"]
-[ext_resource type="Resource" uid="uid://dg2h3hgw5cat2" path="res://inventory/playerInventory.tres" id="4_1jfvn"]
 [ext_resource type="PackedScene" uid="uid://c74bpv2deaixx" path="res://inventory/inventoryGui.tscn" id="5_b0gpo"]
 [ext_resource type="Script" path="res://locais/UI.gd" id="5_pbu2o"]
 [ext_resource type="Script" path="res://inventory/inventoryGui.gd" id="6_a64pp"]
-[ext_resource type="PackedScene" uid="uid://dyo4ksdv5sak2" path="res://inventory/anton.tscn" id="9_8tfa1"]
+[ext_resource type="PackedScene" uid="uid://chvv8dlqmv7ab" path="res://inventory/anton.tscn" id="9_8tfa1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlms7"]
 size = Vector2(20, 267)
@@ -65,7 +64,6 @@ shape = SubResource("RectangleShape2D_rlms7")
 
 [node name="Chico" parent="." instance=ExtResource("2_34yms")]
 position = Vector2(3027, 438)
-inventory = ExtResource("4_1jfvn")
 
 [node name="ParedesInvisiveis" parent="." instance=ExtResource("3_4ia64")]
 position = Vector2(2774, 405)
@@ -83,5 +81,5 @@ offset_right = 40.0
 offset_bottom = 26.0
 script = ExtResource("6_a64pp")
 
-[node name="Anton" parent="." instance=ExtResource("9_8tfa1")]
-position = Vector2(2641, 456)
+[node name="anton" parent="." instance=ExtResource("9_8tfa1")]
+position = Vector2(2395, 441)

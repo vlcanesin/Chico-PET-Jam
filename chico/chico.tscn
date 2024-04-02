@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://r6tpqlaxacs2"]
+[gd_scene load_steps=24 format=3 uid="uid://r6tpqlaxacs2"]
 
 [ext_resource type="Texture2D" uid="uid://ddw04dmmrt44i" path="res://assets/sprites/chico/spritesheet-chico1.png" id="1_fxkqi"]
 [ext_resource type="Script" path="res://chico/chico.gd" id="1_iifu8"]
+[ext_resource type="Resource" uid="uid://dg2h3hgw5cat2" path="res://inventory/playerInventory.tres" id="2_g464a"]
 [ext_resource type="Texture2D" uid="uid://c5arlwultyasm" path="res://assets/sprites/chico/spritesheet-chico1-flipped.png" id="2_pb10n"]
 [ext_resource type="Texture2D" uid="uid://c2wpmpwvp0lsm" path="res://assets/sprites/chico/spritesheet-chico2.png" id="2_xtqr0"]
 [ext_resource type="Texture2D" uid="uid://2cyt7m1ps887" path="res://assets/sprites/chico/spritesheet-chico2-flipped.png" id="3_53ljx"]
@@ -102,9 +103,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80qcb"]
 size = Vector2(20, 173)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ejrh"]
+
 [node name="Chico" type="CharacterBody2D"]
 position = Vector2(0, 11)
 script = ExtResource("1_iifu8")
+inventory = ExtResource("2_g464a")
 
 [node name="Thought" type="Node2D" parent="."]
 
@@ -156,3 +160,11 @@ drag_left_margin = 0.45
 drag_right_margin = 0.45
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_6ejrh")
+
+[connection signal="area_entered" from="ActionableFinder" to="." method="_on_actionable_finder_area_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_hitbox_area_entered"]
