@@ -1,22 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://d3857yr2eyjnp"]
+[gd_scene load_steps=11 format=3 uid="uid://d3857yr2eyjnp"]
 
 [ext_resource type="Texture2D" uid="uid://ctuvmjcsil0mv" path="res://assets/sprites/localidades/spawn.png" id="1_1oi8u"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_34yms"]
 [ext_resource type="PackedScene" uid="uid://qrksu8tbyb85" path="res://common/height_actionable.tscn" id="2_xfo38"]
 [ext_resource type="PackedScene" uid="uid://cfe0q32vvc5ms" path="res://prefabs/paredesInvisiveis.tscn" id="3_4ia64"]
+[ext_resource type="Resource" uid="uid://dg2h3hgw5cat2" path="res://inventory/playerInventory.tres" id="4_1jfvn"]
 [ext_resource type="PackedScene" uid="uid://c74bpv2deaixx" path="res://inventory/inventoryGui.tscn" id="5_b0gpo"]
 [ext_resource type="Script" path="res://locais/UI.gd" id="5_pbu2o"]
-[ext_resource type="PackedScene" uid="uid://c3q0nr25ltj0k" path="res://npc/npcs_calculo/walter_calculo.tscn" id="5_wtpws"]
-[ext_resource type="PackedScene" uid="uid://bcn5aghu6po44" path="res://npc/npcs_calculo/marcelo_calculo.tscn" id="6_046g8"]
 [ext_resource type="Script" path="res://inventory/inventoryGui.gd" id="6_a64pp"]
-[ext_resource type="PackedScene" uid="uid://cepicnrc56pes" path="res://quests/QuestMenu.tscn" id="7_cpf5m"]
-[ext_resource type="PackedScene" uid="uid://chvv8dlqmv7ab" path="res://inventory/anton.tscn" id="9_8tfa1"]
+[ext_resource type="PackedScene" uid="uid://dyo4ksdv5sak2" path="res://inventory/anton.tscn" id="9_8tfa1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlms7"]
 size = Vector2(20, 267)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0rns"]
-size = Vector2(155, 270)
 
 [node name="SpawnFisicaLetras" type="Node2D"]
 
@@ -70,29 +65,13 @@ shape = SubResource("RectangleShape2D_rlms7")
 
 [node name="Chico" parent="." instance=ExtResource("2_34yms")]
 position = Vector2(3027, 438)
+inventory = ExtResource("4_1jfvn")
 
 [node name="ParedesInvisiveis" parent="." instance=ExtResource("3_4ia64")]
 position = Vector2(2774, 405)
 
 [node name="ParedesInvisiveis2" parent="." instance=ExtResource("3_4ia64")]
 position = Vector2(3226, 406)
-
-[node name="NPC_5" parent="." instance=ExtResource("6_046g8")]
-z_index = 2
-position = Vector2(596, 409)
-
-[node name="NPC_1" parent="." instance=ExtResource("5_wtpws")]
-z_index = 2
-position = Vector2(440, 404)
-
-[node name="QuestMenu" parent="." instance=ExtResource("7_cpf5m")]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(440, 404)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-359.5, 113)
-shape = SubResource("RectangleShape2D_v0rns")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("5_pbu2o")
@@ -104,5 +83,5 @@ offset_right = 40.0
 offset_bottom = 26.0
 script = ExtResource("6_a64pp")
 
-[node name="anton" parent="." instance=ExtResource("9_8tfa1")]
-position = Vector2(2395, 441)
+[node name="Anton" parent="." instance=ExtResource("9_8tfa1")]
+position = Vector2(1982, 457)

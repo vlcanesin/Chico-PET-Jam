@@ -15,6 +15,8 @@ var is_barking: bool = false
 
 @export var SPEED : float = 300.0
 
+@export var inventory: Inventory
+
 @onready var _walk_sprite = $WalkSprite
 @onready var _bark_bark = $BarkBark
 @onready var _thought_node = $Thought
@@ -170,3 +172,7 @@ func _on_bark_timer_timeout():
 	bark_timer.stop()
 	_bark_bark.stop()
 	is_barking = false
+
+func _on_hitbox_area_entered(area):
+	if area.has_method("collect"):
+		area.collect(inventory)
