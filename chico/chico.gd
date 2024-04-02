@@ -93,13 +93,8 @@ func _fix_bark_position():
 		_bark_bark.position.x = 86
 
 func _process_movement(delta) -> void:
-	move_and_slide()
-	if is_on_wall():
-		if orientation == "right":
-			position.x -= 0.1
-		else:
-			position.x += 0.1
-	if Input.is_action_pressed("ui_right") and not is_MIJANDO and not is_on_wall():
+	move_and_slide()  # garante processamento da colisão
+	if Input.is_action_pressed("ui_right") and not is_MIJANDO:
 		is_sleeping = false
 		_reset_sleep_timer()
 		orientation = "right"
@@ -107,7 +102,7 @@ func _process_movement(delta) -> void:
 		_fix_bark_position()
 		_walk_sprite.play("right")
 		position.x += SPEED*delta
-	elif Input.is_action_pressed("ui_left") and not is_MIJANDO and not is_on_wall():
+	elif Input.is_action_pressed("ui_left") and not is_MIJANDO:
 		is_sleeping = false
 		_reset_sleep_timer()
 		orientation = "left"
