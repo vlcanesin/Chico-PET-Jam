@@ -4,6 +4,8 @@ const SLEEP_TIMEOUT: float = 10.0
 const MIJO_LENGTH: float = 8.0/12
 const BARK_LENGTH: float = 4.0/8
 
+const METATHOUGHT_SCALE: float = 0.3
+
 var default_height: int = 438  # OBS: não está como constante pois pode variar de cena pra cena
 var orientation: String = "right"
 var thought: String = ""
@@ -144,6 +146,12 @@ func _play_thought_content() -> void:
 		_content_sprite.position.x = -10
 	else:
 		_content_sprite.position.x = 10
+	if thought == "pensar":
+		_content_sprite.scale.x = 0.3
+		_content_sprite.scale.y = 0.3
+	else:
+		_content_sprite.scale.x = 0.45
+		_content_sprite.scale.y = 0.45
 	_content_sprite.play(thought)
 
 func _on_sleep_timer_timeout():

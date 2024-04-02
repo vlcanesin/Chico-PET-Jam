@@ -211,13 +211,13 @@ script = ExtResource("1_iifu8")
 [node name="Thought" type="Node2D" parent="."]
 
 [node name="Content" type="AnimatedSprite2D" parent="Thought"]
-z_index = 1
-position = Vector2(0.0176786, -107.305)
-scale = Vector2(0.266229, 0.266229)
+position = Vector2(0.344908, -106.789)
+scale = Vector2(0.452407, 0.452407)
 sprite_frames = SubResource("SpriteFrames_s5qrt")
 animation = &"pensar"
 
 [node name="Balloon" type="AnimatedSprite2D" parent="Thought"]
+z_index = -1
 position = Vector2(-3.8147e-06, -102)
 scale = Vector2(0.678061, 0.678061)
 sprite_frames = SubResource("SpriteFrames_2jl3f")
