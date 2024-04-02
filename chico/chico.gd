@@ -8,6 +8,8 @@ var default_height: int = 438
 
 @export var SPEED : float = 300.0
 
+@export var inventory: Inventory
+
 @onready var _walk_sprite = $WalkSprite
 @onready var _thought_node = $Thought
 @onready var _balloon_sprite = $Thought/Balloon
@@ -68,6 +70,8 @@ func _process_thought() -> void:
 		_content_sprite.stop()
 		_thought_node.visible = false
 
+
+
 func _play_thought_content() -> void:
 	match thought:
 		"escutar":
@@ -78,3 +82,9 @@ func _play_thought_content() -> void:
 			_content_sprite.play("escutar")
 		_:
 			assert(false)  # throws error
+
+
+
+func _on_hitbox_area_entered(area):
+	if area.has_method("collect"):
+		area.collect(inventory)

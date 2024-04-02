@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bh0j684fyuft1"]
 
 [ext_resource type="Script" path="res://menu/menu.gd" id="1_qxv16"]
-[ext_resource type="Texture2D" uid="uid://c5arlwultyasm" path="res://assets/sprites/chico/spritesheet-chico1-flipped.png" id="2_i8ktw"]
-[ext_resource type="Texture2D" uid="uid://ddw04dmmrt44i" path="res://assets/sprites/chico/spritesheet-chico1.png" id="2_l0jn3"]
 [ext_resource type="Theme" uid="uid://cxyika655yov1" path="res://menu/defaultBotao.tres" id="4_7tfmg"]
+[ext_resource type="Texture2D" uid="uid://nljbrpepmb5r" path="res://assets/sprites/IconesMenu/title.png" id="5_g4dwh"]
+[ext_resource type="PackedScene" uid="uid://gbcfsgi7kgf" path="res://assets/sprites/chico/ChicoDorme.tscn" id="5_pyewy"]
 [ext_resource type="Texture2D" uid="uid://gkojgkr4pe2q" path="res://assets/sprites/localidades/spawnMenu.png" id="6_loo0f"]
 
 [node name="menu" type="Control"]
@@ -21,25 +21,6 @@ offset_left = -56.0
 offset_right = 1163.0
 offset_bottom = 648.0
 texture = ExtResource("6_loo0f")
-
-[node name="Chico" type="TextureRect" parent="."]
-layout_mode = 2
-offset_left = 600.0
-offset_top = 336.0
-offset_right = 760.0
-offset_bottom = 496.0
-size_flags_horizontal = 8
-size_flags_vertical = 0
-texture = ExtResource("2_i8ktw")
-stretch_mode = 2
-
-[node name="tituloJogo" type="TextureRect" parent="."]
-layout_mode = 2
-offset_left = 96.0
-offset_top = 104.0
-offset_right = 528.0
-offset_bottom = 264.0
-texture = ExtResource("2_l0jn3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -69,6 +50,13 @@ text = "Galeria"
 layout_mode = 2
 theme = ExtResource("4_7tfmg")
 text = "Sair"
+
+[node name="Titulo" type="Sprite2D" parent="."]
+position = Vector2(291, 159)
+texture = ExtResource("5_g4dwh")
+
+[node name="ChicoDorme" parent="." instance=ExtResource("5_pyewy")]
+position = Vector2(672, 425)
 
 [connection signal="pressed" from="VBoxContainer/novoJogoBotao" to="." method="_on_novo_jogo_botao_pressed"]
 [connection signal="pressed" from="VBoxContainer/continuarBotao" to="." method="_on_continuar_botao_pressed"]
