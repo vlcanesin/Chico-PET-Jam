@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3857yr2eyjnp"]
+[gd_scene load_steps=11 format=3 uid="uid://d3857yr2eyjnp"]
 
 [ext_resource type="Texture2D" uid="uid://ctuvmjcsil0mv" path="res://assets/sprites/localidades/spawn.png" id="1_1oi8u"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_34yms"]
@@ -7,9 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://c3q0nr25ltj0k" path="res://npc/npcs_calculo/walter_calculo.tscn" id="5_wtpws"]
 [ext_resource type="PackedScene" uid="uid://bcn5aghu6po44" path="res://npc/npcs_calculo/marcelo_calculo.tscn" id="6_046g8"]
 [ext_resource type="PackedScene" uid="uid://cepicnrc56pes" path="res://quests/QuestMenu.tscn" id="7_cpf5m"]
+[ext_resource type="Script" path="res://locais/teste.gd" id="8_66ujr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlms7"]
 size = Vector2(20, 267)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0rns"]
+size = Vector2(155, 270)
 
 [node name="SpawnFisicaLetras" type="Node2D"]
 
@@ -79,3 +83,13 @@ z_index = 2
 position = Vector2(440, 404)
 
 [node name="QuestMenu" parent="." instance=ExtResource("7_cpf5m")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(440, 404)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-359.5, 113)
+shape = SubResource("RectangleShape2D_v0rns")
+
+[node name="teste" type="CharacterBody2D" parent="."]
+script = ExtResource("8_66ujr")
