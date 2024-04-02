@@ -6,7 +6,7 @@ const BARK_LENGTH: float = 4.0/8
 
 const METATHOUGHT_SCALE: float = 0.3
 
-var default_height: int = 438  # OBS: não está como constante pois pode variar de cena pra cena
+var default_height: int = 435  # OBS: não está como constante pois pode variar de cena pra cena
 var orientation: String = "right"
 var thought: String = ""
 var is_sleeping: bool = true

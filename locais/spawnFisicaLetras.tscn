@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://d3857yr2eyjnp"]
+[gd_scene load_steps=13 format=3 uid="uid://d3857yr2eyjnp"]
 
-[ext_resource type="Texture2D" uid="uid://ctuvmjcsil0mv" path="res://assets/sprites/localidades/spawn.png" id="1_1oi8u"]
+[ext_resource type="Texture2D" uid="uid://xh8e0lpg11qy" path="res://assets/sprites/localidades/fisica.png" id="1_ak7ap"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_34yms"]
 [ext_resource type="PackedScene" uid="uid://qrksu8tbyb85" path="res://common/height_actionable.tscn" id="2_xfo38"]
-[ext_resource type="PackedScene" uid="uid://cfe0q32vvc5ms" path="res://prefabs/paredesInvisiveis.tscn" id="3_4ia64"]
 [ext_resource type="PackedScene" uid="uid://c74bpv2deaixx" path="res://inventory/inventoryGui.tscn" id="5_b0gpo"]
 [ext_resource type="Script" path="res://locais/UI.gd" id="5_pbu2o"]
 [ext_resource type="PackedScene" uid="uid://c3q0nr25ltj0k" path="res://npc/npcs_calculo/walter_calculo.tscn" id="5_wtpws"]
@@ -16,83 +15,145 @@
 size = Vector2(20, 267)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0rns"]
-size = Vector2(155, 270)
+size = Vector2(155, 828)
 
 [node name="SpawnFisicaLetras" type="Node2D"]
 
 [node name="Spawn" type="Sprite2D" parent="."]
-position = Vector2(2416, 328)
+position = Vector2(5828, 416)
 scale = Vector2(1, 1.01328)
-texture = ExtResource("1_1oi8u")
+texture = ExtResource("1_ak7ap")
 
-[node name="HeightCollection" type="Node" parent="Spawn"]
+[node name="HeightCollection" type="Node2D" parent="Spawn"]
+position = Vector2(-5828, -410.548)
 
 [node name="HeightActionable" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
-position = Vector2(4438, 518)
+position = Vector2(5720, 533.91)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable"]
 shape = SubResource("RectangleShape2D_rlms7")
 
 [node name="HeightActionable2" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
-position = Vector2(4458, 578)
-height = 60
+position = Vector2(5740, 593.91)
+height = 80
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable2"]
 shape = SubResource("RectangleShape2D_rlms7")
 
 [node name="HeightActionable3" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
-position = Vector2(4558, 578)
-height = 60
+position = Vector2(5840, 593.91)
+height = 80
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable3"]
 shape = SubResource("RectangleShape2D_rlms7")
 
 [node name="HeightActionable4" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
-position = Vector2(4578, 639)
-height = 120
+position = Vector2(5860, 654.91)
+height = 160
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable4"]
 shape = SubResource("RectangleShape2D_rlms7")
 
 [node name="HeightActionable5" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
-position = Vector2(4679, 639)
-height = 120
+position = Vector2(5961, 654.91)
+height = 160
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable5"]
 shape = SubResource("RectangleShape2D_rlms7")
 
 [node name="HeightActionable6" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
-position = Vector2(4699, 700)
-height = 180
+position = Vector2(5981, 715.91)
+height = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable6"]
 shape = SubResource("RectangleShape2D_rlms7")
 
+[node name="HeightActionable7" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
+position = Vector2(7220, 725.367)
+height = 200
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable7"]
+position = Vector2(0, -0.411654)
+shape = SubResource("RectangleShape2D_rlms7")
+
+[node name="HeightActionable8" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
+position = Vector2(7241, 653.324)
+height = 180
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable8"]
+shape = SubResource("RectangleShape2D_rlms7")
+
+[node name="HeightActionable9" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
+position = Vector2(7340, 654.311)
+height = 180
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable9"]
+shape = SubResource("RectangleShape2D_rlms7")
+
+[node name="HeightActionable10" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
+position = Vector2(7361, 594.11)
+height = 120
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable10"]
+shape = SubResource("RectangleShape2D_rlms7")
+
+[node name="HeightActionable11" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
+position = Vector2(7460, 594.11)
+height = 120
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable11"]
+shape = SubResource("RectangleShape2D_rlms7")
+
+[node name="HeightActionable12" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
+position = Vector2(7481, 534.896)
+height = 60
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable12"]
+shape = SubResource("RectangleShape2D_rlms7")
+
+[node name="HeightActionable13" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
+position = Vector2(7581, 534.897)
+height = 60
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable13"]
+shape = SubResource("RectangleShape2D_rlms7")
+
+[node name="HeightActionable14" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
+position = Vector2(7601, 475.683)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable14"]
+shape = SubResource("RectangleShape2D_rlms7")
+
+[node name="WallCollection" type="Node2D" parent="Spawn"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Spawn/WallCollection"]
+position = Vector2(-5018, 95.7287)
+scale = Vector2(1, 0.986894)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/WallCollection/StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_v0rns")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Spawn/WallCollection"]
+position = Vector2(4542, -0.986908)
+scale = Vector2(1, 0.986894)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/WallCollection/StaticBody2D2"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_v0rns")
+
 [node name="Chico" parent="." instance=ExtResource("2_34yms")]
-position = Vector2(3027, 438)
-
-[node name="ParedesInvisiveis" parent="." instance=ExtResource("3_4ia64")]
-position = Vector2(2774, 405)
-
-[node name="ParedesInvisiveis2" parent="." instance=ExtResource("3_4ia64")]
-position = Vector2(3226, 406)
+position = Vector2(4303, 435)
 
 [node name="NPC_5" parent="." instance=ExtResource("6_046g8")]
 z_index = 2
-position = Vector2(596, 409)
+position = Vector2(2325, 371)
 
 [node name="NPC_1" parent="." instance=ExtResource("5_wtpws")]
 z_index = 2
-position = Vector2(440, 404)
+position = Vector2(2169, 366)
 
 [node name="QuestMenu" parent="." instance=ExtResource("7_cpf5m")]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(440, 404)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-359.5, 113)
-shape = SubResource("RectangleShape2D_v0rns")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("5_pbu2o")
@@ -105,4 +166,4 @@ offset_bottom = 26.0
 script = ExtResource("6_a64pp")
 
 [node name="anton" parent="." instance=ExtResource("9_8tfa1")]
-position = Vector2(2395, 441)
+position = Vector2(996, 466)
