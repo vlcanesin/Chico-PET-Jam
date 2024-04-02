@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://r6tpqlaxacs2"]
+[gd_scene load_steps=41 format=3 uid="uid://r6tpqlaxacs2"]
 
 [ext_resource type="Texture2D" uid="uid://ddw04dmmrt44i" path="res://assets/sprites/chico/spritesheet-chico1.png" id="1_fxkqi"]
 [ext_resource type="Script" path="res://chico/chico.gd" id="1_iifu8"]
@@ -32,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://cv6t42bti4oh5" path="res://assets/sprites/latido/latido2.png" id="30_xxcv7"]
 [ext_resource type="Texture2D" uid="uid://24ehwgjwd8kl" path="res://assets/sprites/latido/latido3.png" id="31_c2dh4"]
 [ext_resource type="Texture2D" uid="uid://cgxglu1tucd40" path="res://assets/sprites/latido/latido4.png" id="32_fb4xe"]
+[ext_resource type="AudioStream" uid="uid://dgy4fufdsrqsd" path="res://assets/sfx/BarkSFX.wav" id="33_yndvt"]
+[ext_resource type="AudioStream" uid="uid://b53bqaihatbyr" path="res://assets/sfx/MIJOSFX.wav" id="34_wdnw5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s5qrt"]
 animations = [{
@@ -273,6 +275,10 @@ frame = 2
 frame_progress = 0.010869
 
 [node name="BarkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_yndvt")
+
+[node name="MIJOSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_wdnw5")
 
 [connection signal="timeout" from="SleepTimer" to="." method="_on_sleep_timer_timeout"]
 [connection signal="timeout" from="MIJOTimer" to="." method="_on_MIJO_timer_timeout"]

@@ -23,6 +23,8 @@ var is_barking: bool = false
 @onready var sleep_timer: Timer = $SleepTimer
 @onready var MIJO_timer: Timer = $MIJOTimer
 @onready var bark_timer: Timer = $BarkTimer
+@onready var bark_sound = $BarkSound
+@onready var MIJO_sound = $MIJOSound
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -30,13 +32,15 @@ func _unhandled_input(_event):
 		if actionables.size() > 0:
 			actionables[0].action()
 			return
-	if Input.is_key_pressed(KEY_M) and not is_sleeping:
+	if Input.is_key_pressed(KEY_M) and not is_sleeping and MIJO_timer.time_left <= 0.01:
+		MIJO_sound.play()
 		is_sleeping = false
 		is_MIJANDO = true
 		_fix_orientation()
 		_walk_sprite.play("MIJAR")
 		_reset_MIJO_timer()
-	if Input.is_key_pressed(KEY_L) and not is_sleeping:
+	if Input.is_key_pressed(KEY_L) and not is_sleeping and bark_timer.time_left <= 0.01:
+		bark_sound.play()
 		is_sleeping = false
 		is_barking = true
 		_bark_bark.visible = true
@@ -44,15 +48,20 @@ func _unhandled_input(_event):
 		_reset_bark_timer()
 
 func _ready():
+	is_sleeping = true
 	sleep_timer.start(0)  # Começa dormindo
 	_walk_sprite.play("sleep")
 	_bark_bark.visible = false
+	_thought_node.visible = false
 
 func _process(delta):
 	if not DialogueGlobals.in_dialogue:
 		_process_movement(delta)
 		_process_height()
-		_process_thought()
+		if not is_sleeping:
+			_process_thought()
+		else:
+			_thought_node.visible = false
 	else:
 		_thought_node.visible = false
 		_reset_sleep_timer()
@@ -82,7 +91,7 @@ func _fix_bark_position():
 		_bark_bark.position.x = 86
 
 func _process_movement(delta) -> void:
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right") and not is_MIJANDO:
 		is_sleeping = false
 		_reset_sleep_timer()
 		orientation = "right"
@@ -90,7 +99,7 @@ func _process_movement(delta) -> void:
 		_fix_bark_position()
 		_walk_sprite.play("right")
 		position.x += SPEED*delta
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left") and not is_MIJANDO:
 		is_sleeping = false
 		_reset_sleep_timer()
 		orientation = "left"
