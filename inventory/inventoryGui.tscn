@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://c74bpv2deaixx"]
+
+[ext_resource type="Texture2D" uid="uid://dwffvp5drua57" path="res://assets/sprites/IconesMenu/quadro.png" id="1_5fb5e"]
+[ext_resource type="PackedScene" uid="uid://cvvno4mihcr5d" path="res://inventory/slot.tscn" id="2_umpto"]
+
+[node name="inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_horizontal_guides_ = [-406.0]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 319.0
+offset_bottom = 79.0
+texture = ExtResource("1_5fb5e")
+region_rect = Rect2(8.5, 0, 259, 275)
+patch_margin_top = 50
+patch_margin_bottom = 50
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -26.5
+offset_right = 135.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="AntonSlot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_umpto")]
+layout_mode = 2
+
+[node name="LapisSlot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_umpto")]
+layout_mode = 2
+
+[node name="TriSlot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_umpto")]
+layout_mode = 2
+
+[node name="CafeSlot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_umpto")]
+layout_mode = 2
+
+[node name="AguaSlot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_umpto")]
+layout_mode = 2

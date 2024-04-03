@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://88l7bf50f74m"]
+
+[ext_resource type="Script" path="res://inventory/inventoryItem.gd" id="1_ow764"]
+[ext_resource type="Texture2D" uid="uid://bt7mbtfbhh8hc" path="res://assets/items/icon_lapis.png" id="2_e1g13"]
+
+[resource]
+script = ExtResource("1_ow764")
+name = "Lapis"
+texture = ExtResource("2_e1g13")

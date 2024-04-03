@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://chvv8dlqmv7ab"]
+
+[ext_resource type="PackedScene" uid="uid://coemh4fp1fupn" path="res://inventory/coletavel.tscn" id="1_kqq2p"]
+[ext_resource type="Texture2D" uid="uid://c1wtp343xtiro" path="res://assets/items/pickup_anton.png" id="2_bcw5i"]
+[ext_resource type="Resource" uid="uid://b0r6mlqdic7a6" path="res://inventory/items/Anton.tres" id="2_dqarv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8h3pf"]
+resource_local_to_scene = true
+size = Vector2(87, 113)
+
+[node name="anton" instance=ExtResource("1_kqq2p")]
+itemRes = ExtResource("2_dqarv")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_8h3pf")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.34375, 0.34375)
+texture = ExtResource("2_bcw5i")
