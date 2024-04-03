@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://dm687nmo3yssh"]
+[gd_scene load_steps=5 format=3 uid="uid://dm687nmo3yssh"]
+
+[ext_resource type="Texture2D" uid="uid://bynpflvyq7o0t" path="res://assets/sprites/localidades/inf.png" id="1_8vryw"]
+[ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_7kf62"]
+[ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="3_xqw2u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0n5p"]
+size = Vector2(466, 209)
 
 [node name="Inf" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5990, 321)
+texture = ExtResource("1_8vryw")
+
+[node name="Chico" parent="." instance=ExtResource("2_7kf62")]
+position = Vector2(11404, 428)
+
+[node name="SceneActionable" parent="." instance=ExtResource("3_xqw2u")]
+scene_path = "res://locais/ru3.tscn"
+direction = "seta-dir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneActionable"]
+position = Vector2(11748, 536.5)
+shape = SubResource("RectangleShape2D_p0n5p")
