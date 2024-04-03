@@ -77,6 +77,30 @@ animations = [{
 "loop": true,
 "name": &"seta-dir",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2l8w7")
+}],
+"loop": true,
+"name": &"seta-down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2l8w7")
+}],
+"loop": true,
+"name": &"seta-esq",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2l8w7")
+}],
+"loop": true,
+"name": &"seta-up",
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2jl3f"]
@@ -220,7 +244,7 @@ z_index = 1
 position = Vector2(0.344908, -106.789)
 scale = Vector2(0.452407, 0.452407)
 sprite_frames = SubResource("SpriteFrames_s5qrt")
-animation = &"pensar"
+animation = &"seta-up"
 
 [node name="Balloon" type="AnimatedSprite2D" parent="Thought"]
 position = Vector2(-3.8147e-06, -102)
@@ -241,7 +265,7 @@ frame_progress = 0.15855
 
 [node name="ActionableFinder" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 26
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]
 position = Vector2(0, -10.5)

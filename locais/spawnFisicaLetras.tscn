@@ -1,5 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3857yr2eyjnp"]
-
+[gd_scene load_steps=15 format=3 uid="uid://d3857yr2eyjnp"]
 
 [ext_resource type="Texture2D" uid="uid://xh8e0lpg11qy" path="res://assets/sprites/localidades/fisica.png" id="1_ak7ap"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_34yms"]
@@ -10,14 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://bcn5aghu6po44" path="res://npc/npcs_calculo/marcelo_calculo.tscn" id="6_046g8"]
 [ext_resource type="Script" path="res://inventory/inventoryGui.gd" id="6_a64pp"]
 [ext_resource type="PackedScene" uid="uid://cepicnrc56pes" path="res://quests/QuestMenu.tscn" id="7_cpf5m"]
-[ext_resource type="PackedScene" uid="uid://chvv8dlqmv7ab" path="res://inventory/anton.tscn" id="9_8tfa1"]
-
+[ext_resource type="PackedScene" uid="uid://chvv8dlqmv7ab" path="res://inventory/itemsPrefabs/anton.tscn" id="9_8tfa1"]
+[ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="11_2uau5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlms7"]
 size = Vector2(20, 267)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0rns"]
 size = Vector2(155, 828)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8tjd"]
+size = Vector2(193, 59)
 
 [node name="SpawnFisicaLetras" type="Node2D"]
 
@@ -169,3 +171,12 @@ script = ExtResource("6_a64pp")
 
 [node name="anton" parent="." instance=ExtResource("9_8tfa1")]
 position = Vector2(996, 466)
+
+[node name="SceneActionable" parent="." instance=ExtResource("11_2uau5")]
+position = Vector2(3957, 477)
+scene_path = "res://locais/ru3.tscn"
+direction = "seta-up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneActionable"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_f8tjd")

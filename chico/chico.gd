@@ -33,9 +33,8 @@ var is_barking: bool = false
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("ui_accept"):
 		var actionables = actionable_finder.get_overlapping_areas()
-		if actionables.size() > 0:
+		if actionables.size() > 0 and not actionables[0].has_method("only_in_bark"):
 			actionables[0].action()
-			return
 	if Input.is_key_pressed(KEY_M) and not is_sleeping and MIJO_timer.time_left <= 0.01:
 		MIJO_sound.play()
 		is_sleeping = false
@@ -43,6 +42,7 @@ func _unhandled_input(_event):
 		_fix_orientation()
 		_walk_sprite.play("MIJAR")
 		_reset_MIJO_timer()
+		_reset_sleep_timer()
 	if Input.is_key_pressed(KEY_L) and not is_sleeping and bark_timer.time_left <= 0.01:
 		bark_sound.play()
 		is_sleeping = false
@@ -50,6 +50,10 @@ func _unhandled_input(_event):
 		_bark_bark.visible = true
 		_bark_bark.play("default")
 		_reset_bark_timer()
+		_reset_sleep_timer()
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0 and actionables[0].has_method("only_in_bark"):
+			actionables[0].action()
 
 func _ready():
 	is_sleeping = true
@@ -124,7 +128,7 @@ func _process_thought() -> void:
 	var actionables = actionable_finder.get_overlapping_areas()
 	var has_actionable_collision: bool = false
 	if actionables.size() > 0:
-		thought = actionables[0].get_trigger_thought()
+		thought = actionables[0].get_thought()
 		has_actionable_collision = true
 	else:
 		has_actionable_collision = false
@@ -155,6 +159,14 @@ func _play_thought_content() -> void:
 	else:
 		_content_sprite.scale.x = 0.45
 		_content_sprite.scale.y = 0.45
+	if thought == "seta-down":
+		_content_sprite.rotation_degrees = 90
+	elif thought == "seta-esq":
+		_content_sprite.rotation_degrees = 180
+	elif thought == "seta-up":
+		_content_sprite.rotation_degrees = -90
+	else:
+		_content_sprite.rotation_degrees = 0
 	_content_sprite.play(thought)
 
 func _on_sleep_timer_timeout():
