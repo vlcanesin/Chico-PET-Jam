@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwxksp43pjd3q"]
+
+[ext_resource type="PackedScene" uid="uid://coemh4fp1fupn" path="res://inventory/coletavel.tscn" id="1_f3hfe"]
+[ext_resource type="Resource" uid="uid://88l7bf50f74m" path="res://inventory/items/Lapis.tres" id="2_d3r5j"]
+[ext_resource type="Texture2D" uid="uid://bwc1uq6bt4ey3" path="res://assets/items/pickup_lapis.png" id="3_8k54m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur0cv"]
+resource_local_to_scene = true
+size = Vector2(84, 91)
+
+[node name="lapis" instance=ExtResource("1_f3hfe")]
+itemRes = ExtResource("2_d3r5j")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-3, -3.5)
+shape = SubResource("RectangleShape2D_ur0cv")
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(-1, -3)
+scale = Vector2(0.278125, 0.278125)
+texture = ExtResource("3_8k54m")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8ygmanc3epd4"]
 
-[ext_resource type="PackedScene" uid="uid://c3q0nr25ltj0k" path="res://npc/npc1.tscn" id="1_xlmg4"]
+[ext_resource type="PackedScene" uid="uid://c3q0nr25ltj0k" path="res://npc/npcs_calculo/walter_calculo.tscn" id="1_xlmg4"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_hyv0t"]
 [ext_resource type="PackedScene" uid="uid://cepicnrc56pes" path="res://quests/QuestMenu.tscn" id="3_h0rcn"]
 

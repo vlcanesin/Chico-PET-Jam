@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://d4hov2bl3xx4f"
+path="res://.godot/imported/calculo.dialogue-d4bb7994a558105e35a574e8a9c1d100.tres"
+
+[deps]
+
+source_file="res://npc/npcs_calculo/calculo.dialogue"
+dest_files=["res://.godot/imported/calculo.dialogue-d4bb7994a558105e35a574e8a9c1d100.tres"]
+
+[params]
+
+defaults=true
