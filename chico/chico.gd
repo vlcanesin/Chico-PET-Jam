@@ -56,6 +56,7 @@ func _unhandled_input(_event):
 			actionables[0].action()
 
 func _ready():
+	default_height = self.position.y
 	is_sleeping = true
 	sleep_timer.start(0)  # Começa dormindo
 	_walk_sprite.play("sleep")
