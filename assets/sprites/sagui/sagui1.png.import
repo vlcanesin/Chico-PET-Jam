@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfg35qm42mywr"
-path="res://.godot/imported/npc5_speak1.png-22787c149097aa9f0cbf8e298d350a77.ctex"
+uid="uid://s73bjrremdus"
+path="res://.godot/imported/sagui1.png-7a7b8be478368c895da54061a1704584.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/npc_5/npc5_speak1.png"
-dest_files=["res://.godot/imported/npc5_speak1.png-22787c149097aa9f0cbf8e298d350a77.ctex"]
+source_file="res://assets/sprites/sagui/sagui1.png"
+dest_files=["res://.godot/imported/sagui1.png-7a7b8be478368c895da54061a1704584.ctex"]
 
 [params]
 

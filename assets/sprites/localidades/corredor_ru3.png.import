@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfg35qm42mywr"
-path="res://.godot/imported/npc5_speak1.png-22787c149097aa9f0cbf8e298d350a77.ctex"
+uid="uid://bv2aykxg50tv"
+path="res://.godot/imported/corredor_ru3.png-87fba0427573aaaf8ba3ef3c58c4c838.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/npc_5/npc5_speak1.png"
-dest_files=["res://.godot/imported/npc5_speak1.png-22787c149097aa9f0cbf8e298d350a77.ctex"]
+source_file="res://assets/sprites/localidades/corredor_ru3.png"
+dest_files=["res://.godot/imported/corredor_ru3.png-87fba0427573aaaf8ba3ef3c58c4c838.ctex"]
 
 [params]
 

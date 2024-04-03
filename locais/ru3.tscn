@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbdy352vu5amv"]
+
+[ext_resource type="Texture2D" uid="uid://bv2aykxg50tv" path="res://assets/sprites/localidades/corredor_ru3.png" id="1_6ia3r"]
+[ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="2_eme87"]
+[ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_t4ni3"]
+[ext_resource type="PackedScene" uid="uid://cqexrnq8q4bs" path="res://npc/antonio/antonio_novo.tscn" id="3_xphwq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qufse"]
+size = Vector2(286, 142)
+
+[node name="Ru3" type="Node2D"]
+
+[node name="Mapa" type="Sprite2D" parent="."]
+position = Vector2(5650, 320)
+texture = ExtResource("1_6ia3r")
+
+[node name="SceneActionable" parent="Mapa" instance=ExtResource("2_eme87")]
+position = Vector2(3749, 111)
+scene_path = "res://locais/inf.tscn"
+direction = "seta-up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/SceneActionable"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_qufse")
+
+[node name="SceneActionable2" parent="Mapa" instance=ExtResource("2_eme87")]
+position = Vector2(-2768, 148)
+scene_path = "res://locais/spawnFisicaLetras.tscn"
+direction = "seta-down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/SceneActionable2"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_qufse")
+
+[node name="Chico" parent="." instance=ExtResource("2_t4ni3")]
+position = Vector2(2887, 424)
+
+[node name="AntonioNovo" parent="." instance=ExtResource("3_xphwq")]
+position = Vector2(5124, 309)
