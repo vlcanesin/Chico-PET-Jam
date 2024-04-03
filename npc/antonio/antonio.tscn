@@ -1,0 +1,85 @@
+[gd_scene load_steps=16 format=3 uid="uid://bcn5aghu6po44"]
+
+[ext_resource type="Script" path="res://npc/antonio/antonio.gd" id="1_ynqb3"]
+[ext_resource type="Texture2D" uid="uid://coc1rgjls1n04" path="res://assets/sprites/antonio/mimindo/idle_chave1.png" id="2_lq1na"]
+[ext_resource type="Texture2D" uid="uid://85y5wsohdomt" path="res://assets/sprites/antonio/mimindo/idle_chave2.png" id="3_6bja3"]
+[ext_resource type="Texture2D" uid="uid://cxki1jq1blnhv" path="res://assets/sprites/antonio/susto/susto1.png" id="4_im7gl"]
+[ext_resource type="Texture2D" uid="uid://dmolxstovx1g1" path="res://assets/sprites/antonio/susto/susto2.png" id="5_i1k8b"]
+[ext_resource type="Texture2D" uid="uid://bl1gll3j5201p" path="res://assets/sprites/antonio/susto/susto3.png" id="6_bk8pa"]
+[ext_resource type="Texture2D" uid="uid://da2xkpnktydmi" path="res://assets/sprites/antonio/susto/susto4.png" id="7_eg66t"]
+[ext_resource type="Texture2D" uid="uid://uit638fgkujo" path="res://assets/sprites/antonio/susto/susto5.png" id="8_huxl0"]
+[ext_resource type="Texture2D" uid="uid://522ex8s2eoko" path="res://assets/sprites/antonio/susto/susto6.png" id="9_723mi"]
+[ext_resource type="Texture2D" uid="uid://bmhb1icb1bau6" path="res://assets/sprites/antonio/susto/susto7.png" id="10_rypjg"]
+[ext_resource type="Texture2D" uid="uid://bm0l8lnw61ieb" path="res://assets/sprites/antonio/susto/susto8.png" id="11_cdvd0"]
+[ext_resource type="Texture2D" uid="uid://cyxo4f3cgx6va" path="res://assets/sprites/antonio/susto/susto9.png" id="12_iur3f"]
+[ext_resource type="PackedScene" uid="uid://dfygosls2h7bk" path="res://common/bark_actionable.tscn" id="13_3cx8h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_52ikt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lq1na")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6bja3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_im7gl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i1k8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bk8pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eg66t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_huxl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_723mi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rypjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cdvd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_iur3f")
+}],
+"loop": true,
+"name": &"susto",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mera8"]
+size = Vector2(293, 339)
+
+[node name="Antonio" type="Node2D"]
+script = ExtResource("1_ynqb3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-14, -5)
+sprite_frames = SubResource("SpriteFrames_52ikt")
+animation = &"idle"
+
+[node name="Actionable" parent="." instance=ExtResource("13_3cx8h")]
+trigger_thought = "latir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(-6.5, -8.5)
+shape = SubResource("RectangleShape2D_mera8")
+
+[node name="Cooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="heard_bark" from="Actionable" to="." method="_on_actionable_heard_bark"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
