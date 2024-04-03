@@ -1,0 +1,34 @@
+~ start
+set in_dialogue = true
+
+set marcelo_speak = true
+set walter_speak = false
+Marcelo: Mano, não só zerei essa prova de física, como com certeza vou zerar a de cálculo hoje de noite.
+
+set marcelo_speak = false
+set walter_speak = true
+Walter: Poxa, mas tu não estudou nada?
+
+set marcelo_speak = true
+set walter_speak = false
+Marcelo: É minha terceira vez fazendo a cadeira! Eu não devia precisar estudar!
+
+set marcelo_speak = false
+set walter_speak = true
+Walter: Cara, fica ligado. Tu sabe que quem roda três vezes em cálculo vira cachorro, né?
+
+set marcelo_speak = true
+set walter_speak = false
+Marcelo: Bah, a essa altura, eu acho que eu preferia ser um cachorro.
+
+set marcelo_speak = false
+set walter_speak = true
+Walter: Mano, não é tão difícil ir pra biblioteca estudar...
+
+set walter_speak = false
+set walter_speak = false
+
+set LogicGlobals.unlock_calc_study = true
+
+set in_dialogue = false
+=> END
