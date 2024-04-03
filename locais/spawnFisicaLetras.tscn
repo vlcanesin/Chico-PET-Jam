@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3857yr2eyjnp"]
+[gd_scene load_steps=14 format=3 uid="uid://d3857yr2eyjnp"]
 
 [ext_resource type="Texture2D" uid="uid://ctuvmjcsil0mv" path="res://assets/sprites/localidades/spawn.png" id="1_1oi8u"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_34yms"]
@@ -7,7 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://c74bpv2deaixx" path="res://inventory/inventoryGui.tscn" id="5_b0gpo"]
 [ext_resource type="Script" path="res://locais/UI.gd" id="5_pbu2o"]
 [ext_resource type="Script" path="res://inventory/inventoryGui.gd" id="6_a64pp"]
-[ext_resource type="PackedScene" uid="uid://chvv8dlqmv7ab" path="res://inventory/anton.tscn" id="9_8tfa1"]
+[ext_resource type="PackedScene" uid="uid://dupqdlypoonad" path="res://inventory/itemsPrefabs/agua.tscn" id="9_2y64w"]
+[ext_resource type="PackedScene" uid="uid://chvv8dlqmv7ab" path="res://inventory/itemsPrefabs/anton.tscn" id="9_8tfa1"]
+[ext_resource type="PackedScene" uid="uid://dxywnd5c3r3m0" path="res://inventory/itemsPrefabs/cafe.tscn" id="10_uce2t"]
+[ext_resource type="PackedScene" uid="uid://cwxksp43pjd3q" path="res://inventory/itemsPrefabs/lapis.tscn" id="11_0lxxg"]
+[ext_resource type="PackedScene" uid="uid://cv88b21sdgtkd" path="res://inventory/itemsPrefabs/tri.tscn" id="12_tecxw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlms7"]
 size = Vector2(20, 267)
@@ -83,3 +87,15 @@ script = ExtResource("6_a64pp")
 
 [node name="anton" parent="." instance=ExtResource("9_8tfa1")]
 position = Vector2(2395, 441)
+
+[node name="agua" parent="." instance=ExtResource("9_2y64w")]
+position = Vector2(2237, 446)
+
+[node name="cafe" parent="." instance=ExtResource("10_uce2t")]
+position = Vector2(2104, 441)
+
+[node name="lapis" parent="." instance=ExtResource("11_0lxxg")]
+position = Vector2(1945, 453)
+
+[node name="TRI" parent="." instance=ExtResource("12_tecxw")]
+position = Vector2(1770, 458)

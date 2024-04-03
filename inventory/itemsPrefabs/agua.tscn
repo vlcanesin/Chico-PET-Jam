@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dupqdlypoonad"]
+
+[ext_resource type="PackedScene" uid="uid://coemh4fp1fupn" path="res://inventory/coletavel.tscn" id="1_xnjco"]
+[ext_resource type="Resource" uid="uid://cegpeg73wjenm" path="res://inventory/items/Agua.tres" id="2_d6fw1"]
+[ext_resource type="Texture2D" uid="uid://cj84bnia31x6c" path="res://assets/items/icon_agua.png" id="3_y2w0c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tg7v2"]
+resource_local_to_scene = true
+size = Vector2(54, 64)
+
+[node name="agua" instance=ExtResource("1_xnjco")]
+itemRes = ExtResource("2_d6fw1")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_tg7v2")
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(-9.53674e-07, -0.999992)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_y2w0c")
