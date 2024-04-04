@@ -42,7 +42,7 @@ script = ExtResource("1_1htcj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_52ikt")
 animation = &"idle"
-frame_progress = 0.879343
+frame_progress = 0.779798
 
 [node name="Actionable" parent="." instance=ExtResource("6_sjth1")]
 dialogue_resource = ExtResource("7_ceqap")
