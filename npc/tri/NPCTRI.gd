@@ -9,6 +9,9 @@ signal arrived_at_tri
 var animation_state: String = "idle"
 var dist_traveled: float = 0.0
 
+func _ready():
+	DialogueGlobals.bernardo_should_run = false
+
 func _process(delta):
 	if DialogueGlobals.bernardo_should_run:
 		animation_state = "run"
