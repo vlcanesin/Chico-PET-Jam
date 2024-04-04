@@ -2,7 +2,14 @@ extends Node
 
 var in_dialogue: bool = false
 var walter_speak: bool = false   # npc_1
-var marcelo_speak: bool = false  # npc_5   
+var jao_speak: bool = false      # npc_1.2
+var claudio_diniz_speak: bool = false # claudio diniz(npc_2)
+var luigi_speak: bool = false    # npc_3
+var rosa_speak: bool = false     # npc_4
+var marcelo_speak: bool = false  # npc_5 
+var vivi_speak: bool = false     # npc_6
+
+var guardinha_speak: bool = false	 # guardinha
 
 var bernardo_should_run: bool = false
 
