@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cmg0qrdddk147"
+path="res://.godot/imported/cena_tri.dialogue-ce948c2051c2d0c31458045f8136eda8.tres"
+
+[deps]
+
+source_file="res://npc/tri/cena_tri.dialogue"
+dest_files=["res://.godot/imported/cena_tri.dialogue-ce948c2051c2d0c31458045f8136eda8.tres"]
+
+[params]
+
+defaults=true

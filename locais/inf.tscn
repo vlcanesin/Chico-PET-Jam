@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dm687nmo3yssh"]
+[gd_scene load_steps=10 format=3 uid="uid://dm687nmo3yssh"]
 
 [ext_resource type="Texture2D" uid="uid://bynpflvyq7o0t" path="res://assets/sprites/localidades/inf.png" id="1_8vryw"]
+[ext_resource type="Script" path="res://locais/inf.gd" id="1_528ty"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_7kf62"]
 [ext_resource type="PackedScene" uid="uid://qrksu8tbyb85" path="res://common/height_actionable.tscn" id="2_pp38q"]
 [ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="3_xqw2u"]
+[ext_resource type="PackedScene" uid="uid://dqspbvgc1qrg0" path="res://npc/tri/cena_tri.tscn" id="5_c7sbx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ttan"]
 size = Vector2(155, 828)
@@ -15,6 +17,10 @@ size = Vector2(20, 229)
 size = Vector2(466, 209)
 
 [node name="Inf" type="Node2D"]
+script = ExtResource("1_528ty")
+
+[node name="CenaTri" parent="." instance=ExtResource("5_c7sbx")]
+position = Vector2(10658, 402)
 
 [node name="Mapa" type="Sprite2D" parent="."]
 position = Vector2(5990, 321)
@@ -72,7 +78,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_1l8jw")
 
 [node name="Chico" parent="." instance=ExtResource("2_7kf62")]
-position = Vector2(11344, 427)
+position = Vector2(11346, 430)
 
 [node name="SceneActionable" parent="." instance=ExtResource("3_xqw2u")]
 scene_path = "res://locais/ru3.tscn"
