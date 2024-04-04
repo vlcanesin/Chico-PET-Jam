@@ -61,7 +61,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tot44"]
-size = Vector2(362, 322)
+size = Vector2(362, 518)
 
 [node name="AntonioNovo" type="Node2D"]
 script = ExtResource("1_5qskt")
@@ -75,7 +75,7 @@ frame_progress = 0.262097
 trigger_thought = "latir"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
-position = Vector2(7, -9)
+position = Vector2(7, 89)
 shape = SubResource("RectangleShape2D_tot44")
 
 [node name="Cooldown" type="Timer" parent="."]

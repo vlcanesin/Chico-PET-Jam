@@ -20,7 +20,7 @@ size = Vector2(466, 209)
 script = ExtResource("1_528ty")
 
 [node name="CenaTri" parent="." instance=ExtResource("5_c7sbx")]
-position = Vector2(10658, 402)
+position = Vector2(5131, 404)
 
 [node name="Mapa" type="Sprite2D" parent="."]
 position = Vector2(5990, 321)
@@ -78,11 +78,13 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_1l8jw")
 
 [node name="Chico" parent="." instance=ExtResource("2_7kf62")]
-position = Vector2(11346, 430)
+position = Vector2(11341, 410)
 
 [node name="SceneActionable" parent="." instance=ExtResource("3_xqw2u")]
+position = Vector2(4, 0)
 scene_path = "res://locais/ru3.tscn"
 direction = "seta-dir"
+new_position = Vector2(8993, 433)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneActionable"]
 position = Vector2(11748, 536.5)

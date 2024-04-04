@@ -2,6 +2,8 @@ extends Node2D
 
 const SPEED = 500.0
 
+@onready var TRI = $TRI
+
 var follows_sagui: bool = false
 var dist_traveled: float = 0.0
 
@@ -15,12 +17,13 @@ func _process(delta):
 		if dist_traveled > 1300:
 			follows_sagui = false
 			grow = true
-	if grow:
-		scale.x = 1
-		scale.y = 1
-	else:
-		scale.x = 0.3
-		scale.y = 0.3
+	if is_instance_valid(TRI):
+		if grow:
+			TRI.scale.x = 1
+			TRI.scale.y = 1
+		else:
+			TRI.scale.x = 0.3
+			TRI.scale.y = 0.3
 
 func _on_collision_actionable_collision():
 	follows_sagui = true

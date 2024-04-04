@@ -63,8 +63,10 @@ func _ready():
 	_walk_sprite.play("sleep")
 	_bark_bark.visible = false
 	_thought_node.visible = false
+	position = LogicGlobals.chico_start_position
 
 func _process(delta):
+	_update_speed()
 	if LogicGlobals.enable_collision_actionables:
 		_handle_collision_actionables()
 	if not DialogueGlobals.in_dialogue:
@@ -77,6 +79,9 @@ func _process(delta):
 	else:
 		_thought_node.visible = false
 		_reset_sleep_timer()
+
+func _update_speed():
+	SPEED = LogicGlobals.chico_speed
 
 func _handle_collision_actionables():
 	var actionables = instant_finder.get_overlapping_areas()
