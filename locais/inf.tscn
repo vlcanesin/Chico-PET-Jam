@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dm687nmo3yssh"]
+[gd_scene load_steps=14 format=3 uid="uid://dm687nmo3yssh"]
 
 [ext_resource type="Texture2D" uid="uid://bynpflvyq7o0t" path="res://assets/sprites/localidades/inf.png" id="1_8vryw"]
 [ext_resource type="Script" path="res://locais/inf.gd" id="1_528ty"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://qrksu8tbyb85" path="res://common/height_actionable.tscn" id="2_pp38q"]
 [ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="3_xqw2u"]
 [ext_resource type="PackedScene" uid="uid://dqspbvgc1qrg0" path="res://npc/tri/cena_tri.tscn" id="5_c7sbx"]
+[ext_resource type="PackedScene" uid="uid://d10l75s5yq1sp" path="res://npc/guardinha/guardinha.tscn" id="7_j3v6n"]
+[ext_resource type="PackedScene" uid="uid://c7wuv3mo23tjc" path="res://npc/claudio_diniz/claudio_diniz.tscn" id="8_cu5gc"]
+[ext_resource type="PackedScene" uid="uid://ynjfw544bco8" path="res://npc/npcs_inf/luigi_inf.tscn" id="9_wm184"]
+[ext_resource type="PackedScene" uid="uid://dxqlaof2usdhq" path="res://npc/npcs_inf/jao_inf.tscn" id="10_nrevl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ttan"]
 size = Vector2(155, 828)
@@ -89,3 +93,15 @@ new_position = Vector2(8993, 433)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneActionable"]
 position = Vector2(11748, 536.5)
 shape = SubResource("RectangleShape2D_p0n5p")
+
+[node name="Guardinha" parent="." instance=ExtResource("7_j3v6n")]
+position = Vector2(7333, 287)
+
+[node name="ClaudioDiniz" parent="." instance=ExtResource("8_cu5gc")]
+position = Vector2(9388, 302)
+
+[node name="LuigiInf" parent="." instance=ExtResource("9_wm184")]
+position = Vector2(10779, 282)
+
+[node name="Jao" parent="." instance=ExtResource("10_nrevl")]
+position = Vector2(10550, 278)

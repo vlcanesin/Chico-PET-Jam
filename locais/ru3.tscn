@@ -1,15 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbdy352vu5amv"]
+[gd_scene load_steps=11 format=3 uid="uid://dbdy352vu5amv"]
 
 [ext_resource type="Texture2D" uid="uid://bv2aykxg50tv" path="res://assets/sprites/localidades/corredor_ru3.png" id="1_6ia3r"]
 [ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="2_eme87"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_t4ni3"]
+[ext_resource type="PackedScene" uid="uid://ccw38qlbyw3ro" path="res://npc/multidao_escada/multidao_escada.tscn" id="3_x1l0f"]
 [ext_resource type="PackedScene" uid="uid://cqexrnq8q4bs" path="res://npc/antonio/antonio_novo.tscn" id="3_xphwq"]
+[ext_resource type="PackedScene" uid="uid://chb25bncs4wd8" path="res://npc/npcs_ru3/rosa_ru3.tscn" id="5_wma1d"]
+[ext_resource type="PackedScene" uid="uid://c4tmtk5sfvq1i" path="res://npc/npcs_ru3/vivi_ru3.tscn" id="6_x8und"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qufse"]
 size = Vector2(286, 142)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nkpu"]
 size = Vector2(109, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ru6vp"]
+size = Vector2(150.5, 583)
 
 [node name="Ru3" type="Node2D"]
 
@@ -50,8 +56,30 @@ position = Vector2(9773, -12)
 position = Vector2(-4895, 200)
 shape = SubResource("RectangleShape2D_7nkpu")
 
+[node name="Bound_stairs" type="StaticBody2D" parent="Mapa"]
+position = Vector2(2174, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/Bound_stairs"]
+position = Vector2(674.25, -6.5)
+shape = SubResource("RectangleShape2D_ru6vp")
+
+[node name="MultidaoEscada" parent="Mapa/Bound_stairs" instance=ExtResource("3_x1l0f")]
+position = Vector2(777, -204)
+
+[node name="MultidaoEscada2" parent="Mapa/Bound_stairs" instance=ExtResource("3_x1l0f")]
+position = Vector2(776, -11)
+
+[node name="MultidaoEscada3" parent="Mapa/Bound_stairs" instance=ExtResource("3_x1l0f")]
+position = Vector2(773, 122)
+
 [node name="Chico" parent="." instance=ExtResource("2_t4ni3")]
 position = Vector2(2887, 433)
 
 [node name="AntonioNovo" parent="." instance=ExtResource("3_xphwq")]
 position = Vector2(5362, 198)
+
+[node name="Rosa" parent="." instance=ExtResource("5_wma1d")]
+position = Vector2(7572, 338)
+
+[node name="Vivi" parent="." instance=ExtResource("6_x8und")]
+position = Vector2(7385, 337)

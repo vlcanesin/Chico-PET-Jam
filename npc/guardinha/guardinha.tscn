@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://d10l75s5yq1sp"]
+
+[ext_resource type="Script" path="res://npc/guardinha/guardinha.gd" id="1_ed35p"]
+[ext_resource type="Texture2D" uid="uid://ddsyywaeu0ulq" path="res://assets/sprites/guardinha/guardinha_idle1.png" id="2_io0dq"]
+[ext_resource type="Texture2D" uid="uid://dq3o2jr5h5hji" path="res://assets/sprites/guardinha/guardinha_idle2.png" id="3_wcv6q"]
+[ext_resource type="Texture2D" uid="uid://vkg3l1dvwl5g" path="res://assets/sprites/guardinha/guardinha_speak1.png" id="4_tupef"]
+[ext_resource type="Texture2D" uid="uid://d3nijnq2xf3ok" path="res://assets/sprites/guardinha/guardinha_speak2.png" id="5_6wcxk"]
+[ext_resource type="PackedScene" uid="uid://c1cmn04k5c4ts" path="res://common/dialogue_actionable.tscn" id="6_imnu5"]
+[ext_resource type="Resource" uid="uid://dwhnfdkrr8uws" path="res://npc/guardinha/guardinha.dialogue" id="7_m2fn5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7fkmq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_io0dq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wcv6q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_tupef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6wcxk")
+}],
+"loop": true,
+"name": &"speak",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0wkj"]
+size = Vector2(217, 403)
+
+[node name="Guardinha" type="Node2D"]
+script = ExtResource("1_ed35p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7fkmq")
+animation = &"idle"
+
+[node name="Actionable" parent="." instance=ExtResource("6_imnu5")]
+dialogue_resource = ExtResource("7_m2fn5")
+trigger_thought = "interagir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_f0wkj")

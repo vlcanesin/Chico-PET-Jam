@@ -1,0 +1,22 @@
+~ start
+set in_dialogue = true
+
+set jao_speak = true
+set luigi_speak = false
+Joao: Aquele cachorro tá carregando um lápis?
+
+set jao_speak = false
+set luigi_speak = true
+Luigi: É o que parece.
+
+set jao_speak = true
+set luigi_speak = false
+Joao: Por que diabos um cachorro carregaria um lápis???
+
+set jao_speak = false
+set luigi_speak = true
+Luigi: É um cachorro. Não é como se ele conseguisse usar uma caneta.
+
+set in_dialogue = false
+set luigi_speak = false
+=> END

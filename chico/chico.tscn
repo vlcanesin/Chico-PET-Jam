@@ -243,13 +243,14 @@ inventory = ExtResource("2_g464a")
 [node name="Thought" type="Node2D" parent="."]
 
 [node name="Content" type="AnimatedSprite2D" parent="Thought"]
-z_index = 1
+z_index = 2
 position = Vector2(0.344908, -106.789)
 scale = Vector2(0.452407, 0.452407)
 sprite_frames = SubResource("SpriteFrames_s5qrt")
 animation = &"seta-up"
 
 [node name="Balloon" type="AnimatedSprite2D" parent="Thought"]
+z_index = 1
 position = Vector2(-3.8147e-06, -102)
 scale = Vector2(0.678061, 0.678061)
 sprite_frames = SubResource("SpriteFrames_2jl3f")
@@ -261,6 +262,7 @@ shape = SubResource("RectangleShape2D_opx01")
 one_way_collision_margin = 0.0
 
 [node name="WalkSprite" type="AnimatedSprite2D" parent="."]
+z_index = 2
 sprite_frames = SubResource("SpriteFrames_aoagg")
 animation = &"MIJAR"
 frame = 3

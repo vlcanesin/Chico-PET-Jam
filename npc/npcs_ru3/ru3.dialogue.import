@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://btsky77or3n5o"
+path="res://.godot/imported/ru3.dialogue-ab93fc6e7164ff3b392a4e6d8b203108.tres"
+
+[deps]
+
+source_file="res://npc/npcs_ru3/ru3.dialogue"
+dest_files=["res://.godot/imported/ru3.dialogue-ab93fc6e7164ff3b392a4e6d8b203108.tres"]
+
+[params]
+
+defaults=true
