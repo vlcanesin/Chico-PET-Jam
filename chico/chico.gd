@@ -24,6 +24,7 @@ var is_barking: bool = false
 @onready var _content_sprite = $Thought/Content
 @onready var actionable_finder: Area2D = $ActionableFinder
 @onready var height_finder: Area2D = $HeightFinder
+@onready var instant_finder: Area2D = $InstantFinder
 @onready var sleep_timer: Timer = $SleepTimer
 @onready var MIJO_timer: Timer = $MIJOTimer
 @onready var bark_timer: Timer = $BarkTimer
@@ -56,13 +57,18 @@ func _unhandled_input(_event):
 			actionables[0].action()
 
 func _ready():
+	default_height = self.position.y
 	is_sleeping = true
 	sleep_timer.start(0)  # Começa dormindo
 	_walk_sprite.play("sleep")
 	_bark_bark.visible = false
 	_thought_node.visible = false
+	position = LogicGlobals.chico_start_position
 
 func _process(delta):
+	_update_speed()
+	if LogicGlobals.enable_collision_actionables:
+		_handle_collision_actionables()
 	if not DialogueGlobals.in_dialogue:
 		_process_movement(delta)
 		_process_height()
@@ -73,6 +79,14 @@ func _process(delta):
 	else:
 		_thought_node.visible = false
 		_reset_sleep_timer()
+
+func _update_speed():
+	SPEED = LogicGlobals.chico_speed
+
+func _handle_collision_actionables():
+	var actionables = instant_finder.get_overlapping_areas()
+	if actionables.size() > 0:
+		actionables[0].action()
 
 func _reset_MIJO_timer(time: float = MIJO_LENGTH):
 	MIJO_timer.start(time)

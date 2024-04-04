@@ -68,7 +68,7 @@ toggleInventory={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://npc/npcs_calculo/calculo.dialogue")
+locale/translations_pot_files=PackedStringArray("res://npc/npcs_calculo/calculo.dialogue", "res://npc/tri/cena_tri.dialogue")
 
 [layer_names]
 
@@ -76,3 +76,4 @@ locale/translations_pot_files=PackedStringArray("res://npc/npcs_calculo/calculo.
 2d_physics/layer_3="FloorHeight"
 2d_physics/layer_4="SceneChange"
 2d_physics/layer_5="Bark"
+2d_physics/layer_6="CollisionAct"

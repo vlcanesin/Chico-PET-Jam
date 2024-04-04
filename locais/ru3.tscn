@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbdy352vu5amv"]
+[gd_scene load_steps=7 format=3 uid="uid://dbdy352vu5amv"]
 
 [ext_resource type="Texture2D" uid="uid://bv2aykxg50tv" path="res://assets/sprites/localidades/corredor_ru3.png" id="1_6ia3r"]
 [ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="2_eme87"]
@@ -8,6 +8,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qufse"]
 size = Vector2(286, 142)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nkpu"]
+size = Vector2(109, 240)
+
 [node name="Ru3" type="Node2D"]
 
 [node name="Mapa" type="Sprite2D" parent="."]
@@ -15,9 +18,10 @@ position = Vector2(5650, 320)
 texture = ExtResource("1_6ia3r")
 
 [node name="SceneActionable" parent="Mapa" instance=ExtResource("2_eme87")]
-position = Vector2(3749, 111)
+position = Vector2(3346, 111)
 scene_path = "res://locais/inf.tscn"
 direction = "seta-up"
+new_position = Vector2(11341, 410)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/SceneActionable"]
 position = Vector2(0, 2)
@@ -27,13 +31,27 @@ shape = SubResource("RectangleShape2D_qufse")
 position = Vector2(-2768, 148)
 scene_path = "res://locais/spawnFisicaLetras.tscn"
 direction = "seta-down"
+new_position = Vector2(3966, 435)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/SceneActionable2"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_qufse")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Mapa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/StaticBody2D"]
+position = Vector2(-4969, 200)
+shape = SubResource("RectangleShape2D_7nkpu")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Mapa"]
+position = Vector2(9773, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/StaticBody2D2"]
+position = Vector2(-4895, 200)
+shape = SubResource("RectangleShape2D_7nkpu")
+
 [node name="Chico" parent="." instance=ExtResource("2_t4ni3")]
-position = Vector2(2887, 424)
+position = Vector2(2887, 433)
 
 [node name="AntonioNovo" parent="." instance=ExtResource("3_xphwq")]
-position = Vector2(5124, 309)
+position = Vector2(5362, 198)

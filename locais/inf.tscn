@@ -1,24 +1,90 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm687nmo3yssh"]
+[gd_scene load_steps=10 format=3 uid="uid://dm687nmo3yssh"]
 
 [ext_resource type="Texture2D" uid="uid://bynpflvyq7o0t" path="res://assets/sprites/localidades/inf.png" id="1_8vryw"]
+[ext_resource type="Script" path="res://locais/inf.gd" id="1_528ty"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_7kf62"]
+[ext_resource type="PackedScene" uid="uid://qrksu8tbyb85" path="res://common/height_actionable.tscn" id="2_pp38q"]
 [ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="3_xqw2u"]
+[ext_resource type="PackedScene" uid="uid://dqspbvgc1qrg0" path="res://npc/tri/cena_tri.tscn" id="5_c7sbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ttan"]
+size = Vector2(155, 828)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l8jw"]
+size = Vector2(20, 229)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0n5p"]
 size = Vector2(466, 209)
 
 [node name="Inf" type="Node2D"]
+script = ExtResource("1_528ty")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CenaTri" parent="." instance=ExtResource("5_c7sbx")]
+position = Vector2(5131, 404)
+
+[node name="Mapa" type="Sprite2D" parent="."]
 position = Vector2(5990, 321)
 texture = ExtResource("1_8vryw")
 
+[node name="WallCollection" type="Node2D" parent="Mapa"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Mapa/WallCollection"]
+position = Vector2(-5667, 85)
+scale = Vector2(1, 0.986894)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/WallCollection/StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_0ttan")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Mapa/WallCollection"]
+position = Vector2(5641, 18)
+scale = Vector2(1, 0.986894)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/WallCollection/StaticBody2D2"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_0ttan")
+
+[node name="HeightCollection" type="Node2D" parent="Mapa"]
+
+[node name="HeightActionable" parent="Mapa/HeightCollection" instance=ExtResource("2_pp38q")]
+position = Vector2(5575, 198)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/HeightCollection/HeightActionable"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1l8jw")
+
+[node name="HeightActionable2" parent="Mapa/HeightCollection" instance=ExtResource("2_pp38q")]
+position = Vector2(5595, 255)
+height = 60
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/HeightCollection/HeightActionable2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1l8jw")
+
+[node name="HeightActionable3" parent="Mapa/HeightCollection" instance=ExtResource("2_pp38q")]
+position = Vector2(5745, 256)
+height = 60
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/HeightCollection/HeightActionable3"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1l8jw")
+
+[node name="HeightActionable4" parent="Mapa/HeightCollection" instance=ExtResource("2_pp38q")]
+position = Vector2(5765, 315)
+height = 120
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/HeightCollection/HeightActionable4"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1l8jw")
+
 [node name="Chico" parent="." instance=ExtResource("2_7kf62")]
-position = Vector2(11404, 428)
+position = Vector2(11341, 410)
 
 [node name="SceneActionable" parent="." instance=ExtResource("3_xqw2u")]
+position = Vector2(4, 0)
 scene_path = "res://locais/ru3.tscn"
 direction = "seta-dir"
+new_position = Vector2(8993, 433)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneActionable"]
 position = Vector2(11748, 536.5)

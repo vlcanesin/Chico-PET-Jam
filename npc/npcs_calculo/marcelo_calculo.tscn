@@ -42,7 +42,6 @@ script = ExtResource("1_1htcj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_52ikt")
 animation = &"speak"
-frame_progress = 0.787223
 
 [node name="Actionable" parent="." instance=ExtResource("6_sjth1")]
 dialogue_resource = ExtResource("7_ceqap")
