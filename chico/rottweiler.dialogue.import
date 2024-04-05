@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://2nwihmc1g1q1"
+path="res://.godot/imported/rottweiler.dialogue-9625762f7f8c5a0b7b9276aec5a30041.tres"
+
+[deps]
+
+source_file="res://chico/rottweiler.dialogue"
+dest_files=["res://.godot/imported/rottweiler.dialogue-9625762f7f8c5a0b7b9276aec5a30041.tres"]
+
+[params]
+
+defaults=true

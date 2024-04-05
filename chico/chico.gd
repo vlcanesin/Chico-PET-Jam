@@ -34,7 +34,7 @@ var is_barking: bool = false
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("ui_accept"):
 		var actionables = actionable_finder.get_overlapping_areas()
-		if actionables.size() > 0 and not actionables[0].has_method("only_in_bark"):
+		if actionables.size() > 0 and not (actionables[0].has_method("only_in_bark") or actionables[0].has_method("only_in_pee")):
 			actionables[0].action()
 	if Input.is_key_pressed(KEY_M) and not is_sleeping and MIJO_timer.time_left <= 0.01:
 		MIJO_sound.play()
@@ -44,6 +44,11 @@ func _unhandled_input(_event):
 		_walk_sprite.play("MIJAR")
 		_reset_MIJO_timer()
 		_reset_sleep_timer()
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0 and actionables[0].has_method("only_in_pee"):
+			for actionable in actionables:
+				actionable.action()
+			#print("MIJOU")
 	if Input.is_key_pressed(KEY_L) and not is_sleeping and bark_timer.time_left <= 0.01:
 		bark_sound.play()
 		is_sleeping = false
@@ -57,15 +62,17 @@ func _unhandled_input(_event):
 			actionables[0].action()
 
 func _ready():
-	default_height = self.position.y
 	is_sleeping = true
 	sleep_timer.start(0)  # Começa dormindo
 	_walk_sprite.play("sleep")
 	_bark_bark.visible = false
 	_thought_node.visible = false
 	position = LogicGlobals.chico_start_position
+	default_height = self.position.y
+	LogicGlobals.unlock_calc_study = true
 
 func _process(delta):
+	_update_global_var_position()
 	_update_speed()
 	if LogicGlobals.enable_collision_actionables:
 		_handle_collision_actionables()
@@ -79,6 +86,9 @@ func _process(delta):
 	else:
 		_thought_node.visible = false
 		_reset_sleep_timer()
+
+func _update_global_var_position():
+	LogicGlobals.chico_position = position
 
 func _update_speed():
 	SPEED = LogicGlobals.chico_speed
