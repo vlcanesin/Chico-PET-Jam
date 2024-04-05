@@ -28,7 +28,7 @@ script = ExtResource("1_6t7ug")
 [node name="Fundo" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tjwqq")
 animation = &"vucovuco"
-frame_progress = 0.812301
+frame_progress = 0.615003
 
 [node name="Actionable" type="Area2D" parent="."]
 collision_layer = 2
