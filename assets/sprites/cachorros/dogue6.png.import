@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://b1n1gcyoaeas0"
-
-path="res://.godot/imported/fernando_idle2.png-c7e3cdbdb17739eeef0362a5ddb2c997.ctex"
+uid="uid://b5mshh7sx32n1"
+path="res://.godot/imported/dogue6.png-84c744f50807fab568c60959f0bca562.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fernando/fernando_idle2.png"
-dest_files=["res://.godot/imported/fernando_idle2.png-c7e3cdbdb17739eeef0362a5ddb2c997.ctex"]
+source_file="res://assets/sprites/cachorros/dogue6.png"
+dest_files=["res://.godot/imported/dogue6.png-84c744f50807fab568c60959f0bca562.ctex"]
 
 [params]
 
