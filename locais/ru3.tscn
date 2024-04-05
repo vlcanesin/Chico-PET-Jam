@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=12 format=3 uid="uid://dbdy352vu5amv"]
-
+[gd_scene load_steps=15 format=3 uid="uid://dbdy352vu5amv"]
 
 [ext_resource type="Texture2D" uid="uid://bv2aykxg50tv" path="res://assets/sprites/localidades/corredor_ru3.png" id="1_6ia3r"]
 [ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="2_eme87"]
@@ -67,7 +65,7 @@ position = Vector2(2174, 10)
 script = ExtResource("3_5tgv1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/Bound_stairs"]
-position = Vector2(659, -625)
+position = Vector2(683, -20)
 shape = SubResource("RectangleShape2D_ru6vp")
 
 [node name="MultidaoEscada" parent="Mapa/Bound_stairs" groups=["multidao_escada"] instance=ExtResource("3_x1l0f")]
@@ -78,7 +76,6 @@ position = Vector2(776, -11)
 
 [node name="MultidaoEscada3" parent="Mapa/Bound_stairs" groups=["multidao_escada"] instance=ExtResource("3_x1l0f")]
 position = Vector2(773, 122)
-
 
 [node name="Chico" parent="." instance=ExtResource("2_t4ni3")]
 position = Vector2(2887, 433)

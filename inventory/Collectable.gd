@@ -5,7 +5,7 @@ extends Area2D
 func _process(_delta):
 	if itemRes.name == "Lapis":
 		if LogicGlobals.unlock_calc_pencil:
-			self.position.y = 20
+			self.position.y = 520
 
 func collect(inventory: Inventory):
 	inventory.insert(itemRes)
