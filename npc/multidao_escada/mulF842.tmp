@@ -20,7 +20,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7crj"]
-size = Vector2(581, 527)
+size = Vector2(364, 400)
 
 [node name="MultidaoEscada" type="Node2D"]
 script = ExtResource("1_6t7ug")
@@ -30,11 +30,8 @@ sprite_frames = SubResource("SpriteFrames_tjwqq")
 animation = &"vucovuco"
 
 [node name="Actionable" type="Area2D" parent="."]
-collision_layer = 2
 script = ExtResource("4_kapv5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
-position = Vector2(-13.5, 10.5)
+position = Vector2(-1, 13)
 shape = SubResource("RectangleShape2D_t7crj")
-
-[connection signal="felt_pee" from="Actionable" to="." method="_on_actionable_felt_pee"]
