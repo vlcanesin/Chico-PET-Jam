@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cepicnrc56pes"]
+[gd_scene load_steps=36 format=3 uid="uid://cepicnrc56pes"]
 
 [ext_resource type="FontFile" uid="uid://bo0gtln8hpyk" path="res://assets/fonts/Rev Mini Pixel.ttf" id="1_b5rl1"]
 [ext_resource type="Script" path="res://addons/markdownlabel/markdownlabel.gd" id="2_1euvc"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h5_format.gd" id="7_kokus"]
 [ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h6_format.gd" id="8_oo7yq"]
 [ext_resource type="Texture2D" uid="uid://bt3yfwkanf7kq" path="res://assets/sprites/IconesMenu/quadro_botao.png" id="11_h4jqy"]
+[ext_resource type="Script" path="res://quests/ProvaCalculo.gd" id="13_78c1j"]
+[ext_resource type="Script" path="res://quests/Estudar.gd" id="14_0l4ip"]
 
 [sub_resource type="Theme" id="Theme_lcvnd"]
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
@@ -87,54 +89,6 @@ is_italic = false
 is_underlined = false
 
 [sub_resource type="Resource" id="Resource_h4rle"]
-resource_local_to_scene = true
-script = ExtResource("8_oo7yq")
-font_size = 0.857
-is_bold = false
-is_italic = false
-is_underlined = false
-
-[sub_resource type="Resource" id="Resource_c6cy0"]
-resource_local_to_scene = true
-script = ExtResource("3_tt8mv")
-font_size = 2.285
-is_bold = false
-is_italic = false
-is_underlined = false
-
-[sub_resource type="Resource" id="Resource_i7dcr"]
-resource_local_to_scene = true
-script = ExtResource("4_7q8d5")
-font_size = 1.714
-is_bold = false
-is_italic = false
-is_underlined = false
-
-[sub_resource type="Resource" id="Resource_s144u"]
-resource_local_to_scene = true
-script = ExtResource("5_jy2qi")
-font_size = 1.428
-is_bold = false
-is_italic = false
-is_underlined = false
-
-[sub_resource type="Resource" id="Resource_bledp"]
-resource_local_to_scene = true
-script = ExtResource("6_6crpb")
-font_size = 1.142
-is_bold = false
-is_italic = false
-is_underlined = false
-
-[sub_resource type="Resource" id="Resource_eiene"]
-resource_local_to_scene = true
-script = ExtResource("7_kokus")
-font_size = 1.0
-is_bold = false
-is_italic = false
-is_underlined = false
-
-[sub_resource type="Resource" id="Resource_k67yl"]
 resource_local_to_scene = true
 script = ExtResource("8_oo7yq")
 font_size = 0.857
@@ -282,6 +236,8 @@ h4 = SubResource("Resource_3oasj")
 h5 = SubResource("Resource_u68f6")
 h6 = SubResource("Resource_h4rle")
 
+[node name="Node2D" type="Node2D" parent="Quadro"]
+
 [node name="ProvaCalculo" type="RichTextLabel" parent="Quadro"]
 layout_mode = 1
 anchors_preset = -1
@@ -289,20 +245,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 27.0
 offset_top = 74.0
-offset_right = 25.0
-offset_bottom = -76.0
+offset_right = -21.0
+offset_bottom = -125.0
 bbcode_enabled = true
 text = "[b]- A prova de cálculo[/b]"
 fit_content = true
 context_menu_enabled = true
-script = ExtResource("2_1euvc")
-markdown_text = "**- A prova de cálculo**"
-h1 = SubResource("Resource_c6cy0")
-h2 = SubResource("Resource_i7dcr")
-h3 = SubResource("Resource_s144u")
-h4 = SubResource("Resource_bledp")
-h5 = SubResource("Resource_eiene")
-h6 = SubResource("Resource_k67yl")
+script = ExtResource("13_78c1j")
 
 [node name="Estudar" type="RichTextLabel" parent="Quadro/ProvaCalculo"]
 layout_mode = 0
@@ -312,14 +261,7 @@ offset_right = 250.0
 offset_bottom = 49.0
 bbcode_enabled = true
 text = "[ul]Estude na biblioteca do INF[/ul]"
-script = ExtResource("2_1euvc")
-markdown_text = "- Estude na biblioteca do INF"
-h1 = SubResource("Resource_skl3t")
-h2 = SubResource("Resource_ioi3b")
-h3 = SubResource("Resource_k5hmb")
-h4 = SubResource("Resource_iyth4")
-h5 = SubResource("Resource_33jcb")
-h6 = SubResource("Resource_6b8ee")
+script = ExtResource("14_0l4ip")
 
 [node name="PegueLapis" type="RichTextLabel" parent="Quadro/ProvaCalculo"]
 layout_mode = 0

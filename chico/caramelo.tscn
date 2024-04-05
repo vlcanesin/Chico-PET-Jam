@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=3 uid="uid://yxg8pu2vbgg6"]
+
+[ext_resource type="Script" path="res://chico/follow_parent.gd" id="1_tguqy"]
+[ext_resource type="Texture2D" uid="uid://dqnpoud2vq1mq" path="res://assets/sprites/cachorros/outro_dogue1.png" id="2_suqhp"]
+[ext_resource type="Texture2D" uid="uid://de7hnuhk2n612" path="res://assets/sprites/cachorros/outro_dogue2.png" id="3_8wjjy"]
+[ext_resource type="Texture2D" uid="uid://crgiafarpibk7" path="res://assets/sprites/cachorros/outro_dogue3.png" id="4_xttt8"]
+[ext_resource type="Texture2D" uid="uid://c2hkijy5xbe1" path="res://assets/sprites/cachorros/outro_dogue4.png" id="5_pi83t"]
+[ext_resource type="Texture2D" uid="uid://dkvunlmsgufav" path="res://assets/sprites/cachorros/outro_dogue5.png" id="6_2u287"]
+[ext_resource type="PackedScene" uid="uid://dfygosls2h7bk" path="res://common/bark_actionable.tscn" id="7_norji"]
+[ext_resource type="Texture2D" uid="uid://ytyvl7w4sh1v" path="res://assets/sprites/cachorros/outro_dogue6.png" id="7_w8nom"]
+[ext_resource type="Script" path="res://chico/disable_on_bark.gd" id="8_tiokm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2dh4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_suqhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8wjjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xttt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pi83t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2u287")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w8nom")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0e1b"]
+size = Vector2(349, 214)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57ba1"]
+size = Vector2(20, 212)
+
+[node name="Caramelo" type="Node2D"]
+script = ExtResource("1_tguqy")
+
+[node name="Sprites" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f2dh4")
+animation = &"walk"
+frame = 2
+frame_progress = 0.3679
+
+[node name="BarkActionable" parent="." instance=ExtResource("7_norji")]
+trigger_thought = "latir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarkActionable"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_c0e1b")
+script = ExtResource("8_tiokm")
+
+[node name="HeightFinder" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeightFinder"]
+shape = SubResource("RectangleShape2D_57ba1")
+
+[connection signal="heard_bark" from="BarkActionable" to="." method="_on_bark_actionable_heard_bark"]
+[connection signal="heard_bark" from="BarkActionable" to="BarkActionable/CollisionShape2D" method="_on_actionable_heard_bark"]

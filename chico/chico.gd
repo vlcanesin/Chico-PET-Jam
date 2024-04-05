@@ -57,15 +57,17 @@ func _unhandled_input(_event):
 			actionables[0].action()
 
 func _ready():
-	default_height = self.position.y
 	is_sleeping = true
 	sleep_timer.start(0)  # Começa dormindo
 	_walk_sprite.play("sleep")
 	_bark_bark.visible = false
 	_thought_node.visible = false
 	position = LogicGlobals.chico_start_position
+	default_height = self.position.y
+	LogicGlobals.unlock_calc_study = true
 
 func _process(delta):
+	_update_global_var_position()
 	_update_speed()
 	if LogicGlobals.enable_collision_actionables:
 		_handle_collision_actionables()
@@ -79,6 +81,9 @@ func _process(delta):
 	else:
 		_thought_node.visible = false
 		_reset_sleep_timer()
+
+func _update_global_var_position():
+	LogicGlobals.chico_position = position
 
 func _update_speed():
 	SPEED = LogicGlobals.chico_speed
