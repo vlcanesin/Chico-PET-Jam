@@ -1,0 +1,9 @@
+~ start
+set in_dialogue = true
+set LogicGlobals.enable_collision_actionables = false
+
+Bernardo: Meu TRI!!! Volta aqui, macaco!
+
+set bernardo_should_run = true
+set in_dialogue = false
+=> END

@@ -1,0 +1,9 @@
+~ start
+set in_dialogue = true
+
+set guardinha_speak = true
+Guardinha: Sem cachorros na biblioteca.
+
+set in_dialogue = false
+set guardinha_speak = false
+=> END

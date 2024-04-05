@@ -24,6 +24,7 @@ var is_barking: bool = false
 @onready var _content_sprite = $Thought/Content
 @onready var actionable_finder: Area2D = $ActionableFinder
 @onready var height_finder: Area2D = $HeightFinder
+@onready var instant_finder: Area2D = $InstantFinder
 @onready var sleep_timer: Timer = $SleepTimer
 @onready var MIJO_timer: Timer = $MIJOTimer
 @onready var bark_timer: Timer = $BarkTimer
@@ -33,9 +34,8 @@ var is_barking: bool = false
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("ui_accept"):
 		var actionables = actionable_finder.get_overlapping_areas()
-		if actionables.size() > 0:
+		if actionables.size() > 0 and not actionables[0].has_method("only_in_bark"):
 			actionables[0].action()
-			return
 	if Input.is_key_pressed(KEY_M) and not is_sleeping and MIJO_timer.time_left <= 0.01:
 		MIJO_sound.play()
 		is_sleeping = false
@@ -43,6 +43,7 @@ func _unhandled_input(_event):
 		_fix_orientation()
 		_walk_sprite.play("MIJAR")
 		_reset_MIJO_timer()
+		_reset_sleep_timer()
 	if Input.is_key_pressed(KEY_L) and not is_sleeping and bark_timer.time_left <= 0.01:
 		bark_sound.play()
 		is_sleeping = false
@@ -50,15 +51,24 @@ func _unhandled_input(_event):
 		_bark_bark.visible = true
 		_bark_bark.play("default")
 		_reset_bark_timer()
+		_reset_sleep_timer()
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0 and actionables[0].has_method("only_in_bark"):
+			actionables[0].action()
 
 func _ready():
+	default_height = self.position.y
 	is_sleeping = true
 	sleep_timer.start(0)  # Começa dormindo
 	_walk_sprite.play("sleep")
 	_bark_bark.visible = false
 	_thought_node.visible = false
+	position = LogicGlobals.chico_start_position
 
 func _process(delta):
+	_update_speed()
+	if LogicGlobals.enable_collision_actionables:
+		_handle_collision_actionables()
 	if not DialogueGlobals.in_dialogue:
 		_process_movement(delta)
 		_process_height()
@@ -69,6 +79,14 @@ func _process(delta):
 	else:
 		_thought_node.visible = false
 		_reset_sleep_timer()
+
+func _update_speed():
+	SPEED = LogicGlobals.chico_speed
+
+func _handle_collision_actionables():
+	var actionables = instant_finder.get_overlapping_areas()
+	if actionables.size() > 0:
+		actionables[0].action()
 
 func _reset_MIJO_timer(time: float = MIJO_LENGTH):
 	MIJO_timer.start(time)
@@ -124,7 +142,7 @@ func _process_thought() -> void:
 	var actionables = actionable_finder.get_overlapping_areas()
 	var has_actionable_collision: bool = false
 	if actionables.size() > 0:
-		thought = actionables[0].get_trigger_thought()
+		thought = actionables[0].get_thought()
 		has_actionable_collision = true
 	else:
 		has_actionable_collision = false
@@ -155,6 +173,14 @@ func _play_thought_content() -> void:
 	else:
 		_content_sprite.scale.x = 0.45
 		_content_sprite.scale.y = 0.45
+	if thought == "seta-down":
+		_content_sprite.rotation_degrees = 90
+	elif thought == "seta-esq":
+		_content_sprite.rotation_degrees = 180
+	elif thought == "seta-up":
+		_content_sprite.rotation_degrees = -90
+	else:
+		_content_sprite.rotation_degrees = 0
 	_content_sprite.play(thought)
 
 func _on_sleep_timer_timeout():

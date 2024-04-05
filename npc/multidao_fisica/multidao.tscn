@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://q8c8p6dbqabf"]
+
+[ext_resource type="Texture2D" uid="uid://2dwkq40ertil" path="res://assets/sprites/aglomerado/aglomerado1.png" id="1_et3vr"]
+[ext_resource type="Script" path="res://npc/multidao_fisica/multidao.gd" id="1_pn3fq"]
+[ext_resource type="Texture2D" uid="uid://cgivxljfgqcot" path="res://assets/sprites/aglomerado/aglomerado2.png" id="2_nqjs3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2y6p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_et3vr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nqjs3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Multidao" type="Node2D"]
+script = ExtResource("1_pn3fq")
+
+[node name="Fundo" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w2y6p")
+frame_progress = 0.144736

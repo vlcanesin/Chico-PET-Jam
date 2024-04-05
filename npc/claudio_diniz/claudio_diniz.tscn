@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7wuv3mo23tjc"]
+
+[ext_resource type="Script" path="res://npc/claudio_diniz/claudio_diniz.gd" id="1_dsfy7"]
+[ext_resource type="Texture2D" uid="uid://i47y8p5qtmbq" path="res://assets/sprites/npc_2/npc2_idle1.png" id="2_xhwk3"]
+[ext_resource type="Texture2D" uid="uid://cnwmrhh1ice6s" path="res://assets/sprites/npc_2/npc2_idle2.png" id="3_djumo"]
+[ext_resource type="Texture2D" uid="uid://c840dh0y4anxu" path="res://assets/sprites/npc_2/npc2_speak1.png" id="4_qhvve"]
+[ext_resource type="Texture2D" uid="uid://b7r5m6xmyr8us" path="res://assets/sprites/npc_2/npc2_speak2.png" id="5_ek8nj"]
+[ext_resource type="PackedScene" uid="uid://c1cmn04k5c4ts" path="res://common/dialogue_actionable.tscn" id="6_i4bra"]
+[ext_resource type="Resource" uid="uid://oi8n2xdi8fns" path="res://npc/claudio_diniz/claudio_diniz.dialogue" id="7_mnixb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ova6w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xhwk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_djumo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qhvve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ek8nj")
+}],
+"loop": true,
+"name": &"speak",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ag7s"]
+size = Vector2(217, 403)
+
+[node name="ClaudioDiniz" type="Node2D"]
+script = ExtResource("1_dsfy7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ova6w")
+animation = &"idle"
+
+[node name="Actionable" parent="." instance=ExtResource("6_i4bra")]
+dialogue_resource = ExtResource("7_mnixb")
+trigger_thought = "interagir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7ag7s")

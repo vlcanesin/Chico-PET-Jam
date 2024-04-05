@@ -1,0 +1,30 @@
+~ start
+set in_dialogue = true
+
+set rosa_speak = true
+set vivi_speak = false
+Rosa: O que tem no RU hoje?
+
+set rosa_speak = false
+set vivi_speak = true
+Vivi: "Cubos ao molho".
+
+set rosa_speak = true
+set vivi_speak = false
+Rosa: Cubos de quê?
+
+set rosa_speak = false
+set vivi_speak = true
+Vivi: Cubos.
+
+set rosa_speak = true
+set vivi_speak = false
+Rosa: O que diabos é um cubo?!
+
+set rosa_speak = false
+set vivi_speak = true
+Vivi: Poxa, eu sei que tu é de humanas... mas poxa, isso é matemática básica né?
+
+set in_dialogue = false
+set vivi_speak = false
+=> END

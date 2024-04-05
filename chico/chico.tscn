@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://r6tpqlaxacs2"]
+[gd_scene load_steps=44 format=3 uid="uid://r6tpqlaxacs2"]
 
 [ext_resource type="Texture2D" uid="uid://ddw04dmmrt44i" path="res://assets/sprites/chico/spritesheet-chico1.png" id="1_fxkqi"]
 [ext_resource type="Script" path="res://chico/chico.gd" id="1_iifu8"]
@@ -76,6 +76,30 @@ animations = [{
 }],
 "loop": true,
 "name": &"seta-dir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2l8w7")
+}],
+"loop": true,
+"name": &"seta-down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2l8w7")
+}],
+"loop": true,
+"name": &"seta-esq",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2l8w7")
+}],
+"loop": true,
+"name": &"seta-up",
 "speed": 5.0
 }]
 
@@ -208,6 +232,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85373"]
 size = Vector2(145, 134)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcl2a"]
+size = Vector2(40, 54)
+
 [node name="Chico" type="CharacterBody2D"]
 position = Vector2(0, 11)
 script = ExtResource("1_iifu8")
@@ -216,13 +243,14 @@ inventory = ExtResource("2_g464a")
 [node name="Thought" type="Node2D" parent="."]
 
 [node name="Content" type="AnimatedSprite2D" parent="Thought"]
-z_index = 1
+z_index = 2
 position = Vector2(0.344908, -106.789)
 scale = Vector2(0.452407, 0.452407)
 sprite_frames = SubResource("SpriteFrames_s5qrt")
-animation = &"pensar"
+animation = &"seta-up"
 
 [node name="Balloon" type="AnimatedSprite2D" parent="Thought"]
+z_index = 1
 position = Vector2(-3.8147e-06, -102)
 scale = Vector2(0.678061, 0.678061)
 sprite_frames = SubResource("SpriteFrames_2jl3f")
@@ -234,6 +262,7 @@ shape = SubResource("RectangleShape2D_opx01")
 one_way_collision_margin = 0.0
 
 [node name="WalkSprite" type="AnimatedSprite2D" parent="."]
+z_index = 2
 sprite_frames = SubResource("SpriteFrames_aoagg")
 animation = &"MIJAR"
 frame = 3
@@ -241,7 +270,7 @@ frame_progress = 0.15855
 
 [node name="ActionableFinder" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 26
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]
 position = Vector2(0, -10.5)
@@ -289,6 +318,15 @@ stream = ExtResource("34_wdnw5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_85373")
+
+[node name="InstantFinder" type="Area2D" parent="."]
+z_index = 10
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InstantFinder"]
+position = Vector2(1, -5)
+shape = SubResource("RectangleShape2D_qcl2a")
 
 [connection signal="area_entered" from="ActionableFinder" to="." method="_on_actionable_finder_area_entered"]
 [connection signal="timeout" from="SleepTimer" to="." method="_on_sleep_timer_timeout"]

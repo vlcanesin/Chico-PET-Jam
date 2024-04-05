@@ -1,23 +1,28 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3857yr2eyjnp"]
-
+[gd_scene load_steps=18 format=3 uid="uid://d3857yr2eyjnp"]
 
 [ext_resource type="Texture2D" uid="uid://xh8e0lpg11qy" path="res://assets/sprites/localidades/fisica.png" id="1_ak7ap"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_34yms"]
 [ext_resource type="PackedScene" uid="uid://qrksu8tbyb85" path="res://common/height_actionable.tscn" id="2_xfo38"]
+[ext_resource type="Script" path="res://locais/boundl_eft.gd" id="3_ru378"]
 [ext_resource type="PackedScene" uid="uid://c74bpv2deaixx" path="res://inventory/inventoryGui.tscn" id="5_b0gpo"]
 [ext_resource type="Script" path="res://locais/UI.gd" id="5_pbu2o"]
 [ext_resource type="PackedScene" uid="uid://c3q0nr25ltj0k" path="res://npc/npcs_calculo/walter_calculo.tscn" id="5_wtpws"]
 [ext_resource type="PackedScene" uid="uid://bcn5aghu6po44" path="res://npc/npcs_calculo/marcelo_calculo.tscn" id="6_046g8"]
 [ext_resource type="Script" path="res://inventory/inventoryGui.gd" id="6_a64pp"]
 [ext_resource type="PackedScene" uid="uid://cepicnrc56pes" path="res://quests/QuestMenu.tscn" id="7_cpf5m"]
-[ext_resource type="PackedScene" uid="uid://chvv8dlqmv7ab" path="res://inventory/anton.tscn" id="9_8tfa1"]
-
+[ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="11_2uau5"]
+[ext_resource type="PackedScene" uid="uid://dxywnd5c3r3m0" path="res://inventory/itemsPrefabs/cafe.tscn" id="11_qop13"]
+[ext_resource type="PackedScene" uid="uid://q8c8p6dbqabf" path="res://npc/multidao_fisica/multidao.tscn" id="12_m0am6"]
+[ext_resource type="Script" path="res://locais/CafeControl.gd" id="13_as6dh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlms7"]
 size = Vector2(20, 267)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0rns"]
 size = Vector2(155, 828)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8tjd"]
+size = Vector2(193, 59)
 
 [node name="SpawnFisicaLetras" type="Node2D"]
 
@@ -128,21 +133,41 @@ shape = SubResource("RectangleShape2D_rlms7")
 
 [node name="WallCollection" type="Node2D" parent="Spawn"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Spawn/WallCollection"]
-position = Vector2(-5018, 95.7287)
+[node name="BoundLeft" type="StaticBody2D" parent="Spawn/WallCollection"]
+position = Vector2(-5173, 38.4888)
 scale = Vector2(1, 0.986894)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/WallCollection/StaticBody2D"]
-position = Vector2(0, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/WallCollection/BoundLeft"]
 shape = SubResource("RectangleShape2D_v0rns")
+script = ExtResource("3_ru378")
+
+[node name="Multidao1" parent="Spawn/WallCollection/BoundLeft" instance=ExtResource("12_m0am6")]
+position = Vector2(-142, -277)
+
+[node name="Multidao2" parent="Spawn/WallCollection/BoundLeft" instance=ExtResource("12_m0am6")]
+position = Vector2(-119, -77)
+
+[node name="Multidao3" parent="Spawn/WallCollection/BoundLeft" instance=ExtResource("12_m0am6")]
+position = Vector2(-99, 114)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Spawn/WallCollection"]
-position = Vector2(4542, -0.986908)
+position = Vector2(5331, -81.9122)
 scale = Vector2(1, 0.986894)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/WallCollection/StaticBody2D2"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_v0rns")
+
+[node name="SceneActionable" parent="Spawn" instance=ExtResource("11_2uau5")]
+position = Vector2(-1871, 60.2005)
+scale = Vector2(1, 0.986894)
+scene_path = "res://locais/ru3.tscn"
+direction = "seta-up"
+new_position = Vector2(2887, 433)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/SceneActionable"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_f8tjd")
 
 [node name="Chico" parent="." instance=ExtResource("2_34yms")]
 position = Vector2(4303, 435)
@@ -167,5 +192,8 @@ offset_right = 40.0
 offset_bottom = 26.0
 script = ExtResource("6_a64pp")
 
-[node name="anton" parent="." instance=ExtResource("9_8tfa1")]
-position = Vector2(996, 466)
+[node name="CafeControl" type="Node2D" parent="."]
+script = ExtResource("13_as6dh")
+
+[node name="cafe" parent="CafeControl" instance=ExtResource("11_qop13")]
+position = Vector2(498, 447)

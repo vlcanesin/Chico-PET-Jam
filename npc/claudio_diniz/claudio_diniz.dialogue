@@ -1,0 +1,11 @@
+~ start
+set in_dialogue = true
+
+set claudio_diniz_speak = true
+Claudio Diniz: Meu nome eh Claudio
+Claudio Diniz: Claudio Diniz para ser mais exato
+Claudio Diniz: ...
+
+set in_dialogue = false
+set claudio_diniz_speak = false
+=> END
