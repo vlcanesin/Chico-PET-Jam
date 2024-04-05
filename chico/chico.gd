@@ -34,7 +34,7 @@ var is_barking: bool = false
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("ui_accept"):
 		var actionables = actionable_finder.get_overlapping_areas()
-		if actionables.size() > 0 and not actionables[0].has_method("only_in_bark"):
+		if actionables.size() > 0 and not (actionables[0].has_method("only_in_bark") or actionables[0].has_method("only_in_pee")):
 			actionables[0].action()
 	if Input.is_key_pressed(KEY_M) and not is_sleeping and MIJO_timer.time_left <= 0.01:
 		MIJO_sound.play()
@@ -44,6 +44,11 @@ func _unhandled_input(_event):
 		_walk_sprite.play("MIJAR")
 		_reset_MIJO_timer()
 		_reset_sleep_timer()
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0 and actionables[0].has_method("only_in_pee"):
+			for actionable in actionables:
+				actionable.action()
+			#print("MIJOU")
 	if Input.is_key_pressed(KEY_L) and not is_sleeping and bark_timer.time_left <= 0.01:
 		bark_sound.play()
 		is_sleeping = false
