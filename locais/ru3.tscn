@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbdy352vu5amv"]
+[gd_scene load_steps=16 format=3 uid="uid://dbdy352vu5amv"]
 
 [ext_resource type="Texture2D" uid="uid://bv2aykxg50tv" path="res://assets/sprites/localidades/corredor_ru3.png" id="1_6ia3r"]
 [ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="2_eme87"]
