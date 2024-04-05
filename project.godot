@@ -16,9 +16,9 @@ config/features=PackedStringArray("4.2")
 
 [autoload]
 
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 DialogueGlobals="*res://common/dialogue_globals.gd"
 LogicGlobals="*res://common/logic_globals.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogue_manager]
 
