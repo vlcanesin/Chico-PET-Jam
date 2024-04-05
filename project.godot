@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.2")
 DialogueGlobals="*res://common/dialogue_globals.gd"
 LogicGlobals="*res://common/logic_globals.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+MusicController="*res://music/MusicController.tscn"
 
 [dialogue_manager]
 
