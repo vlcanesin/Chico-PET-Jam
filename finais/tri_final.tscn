@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dothup00oj6uw"]
+
+[ext_resource type="Script" path="res://finais/tri_final.gd" id="1_y0pys"]
+[ext_resource type="Texture2D" uid="uid://c3420mjy2cd16" path="res://assets/finais/343-Campus-Ipiranga-POA.webp" id="2_5jtlj"]
+
+[sub_resource type="Theme" id="Theme_wonlg"]
+
+[node name="TriFinal_tscn" type="Node2D"]
+script = ExtResource("1_y0pys")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574.75, 269)
+scale = Vector2(1.79984, 1.2823)
+texture = ExtResource("2_5jtlj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 202.0
+offset_top = 310.0
+offset_right = 659.0
+offset_bottom = 473.0
+theme = SubResource("Theme_wonlg")
+text = "Final secreto: Chico vai ter aula no centro!"

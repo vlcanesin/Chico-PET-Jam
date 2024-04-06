@@ -69,7 +69,6 @@ func _ready():
 	_thought_node.visible = false
 	position = LogicGlobals.chico_start_position
 	default_height = self.position.y
-	LogicGlobals.unlock_calc_study = true
 
 func _process(delta):
 	_update_global_var_position()

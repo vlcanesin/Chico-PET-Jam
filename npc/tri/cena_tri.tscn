@@ -134,3 +134,4 @@ scale = Vector2(0.3, 0.3)
 [connection signal="collision" from="CollisionActionable" to="Sagui" method="_on_collision_actionable_collision"]
 [connection signal="collision" from="CollisionActionable" to="NPCTRI" method="_on_collision_actionable_collision"]
 [connection signal="collision" from="CollisionActionable" to="TRIcontrol" method="_on_collision_actionable_collision"]
+[connection signal="area_entered" from="TRIcontrol/TRI" to="TRIcontrol" method="_on_tri_area_entered"]

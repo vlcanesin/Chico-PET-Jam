@@ -30,3 +30,6 @@ func _on_collision_actionable_collision():
 
 func _on_npctri_arrived_at_tri():
 	position.y = 10000
+
+func _on_tri_area_entered(area):
+	LogicGlobals.chico_iswith_tri = true

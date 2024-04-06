@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://ncrmao51v22s"
+path="res://.godot/imported/multidao_fisica.dialogue-bdbb29d025b8a2bd4a9f1796f48a4137.tres"
+
+[deps]
+
+source_file="res://locais/multidao_fisica.dialogue"
+dest_files=["res://.godot/imported/multidao_fisica.dialogue-bdbb29d025b8a2bd4a9f1796f48a4137.tres"]
+
+[params]
+
+defaults=true
