@@ -25,6 +25,7 @@ var is_barking: bool = false
 @onready var actionable_finder: Area2D = $ActionableFinder
 @onready var height_finder: Area2D = $HeightFinder
 @onready var instant_finder: Area2D = $InstantFinder
+@onready var mimir_finder: Area2D = $MimirFinder
 @onready var sleep_timer: Timer = $SleepTimer
 @onready var MIJO_timer: Timer = $MIJOTimer
 @onready var bark_timer: Timer = $BarkTimer
@@ -196,6 +197,9 @@ func _on_sleep_timer_timeout():
 	is_sleeping = true
 	_fix_orientation()
 	_walk_sprite.play("sleep")
+	var actionables = mimir_finder.get_overlapping_areas()
+	if actionables.size() > 0:
+		actionables[0].action()
 
 func _on_MIJO_timer_timeout():
 	MIJO_timer.stop()

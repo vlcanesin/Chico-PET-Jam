@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d3857yr2eyjnp"]
+[gd_scene load_steps=25 format=3 uid="uid://d3857yr2eyjnp"]
 
 [ext_resource type="Texture2D" uid="uid://xh8e0lpg11qy" path="res://assets/sprites/localidades/fisica.png" id="1_ak7ap"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_34yms"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cepicnrc56pes" path="res://quests/QuestMenu.tscn" id="7_cpf5m"]
 [ext_resource type="Script" path="res://locais/bound_right.gd" id="7_hm5tm"]
 [ext_resource type="Script" path="res://locais/actionable_multidao.gd" id="7_opday"]
+[ext_resource type="Script" path="res://locais/sleep.gd" id="10_gpcfr"]
 [ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="11_2uau5"]
 [ext_resource type="PackedScene" uid="uid://dxywnd5c3r3m0" path="res://inventory/itemsPrefabs/cafe.tscn" id="11_qop13"]
 [ext_resource type="PackedScene" uid="uid://q8c8p6dbqabf" path="res://npc/multidao_fisica/multidao.tscn" id="12_m0am6"]
@@ -30,6 +31,9 @@ size = Vector2(291, 276)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8tjd"]
 size = Vector2(193, 234.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dme70"]
+size = Vector2(263, 146.191)
 
 [node name="SpawnFisicaLetras" type="Node2D"]
 
@@ -193,7 +197,7 @@ shape = SubResource("RectangleShape2D_5uigf")
 script = ExtResource("7_opday")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Spawn/WallCollection"]
-position = Vector2(5672, -4.93446)
+position = Vector2(5293, 0.986899)
 scale = Vector2(1, 0.986894)
 script = ExtResource("7_hm5tm")
 
@@ -222,6 +226,15 @@ new_position = Vector2(2887, 433)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/SceneActionable2"]
 position = Vector2(0.5, 88.75)
 shape = SubResource("RectangleShape2D_f8tjd")
+
+[node name="SleepActionable" type="Area2D" parent="Spawn"]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("10_gpcfr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/SleepActionable"]
+position = Vector2(-1508.5, 63.0957)
+shape = SubResource("RectangleShape2D_dme70")
 
 [node name="Chico" parent="." instance=ExtResource("2_34yms")]
 position = Vector2(4303, 435)

@@ -13,6 +13,7 @@ var calc_pencil_completed: bool = false
 var in_calc_final: bool = false
 var in_montanha_final: bool = false
 var in_tri_final: bool = false
+var in_mimir_final: bool = false
 
 var enable_collision_actionables: bool = true
 

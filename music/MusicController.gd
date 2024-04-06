@@ -5,6 +5,7 @@ var main_music = load("res://assets/sfx/ChicoProductions_finale_topper.wav")
 var calc_song = load("res://assets/sfx/calc_song.wav")
 var montanha_song = load("res://assets/sfx/montanha_song.wav")
 var tri_song = load("res://assets/sfx/tri_song.wav")
+var mimir_sound = load("res://assets/sfx/sleep.wav")
 var player_stream
 var only_once: bool = false
 
@@ -18,6 +19,8 @@ func play_music(stop_forever = false):
 			player_stream = montanha_song
 		elif LogicGlobals.in_tri_final:
 			player_stream = tri_song
+		elif LogicGlobals.in_mimir_final:
+			player_stream = mimir_sound
 		else:
 			player_stream = main_music
 	
