@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dleveta3u4kx8"
+path="res://.godot/imported/Fernando_fabricio.dialogue-55496f37580d2afac12f7ae79d709613.tres"
+
+[deps]
+
+source_file="res://npc/fernando_fabricio/Fernando_fabricio.dialogue"
+dest_files=["res://.godot/imported/Fernando_fabricio.dialogue-55496f37580d2afac12f7ae79d709613.tres"]
+
+[params]
+
+defaults=true

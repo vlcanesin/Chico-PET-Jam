@@ -8,6 +8,8 @@ var luigi_speak: bool = false    # npc_3
 var rosa_speak: bool = false     # npc_4
 var marcelo_speak: bool = false  # npc_5 
 var vivi_speak: bool = false     # npc_6
+var fernando_speak: bool = false
+var fabricio_speak: bool = false
 
 var guardinha_speak: bool = false	 # guardinha
 

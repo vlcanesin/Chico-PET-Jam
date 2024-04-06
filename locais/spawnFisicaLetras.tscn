@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d3857yr2eyjnp"]
+[gd_scene load_steps=27 format=3 uid="uid://d3857yr2eyjnp"]
 
 [ext_resource type="Texture2D" uid="uid://xh8e0lpg11qy" path="res://assets/sprites/localidades/fisica.png" id="1_ak7ap"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_34yms"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://dxywnd5c3r3m0" path="res://inventory/itemsPrefabs/cafe.tscn" id="11_qop13"]
 [ext_resource type="PackedScene" uid="uid://q8c8p6dbqabf" path="res://npc/multidao_fisica/multidao.tscn" id="12_m0am6"]
 [ext_resource type="Script" path="res://locais/CafeControl.gd" id="13_as6dh"]
+[ext_resource type="Script" path="res://locais/LapisControl.gd" id="20_dpn8p"]
+[ext_resource type="PackedScene" uid="uid://cwxksp43pjd3q" path="res://inventory/itemsPrefabs/lapis.tscn" id="20_xlf6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlms7"]
 size = Vector2(20, 267)
@@ -264,3 +266,11 @@ script = ExtResource("13_as6dh")
 
 [node name="cafe" parent="CafeControl" instance=ExtResource("11_qop13")]
 position = Vector2(498, 447)
+
+[node name="LapisControl" type="Node2D" parent="."]
+script = ExtResource("20_dpn8p")
+
+[node name="lapis" parent="LapisControl" instance=ExtResource("20_xlf6t")]
+position = Vector2(9383, 170)
+
+[connection signal="area_entered" from="LapisControl/lapis" to="LapisControl" method="_on_lapis_area_entered"]

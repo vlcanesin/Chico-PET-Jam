@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cepicnrc56pes"]
+[gd_scene load_steps=32 format=3 uid="uid://cepicnrc56pes"]
 
 [ext_resource type="FontFile" uid="uid://bo0gtln8hpyk" path="res://assets/fonts/Rev Mini Pixel.ttf" id="1_b5rl1"]
 [ext_resource type="Script" path="res://addons/markdownlabel/markdownlabel.gd" id="2_1euvc"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://quests/ProvaCalculo.gd" id="13_78c1j"]
 [ext_resource type="Script" path="res://quests/Estudar.gd" id="14_0l4ip"]
 [ext_resource type="Script" path="res://quests/PegueTRI.gd" id="15_gyyeo"]
+[ext_resource type="Script" path="res://quests/PegueLapis.gd" id="15_h83yk"]
 
 [sub_resource type="Theme" id="Theme_lcvnd"]
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
@@ -90,54 +91,6 @@ is_italic = false
 is_underlined = false
 
 [sub_resource type="Resource" id="Resource_h4rle"]
-resource_local_to_scene = true
-script = ExtResource("8_oo7yq")
-font_size = 0.857
-is_bold = false
-is_italic = false
-is_underlined = false
-
-[sub_resource type="Resource" id="Resource_skl3t"]
-resource_local_to_scene = true
-script = ExtResource("3_tt8mv")
-font_size = 2.285
-is_bold = false
-is_italic = false
-is_underlined = false
-
-[sub_resource type="Resource" id="Resource_ioi3b"]
-resource_local_to_scene = true
-script = ExtResource("4_7q8d5")
-font_size = 1.714
-is_bold = false
-is_italic = false
-is_underlined = false
-
-[sub_resource type="Resource" id="Resource_k5hmb"]
-resource_local_to_scene = true
-script = ExtResource("5_jy2qi")
-font_size = 1.428
-is_bold = false
-is_italic = false
-is_underlined = false
-
-[sub_resource type="Resource" id="Resource_iyth4"]
-resource_local_to_scene = true
-script = ExtResource("6_6crpb")
-font_size = 1.142
-is_bold = false
-is_italic = false
-is_underlined = false
-
-[sub_resource type="Resource" id="Resource_33jcb"]
-resource_local_to_scene = true
-script = ExtResource("7_kokus")
-font_size = 1.0
-is_bold = false
-is_italic = false
-is_underlined = false
-
-[sub_resource type="Resource" id="Resource_6b8ee"]
 resource_local_to_scene = true
 script = ExtResource("8_oo7yq")
 font_size = 0.857
@@ -272,14 +225,7 @@ offset_right = 237.0
 offset_bottom = 69.0
 bbcode_enabled = true
 text = "[ul]Pegue um lápis[/ul]"
-script = ExtResource("2_1euvc")
-markdown_text = "- Pegue um lápis"
-h1 = SubResource("Resource_skl3t")
-h2 = SubResource("Resource_ioi3b")
-h3 = SubResource("Resource_k5hmb")
-h4 = SubResource("Resource_iyth4")
-h5 = SubResource("Resource_33jcb")
-h6 = SubResource("Resource_6b8ee")
+script = ExtResource("15_h83yk")
 
 [node name="BebaAgua" type="RichTextLabel" parent="Quadro"]
 layout_mode = 0

@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8okgrof3l4o3"]
+
+[ext_resource type="Texture2D" uid="uid://ci7i73ox7bsaq" path="res://assets/sprites/fernando/fernando_idle1.png" id="1_fyxli"]
+[ext_resource type="Script" path="res://npc/fernando_fabricio/Fernando.gd" id="1_wgbm1"]
+[ext_resource type="Texture2D" uid="uid://b1n1gcyoaeas0" path="res://assets/sprites/fernando/fernando_idle2.png" id="2_a7otu"]
+[ext_resource type="PackedScene" uid="uid://c1cmn04k5c4ts" path="res://common/dialogue_actionable.tscn" id="3_s4koo"]
+[ext_resource type="Resource" uid="uid://dleveta3u4kx8" path="res://npc/fernando_fabricio/Fernando_fabricio.dialogue" id="4_n36g1"]
+[ext_resource type="Texture2D" uid="uid://dm3ywyqp7vvbg" path="res://assets/sprites/fernando/fernando_speak1.png" id="4_w5o0y"]
+[ext_resource type="Texture2D" uid="uid://bocwk56jwhmol" path="res://assets/sprites/fernando/fernando_speak2.png" id="5_a6ia0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkijx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fyxli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_a7otu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_w5o0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a6ia0")
+}],
+"loop": true,
+"name": &"speak",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxcv7"]
+size = Vector2(183, 377)
+
+[node name="Fernando" type="Node2D"]
+script = ExtResource("1_wgbm1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dkijx")
+animation = &"speak"
+
+[node name="Actionable" parent="." instance=ExtResource("3_s4koo")]
+dialogue_resource = ExtResource("4_n36g1")
+trigger_thought = "interagir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(0.5, 2.5)
+shape = SubResource("RectangleShape2D_nxcv7")
