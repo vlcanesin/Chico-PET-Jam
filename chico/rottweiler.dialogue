@@ -1,0 +1,20 @@
+~ start
+set in_dialogue = true
+
+if LogicGlobals.unlock_calc_study
+	if not LogicGlobals.chico_found_caramelo
+		Chico (Você): AUau, UAau uAu, uauaUA ua... (Mano Weiler, não tenho muito tempo, preciso da sua ajuda...)
+		Chico (Você): AUauu AUu uaUaUa Au Auu? (Você conhece alguma forma de entrar na biblioteca?)
+		Mano Weiler: Auu.... (Hmmm...)
+		Mano Weiler: AAAAU! AuauaU AU AU au Au! (Já sei! Se você trouxer o caramelo até aqui a gente consegue despistar a guarda!)
+		Mano Weiler: AuAu AUau Au au AU!! (É só a gente começar a brigar que ela nem vai notar você entrando!!)
+		Chico (Você): Auaua AU auauAU, UAau uAu (Você sempre tem as melhores ideias, mano Weiler)
+		set LogicGlobals.enable_follow_at_bark = true 
+	else
+		Mano Weiler: Au! au AUAU Au AU!! (Pronto! Vem cá Caramelo!!)
+		set LogicGlobals.dogfight_is_running = true
+else
+	Mano Weiler: Auau, AU! (Eai, Chico!)
+
+set in_dialogue = false
+=> END

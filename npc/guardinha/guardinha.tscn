@@ -43,10 +43,12 @@ script = ExtResource("1_ed35p")
 sprite_frames = SubResource("SpriteFrames_7fkmq")
 animation = &"idle"
 
-[node name="Actionable" parent="." instance=ExtResource("6_imnu5")]
+[node name="ActionableControl" type="Node2D" parent="."]
+
+[node name="Actionable" parent="ActionableControl" instance=ExtResource("6_imnu5")]
 dialogue_resource = ExtResource("7_m2fn5")
 trigger_thought = "interagir"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableControl/Actionable"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_f0wkj")

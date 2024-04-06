@@ -28,6 +28,11 @@ Walter: Mano, não é tão difícil ir pra biblioteca estudar...
 
 set walter_speak = false
 set walter_speak = false
+Chico (você): Auau, uAU uAAU! auaA Auu AuuaAu!! (Oh não, quase ia me esquecendo da prova de novo! Tenho que me preparar o quanto antes!!) 
+
+set marcelo_speak = true
+set walter_speak = false
+Marcelo: ... Tá tudo bem aí, Chico?
 
 set LogicGlobals.unlock_calc_study = true
 

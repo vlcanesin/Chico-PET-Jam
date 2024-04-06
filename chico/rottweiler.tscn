@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://c30x8qxdersm4"]
+
+[ext_resource type="Texture2D" uid="uid://r5n101wr8tr2" path="res://assets/sprites/cachorros/dogue1.png" id="1_848b8"]
+[ext_resource type="Texture2D" uid="uid://drcqqbcn64j44" path="res://assets/sprites/cachorros/dogue2.png" id="2_4di8q"]
+[ext_resource type="Texture2D" uid="uid://bwqyi8erxueg2" path="res://assets/sprites/cachorros/dogue3.png" id="3_um1xf"]
+[ext_resource type="Texture2D" uid="uid://cpb6go6i1ludl" path="res://assets/sprites/cachorros/dogue4.png" id="4_fd8pq"]
+[ext_resource type="Texture2D" uid="uid://ci8et2hys0bjr" path="res://assets/sprites/cachorros/dogue5.png" id="5_etltg"]
+[ext_resource type="Texture2D" uid="uid://b5mshh7sx32n1" path="res://assets/sprites/cachorros/dogue6.png" id="6_ahsxh"]
+[ext_resource type="PackedScene" uid="uid://c1cmn04k5c4ts" path="res://common/dialogue_actionable.tscn" id="7_v7rmf"]
+[ext_resource type="Resource" uid="uid://2nwihmc1g1q1" path="res://chico/rottweiler.dialogue" id="8_jw3kd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iawi1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_848b8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4di8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_um1xf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fd8pq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_etltg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ahsxh")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2jf5"]
+size = Vector2(264, 217)
+
+[node name="Rottweiler" type="Node2D"]
+
+[node name="Sprites" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iawi1")
+animation = &"walk"
+frame_progress = 0.00886946
+
+[node name="Actionable" parent="." instance=ExtResource("7_v7rmf")]
+dialogue_resource = ExtResource("8_jw3kd")
+trigger_thought = "interagir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_r2jf5")
