@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d3857yr2eyjnp"]
+[gd_scene load_steps=23 format=3 uid="uid://d3857yr2eyjnp"]
 
 [ext_resource type="Texture2D" uid="uid://xh8e0lpg11qy" path="res://assets/sprites/localidades/fisica.png" id="1_ak7ap"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_34yms"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://ncrmao51v22s" path="res://locais/multidao_fisica.dialogue" id="6_v85cf"]
 [ext_resource type="PackedScene" uid="uid://cepicnrc56pes" path="res://quests/QuestMenu.tscn" id="7_cpf5m"]
 [ext_resource type="Script" path="res://locais/bound_right.gd" id="7_hm5tm"]
+[ext_resource type="Script" path="res://locais/actionable_multidao.gd" id="7_opday"]
 [ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="11_2uau5"]
 [ext_resource type="PackedScene" uid="uid://dxywnd5c3r3m0" path="res://inventory/itemsPrefabs/cafe.tscn" id="11_qop13"]
 [ext_resource type="PackedScene" uid="uid://q8c8p6dbqabf" path="res://npc/multidao_fisica/multidao.tscn" id="12_m0am6"]
@@ -189,6 +190,7 @@ trigger_thought = "pensar"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/WallCollection/BoundLeft/Actionable"]
 position = Vector2(135.5, 128)
 shape = SubResource("RectangleShape2D_5uigf")
+script = ExtResource("7_opday")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Spawn/WallCollection"]
 position = Vector2(5294, 0.986899)
