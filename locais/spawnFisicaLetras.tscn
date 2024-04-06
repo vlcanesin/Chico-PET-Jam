@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d3857yr2eyjnp"]
+[gd_scene load_steps=31 format=3 uid="uid://d3857yr2eyjnp"]
 
 [ext_resource type="Texture2D" uid="uid://xh8e0lpg11qy" path="res://assets/sprites/localidades/fisica.png" id="1_ak7ap"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_34yms"]
@@ -21,6 +21,10 @@
 [ext_resource type="Script" path="res://locais/CafeControl.gd" id="13_as6dh"]
 [ext_resource type="Script" path="res://locais/LapisControl.gd" id="20_dpn8p"]
 [ext_resource type="PackedScene" uid="uid://cwxksp43pjd3q" path="res://inventory/itemsPrefabs/lapis.tscn" id="20_xlf6t"]
+[ext_resource type="PackedScene" uid="uid://deugqlvjyqvmf" path="res://npc/letras/Beatriz.tscn" id="22_1p23n"]
+[ext_resource type="PackedScene" uid="uid://cnqxggxoursr" path="res://npc/letras/Cibele.tscn" id="23_ceogl"]
+[ext_resource type="Script" path="res://locais/AguaControl.gd" id="24_otvjd"]
+[ext_resource type="PackedScene" uid="uid://dupqdlypoonad" path="res://inventory/itemsPrefabs/agua.tscn" id="25_gei7i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlms7"]
 size = Vector2(20, 267)
@@ -273,4 +277,17 @@ script = ExtResource("20_dpn8p")
 [node name="lapis" parent="LapisControl" instance=ExtResource("20_xlf6t")]
 position = Vector2(9383, 170)
 
+[node name="Beatriz" parent="." instance=ExtResource("22_1p23n")]
+position = Vector2(6582, 522)
+
+[node name="Cibele" parent="." instance=ExtResource("23_ceogl")]
+position = Vector2(6760, 521)
+
+[node name="AguaControl" type="Node2D" parent="."]
+script = ExtResource("24_otvjd")
+
+[node name="agua" parent="AguaControl" instance=ExtResource("25_gei7i")]
+position = Vector2(6673, 739)
+
 [connection signal="area_entered" from="LapisControl/lapis" to="LapisControl" method="_on_lapis_area_entered"]
+[connection signal="area_entered" from="AguaControl/agua" to="AguaControl" method="_on_agua_area_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cqexrnq8q4bs"]
+[gd_scene load_steps=18 format=3 uid="uid://cqexrnq8q4bs"]
 
 [ext_resource type="Script" path="res://npc/antonio/antonio_novo.gd" id="1_5qskt"]
 [ext_resource type="Texture2D" uid="uid://coc1rgjls1n04" path="res://assets/sprites/antonio/mimindo/idle_chave1.png" id="1_maesu"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bm0l8lnw61ieb" path="res://assets/sprites/antonio/susto/susto8.png" id="10_j1c0u"]
 [ext_resource type="Texture2D" uid="uid://cyxo4f3cgx6va" path="res://assets/sprites/antonio/susto/susto9.png" id="11_6a551"]
 [ext_resource type="PackedScene" uid="uid://dfygosls2h7bk" path="res://common/bark_actionable.tscn" id="12_mcy8r"]
+[ext_resource type="PackedScene" uid="uid://bawxlwa1mxwp" path="res://inventory/itemsPrefabs/chave.tscn" id="14_6657t"]
+[ext_resource type="Script" path="res://npc/antonio/ChaveControl.gd" id="14_wau07"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4yroy"]
 animations = [{
@@ -69,7 +71,8 @@ script = ExtResource("1_5qskt")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4yroy")
 animation = &"susto"
-frame_progress = 0.262097
+frame = 6
+frame_progress = 0.619532
 
 [node name="Actionable" parent="." instance=ExtResource("12_mcy8r")]
 trigger_thought = "latir"
@@ -81,5 +84,14 @@ shape = SubResource("RectangleShape2D_tot44")
 [node name="Cooldown" type="Timer" parent="."]
 one_shot = true
 
+[node name="Node" type="Node2D" parent="."]
+z_index = 10
+script = ExtResource("14_wau07")
+
+[node name="Chave" parent="Node" instance=ExtResource("14_6657t")]
+position = Vector2(-91, 164)
+
 [connection signal="heard_bark" from="Actionable" to="." method="_on_actionable_heard_bark"]
+[connection signal="heard_bark" from="Actionable" to="Node" method="_on_actionable_heard_bark"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="area_entered" from="Node/Chave" to="Node" method="_on_chave_area_entered"]

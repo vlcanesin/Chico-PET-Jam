@@ -1,0 +1,47 @@
+~ start
+set in_dialogue = true
+
+if not LogicGlobals.unlock_water:
+	set cibele_speak = true
+	set beatriz_speak = false
+	Cibele: Tadinho, ele deve estar morrendo de sede!
+
+	set cibele_speak = false
+	set beatriz_speak = true
+	Beatriz: Deixei minha garrafinha de água dentro do bar da letras
+
+	set beatriz_speak = false
+	Beatriz: *tenta abrir a porta*
+
+	set beatriz_speak = true
+	Beatriz: Ah! Está trancada!
+
+	set cibele_speak = true
+	set beatriz_speak = false
+	Cibele: Verdade, você trancou e deixou a chave com o sr. Antônio
+
+	set cibele_speak = false
+	set beatriz_speak = false
+	Chico (Você): uauauA uaUaAUAU, aa uaua ua AUU (Tenho que procurar o Antônio, estou morrendo de sede MESMO)
+
+	set LogicGlobals.unlock_water = true
+
+else:
+	if not LogicGlobals.chico_iswith_key:
+		set cibele_speak = true
+		set beatriz_speak = false
+		Cibele: Onde é que tá o sr. Antônio mesmo?
+		
+		set cibele_speak = false
+		set beatriz_speak = true
+		Beatriz: Ele gosta de ficar sentado nos bancos do lado do RU3, tirando uma sonequinha
+		set beatriz_speak = false
+		
+	else:
+		set cibele_speak = false
+		set beatriz_speak = true
+		Beatriz: Missão cumprida!
+		set beatriz_speak = false
+
+set in_dialogue = false
+=> END

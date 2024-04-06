@@ -10,6 +10,8 @@ var marcelo_speak: bool = false  # npc_5
 var vivi_speak: bool = false     # npc_6
 var fernando_speak: bool = false
 var fabricio_speak: bool = false
+var cibele_speak: bool = false
+var beatriz_speak: bool = false
 
 var guardinha_speak: bool = false	 # guardinha
 
