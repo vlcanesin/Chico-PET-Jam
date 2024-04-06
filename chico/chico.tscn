@@ -264,7 +264,9 @@ one_way_collision_margin = 0.0
 [node name="WalkSprite" type="AnimatedSprite2D" parent="."]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_aoagg")
-animation = &"right"
+animation = &"MIJAR"
+frame = 3
+frame_progress = 0.15855
 
 [node name="ActionableFinder" type="Area2D" parent="."]
 collision_layer = 0

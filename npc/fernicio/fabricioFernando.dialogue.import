@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bjuxsr2dddftv"
+path="res://.godot/imported/fabricioFernando.dialogue-7f61062e3b61875a9831e4fdad05771d.tres"
+
+[deps]
+
+source_file="res://npc/fernicio/fabricioFernando.dialogue"
+dest_files=["res://.godot/imported/fabricioFernando.dialogue-7f61062e3b61875a9831e4fdad05771d.tres"]
+
+[params]
+
+defaults=true

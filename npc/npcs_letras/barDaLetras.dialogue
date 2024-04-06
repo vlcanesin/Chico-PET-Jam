@@ -21,26 +21,3 @@ set LogicGlobals.unlock_water = true
 set in_dialogue = false
 set funcionaria_letras1_speak = false
 => END
-~ without_calc
-set in_dialogue = true
-
-set funcionaria_letras1_speak = true
-set funcionaria_letras2_speak = false
-Cibele: Ps ps ps, vem cá Chico.
-
-set funcionaria_letras1_speak = false
-set funcionaria_letras2_speak = true
-Anitta: O nome dele não era Tigrinho?
-
-set funcionaria_letras1_speak = true
-set funcionaria_letras2_speak = false
-Cibele: Olha, também tem gente que chama ele de Cadu.
-
-set funcionaria_letras1_speak = false
-set funcionaria_letras2_speak = true
-Anitta: Tu deve ta pensando em outro cachorro.
-Anitta: Ou talvez ele se transforme.
-
-set in_dialogue = false
-set funcionaria_letras2_speak = false
-=> END

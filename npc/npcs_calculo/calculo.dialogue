@@ -1,5 +1,4 @@
 ~ start
-~ without_calc
 set in_dialogue = true
 
 set marcelo_speak = true

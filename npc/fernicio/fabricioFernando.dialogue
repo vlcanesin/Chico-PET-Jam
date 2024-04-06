@@ -1,0 +1,42 @@
+~ start
+
+set in_dialogue = true
+
+set fernando_speak = true
+set fabricio_speak = false
+Fernando: Tu vai na roda de poesia hoje, na toca da letras?
+
+set fernando_speak = false
+set fabricio_speak = true
+Fabricio: Eu não tenho nenhum poema pronto pra ler.
+
+set fernando_speak = true
+set fabricio_speak = false
+Joao: A ideia é ser ao vivo. Freestyle.
+Fernando: Vai ter uma mesa e um lápis pra escrever o poema na hora.
+
+set fernando_speak = false
+set fabricio_speak = true
+Fabricio: E papel?
+
+set fernando_speak = true
+set fabricio_speak = false
+Fernando: Tem que trazer, ué. Quem vem pra faculdade sem papel?
+
+set fernando_speak = false
+set fabricio_speak = true
+Fabricio: Mas eles fornecem lápis? Quem vem pra faculdade sem lápis?
+
+set fernando_speak = true
+set fabricio_speak = false
+Fernando: Tu nunca foi monitor né? Tem gente que vem pra prova sem lápis.
+
+set fernando_speak = false
+set fabricio_speak = true
+Fabricio:  ...de repente eu sinto minha síndrome de impostor evaporando.
+
+set LogicGlobals.unlock_calc_pencil = true
+
+set in_dialogue = false
+set fabricio_speak = false
+=> END
