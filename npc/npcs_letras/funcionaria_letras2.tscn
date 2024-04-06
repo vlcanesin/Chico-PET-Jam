@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://cet3wwgxlhv7e"]
+
+[ext_resource type="Script" path="res://npc/npcs_letras/funcionaria_letras2.gd" id="1_yp0vw"]
+[ext_resource type="Texture2D" uid="uid://bot8p37gs7p3t" path="res://assets/sprites/npc_letras2/npc_letras2_idle1.png" id="2_atio8"]
+[ext_resource type="Texture2D" uid="uid://1h231ta44bfr" path="res://assets/sprites/npc_letras2/npc_letras2_idle2.png" id="3_lbr22"]
+[ext_resource type="Texture2D" uid="uid://cmo67lm751ahb" path="res://assets/sprites/npc_letras2/npc_letras2_speak1.png" id="4_lcj15"]
+[ext_resource type="Texture2D" uid="uid://i87rs7wi8rqm" path="res://assets/sprites/npc_letras2/npc_letras2_speak2.png" id="5_x63mr"]
+[ext_resource type="PackedScene" uid="uid://c1cmn04k5c4ts" path="res://common/dialogue_actionable.tscn" id="6_s32he"]
+[ext_resource type="Resource" uid="uid://ckugdcgeoxqob" path="res://npc/npcs_letras/barDaLetras.dialogue" id="7_d11ub"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ilvuf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_atio8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lbr22")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lcj15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x63mr")
+}],
+"loop": true,
+"name": &"speak",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibpxo"]
+size = Vector2(217, 403)
+
+[node name="FuncionariaLetras2" type="Node2D"]
+script = ExtResource("1_yp0vw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ilvuf")
+animation = &"speak"
+frame = 1
+frame_progress = 0.739435
+flip_h = true
+
+[node name="Actionable" parent="." instance=ExtResource("6_s32he")]
+dialogue_resource = ExtResource("7_d11ub")
+trigger_thought = "interagir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ibpxo")

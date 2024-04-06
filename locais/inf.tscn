@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=27 format=3 uid="uid://dm687nmo3yssh"]
 
 [ext_resource type="Texture2D" uid="uid://bynpflvyq7o0t" path="res://assets/sprites/localidades/inf.png" id="1_8vryw"]
@@ -10,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://c7wuv3mo23tjc" path="res://npc/claudio_diniz/claudio_diniz.tscn" id="8_cu5gc"]
 [ext_resource type="PackedScene" uid="uid://ynjfw544bco8" path="res://npc/npcs_inf/luigi_inf.tscn" id="9_wm184"]
 [ext_resource type="PackedScene" uid="uid://dxqlaof2usdhq" path="res://npc/npcs_inf/jao_inf.tscn" id="10_nrevl"]
+
+
+
 [ext_resource type="PackedScene" path="res://chico/caramelo.tscn" id="11_vllis"]
 [ext_resource type="PackedScene" path="res://chico/rottweiler.tscn" id="12_skc8k"]
 [ext_resource type="Script" path="res://chico/rottweiler.gd" id="13_70a0t"]
@@ -132,6 +136,7 @@ position = Vector2(10779, 282)
 [node name="Jao" parent="." instance=ExtResource("10_nrevl")]
 position = Vector2(10550, 278)
 
+
 [node name="Caramelo" parent="." node_paths=PackedStringArray("node_to_follow") instance=ExtResource("11_vllis")]
 position = Vector2(2229, 419)
 node_to_follow = NodePath("../Chico")
@@ -172,10 +177,13 @@ script = ExtResource("14_1ch6i")
 script = ExtResource("17_d1vvb")
 
 [node name="inventoryGui" parent="UI" instance=ExtResource("18_2rfet")]
+
 offset_left = 40.0
 offset_top = 26.0
 offset_right = 40.0
 offset_bottom = 26.0
+
 script = ExtResource("19_k2fbh")
 
 [connection signal="area_entered" from="AntonControl/anton" to="AntonControl" method="_on_anton_area_entered"]
+

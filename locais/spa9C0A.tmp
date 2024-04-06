@@ -30,7 +30,7 @@ size = Vector2(155, 828)
 size = Vector2(193, 59)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kf0qh"]
-size = Vector2(430, 254.5)
+size = Vector2(430, 145)
 
 [node name="SpawnFisicaLetras" type="Node2D"]
 
@@ -189,9 +189,6 @@ z_index = 2
 position = Vector2(2169, 366)
 
 [node name="QuestMenu" parent="." instance=ExtResource("7_cpf5m")]
-z_index = 1
-offset_left = 1.0
-offset_right = 1.0
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("5_pbu2o")
@@ -223,12 +220,13 @@ position = Vector2(6458, 499)
 position = Vector2(6259, 503)
 
 [node name="WaterActionable" type="Area2D" parent="Funcionarias_da_Letras"]
-position = Vector2(6352, 671)
 script = ExtResource("18_jnnxj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Funcionarias_da_Letras/WaterActionable"]
-position = Vector2(2, 6.75)
+position = Vector2(6352, 696.5)
 shape = SubResource("RectangleShape2D_kf0qh")
 
 [node name="agua" parent="Funcionarias_da_Letras/WaterActionable/CollisionShape2D" instance=ExtResource("19_2flbg")]
-position = Vector2(-6, 214.25)
+position = Vector2(5, 199.5)
+
+[connection signal="area_entered" from="Funcionarias_da_Letras/WaterActionable" to="Chico" method="_on_water_actionable_area_entered"]
