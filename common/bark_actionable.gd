@@ -6,7 +6,6 @@ signal heard_bark
 
 func action() -> void:
 	heard_bark.emit()
-	self.position.y = 100000
 
 func get_thought() -> String:
 	return trigger_thought

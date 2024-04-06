@@ -10,8 +10,6 @@ var marcelo_speak: bool = false  # npc_5
 var vivi_speak: bool = false     # npc_6
 
 var guardinha_speak: bool = false	 # guardinha
-var funcionaria_letras1_speak: bool = false # letras1
-var funcionaria_letras2_speak: bool = false # letras2
 
 var bernardo_should_run: bool = false
 

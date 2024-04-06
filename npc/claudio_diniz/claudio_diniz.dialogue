@@ -1,5 +1,4 @@
 ~ start
-~ without_calc
 set in_dialogue = true
 
 set claudio_diniz_speak = true
