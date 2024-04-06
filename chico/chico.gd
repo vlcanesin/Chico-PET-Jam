@@ -64,7 +64,7 @@ func _unhandled_input(_event):
 
 func _ready():
 	is_sleeping = true
-	sleep_timer.start(0)  # Começa dormindo
+	#sleep_timer.start(0)  # Começa dormindo
 	_walk_sprite.play("sleep")
 	_bark_bark.visible = false
 	_thought_node.visible = false
