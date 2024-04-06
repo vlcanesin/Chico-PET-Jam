@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://d3857yr2eyjnp"]
+[gd_scene load_steps=25 format=3 uid="uid://d3857yr2eyjnp"]
 
 [ext_resource type="Texture2D" uid="uid://xh8e0lpg11qy" path="res://assets/sprites/localidades/fisica.png" id="1_ak7ap"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_34yms"]

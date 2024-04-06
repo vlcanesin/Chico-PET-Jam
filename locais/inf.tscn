@@ -140,6 +140,7 @@ position = Vector2(10779, 282)
 [node name="Jao" parent="." instance=ExtResource("10_nrevl")]
 position = Vector2(10550, 278)
 
+
 [node name="Caramelo" parent="." node_paths=PackedStringArray("node_to_follow") instance=ExtResource("11_vllis")]
 position = Vector2(2229, 419)
 node_to_follow = NodePath("../Chico")
@@ -180,10 +181,12 @@ script = ExtResource("14_1ch6i")
 script = ExtResource("17_d1vvb")
 
 [node name="inventoryGui" parent="UI" instance=ExtResource("18_2rfet")]
+
 offset_left = 40.0
 offset_top = 26.0
 offset_right = 40.0
 offset_bottom = 26.0
+
 script = ExtResource("19_k2fbh")
 
 [node name="SceneActionable2" parent="." instance=ExtResource("3_xqw2u")]
@@ -205,3 +208,4 @@ position = Vector2(-139, 55)
 shape = SubResource("RectangleShape2D_gb4mo")
 
 [connection signal="area_entered" from="AntonControl/anton" to="AntonControl" method="_on_anton_area_entered"]
+
