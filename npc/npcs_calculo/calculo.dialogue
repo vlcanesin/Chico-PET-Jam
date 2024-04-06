@@ -32,6 +32,7 @@ Chico (você): Auau, uAU uAAU! auaA Auu AuuaAu!! (Oh não, quase ia me esquecend
 set marcelo_speak = true
 set walter_speak = false
 Marcelo: ... Tá tudo bem aí, Chico?
+set marcelo_speak = false
 
 set LogicGlobals.unlock_calc_study = true
 

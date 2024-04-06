@@ -32,6 +32,7 @@ animation = &"vucovuco"
 [node name="Actionable" type="Area2D" parent="."]
 collision_layer = 2
 script = ExtResource("4_kapv5")
+trigger_thought = "mijar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 position = Vector2(-13.5, 10.5)

@@ -49,10 +49,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6c64j"]
-size = Vector2(248, 179)
+size = Vector2(248, 250.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gb4mo"]
-size = Vector2(293, 152)
+size = Vector2(293, 235)
 
 [node name="Inf" type="Node2D"]
 script = ExtResource("1_528ty")
@@ -192,16 +192,17 @@ scene_path = "res://finais/montanha_final.tscn"
 direction = "seta-esq"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneActionable2"]
-position = Vector2(3, -2)
+position = Vector2(3, -37.75)
 shape = SubResource("RectangleShape2D_6c64j")
 
 [node name="Actionable" parent="." instance=ExtResource("23_bo7vs")]
 position = Vector2(944, 513)
+collision_mask = 0
 dialogue_resource = ExtResource("24_sit7t")
 trigger_thought = "pensar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
-position = Vector2(-139, 55)
+position = Vector2(-139, 13.5)
 shape = SubResource("RectangleShape2D_gb4mo")
 
 [connection signal="area_entered" from="AntonControl/anton" to="AntonControl" method="_on_anton_area_entered"]

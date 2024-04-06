@@ -42,6 +42,8 @@ else:
 		set beatriz_speak = true
 		Beatriz: Missão cumprida!
 		set beatriz_speak = false
+		
+		Narrador: Habilidade desbloqueada: MIJAR (aperte M)
 
 set in_dialogue = false
 => END

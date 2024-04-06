@@ -14,29 +14,30 @@ if LogicGlobals.unlock_calc_study
 	set fabricio_speak = false
 	Fernando: A ideia é ser ao vivo. Freestyle.
 
-	set fernando_speak = false
-	set fabricio_speak = true
+	set fernando_speak = true
+	set fabricio_speak = false
 	Fernando: Vai ter uma mesa e um lápis pra escrever o poema na hora.
 
-	set fernando_speak = true
-	set fabricio_speak = false
+	set fernando_speak = false
+	set fabricio_speak = true
 	Fabricio: E papel?
 
-	set fernando_speak = false
-	set fabricio_speak = true
+	set fernando_speak = true
+	set fabricio_speak = false
 	Fernando: Tem que trazer, ué. Quem vem pra faculdade sem papel?
 
-	set fernando_speak = true
-	set fabricio_speak = false
-	Fabricio: Mas eles fornecem lápis? Quem vem pra faculdade sem lápis?
-
 	set fernando_speak = false
 	set fabricio_speak = true
-	Fernando: Tu nunca foi monitor né? Tem gente que vem pra prova sem lápis.
+	Fabricio: Mas eles fornecem lápis? Quem vem pra faculdade sem lápis?
 
 	set fernando_speak = true
 	set fabricio_speak = false
-	Fabricio: ...de repente eu sinto minha síndrome de impostor evaporando. 
+	Fernando: Tu nunca foi monitor né? Tem gente que vem pra prova sem lápis.
+
+	set fernando_speak = false
+	set fabricio_speak = false
+	Chico (Você): Au, auauau AUau... (Ei, não fala assim de m...)
+	Chico (Você): auaua, auua uAU aU au (Pera, eu preciso de um lápis pra fazer a prova)
 	
 	set LogicGlobals.unlock_calc_pencil = true
 

@@ -45,20 +45,29 @@ theme = SubResource("Theme_i6ds7")
 text = "<- -> : movimentação no mapa
 "
 
+[node name="RichTextLabel6" type="RichTextLabel" parent="."]
+offset_left = 438.0
+offset_top = 336.0
+offset_right = 757.0
+offset_bottom = 395.0
+theme = SubResource("Theme_i6ds7")
+text = "I : inventário
+"
+
 [node name="RichTextLabel5" type="RichTextLabel" parent="."]
 offset_left = 499.0
-offset_top = 339.0
+offset_top = 399.0
 offset_right = 738.0
-offset_bottom = 398.0
+offset_bottom = 458.0
 theme = SubResource("Theme_i6ds7")
 text = "L : latir
 "
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
 offset_left = 511.0
-offset_top = 411.0
+offset_top = 464.0
 offset_right = 692.0
-offset_bottom = 470.0
+offset_bottom = 523.0
 theme = SubResource("Theme_c74ty")
 theme_override_colors/default_color = Color(0.592157, 0.592157, 0.592157, 1)
 text = "M: ???
