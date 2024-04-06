@@ -5,10 +5,7 @@ extends Area2D
 @export var trigger_thought: String = ""
 
 func action() -> void:
-	if not LogicGlobals.unlock_calc_study:
-		dialogue_start = "without_calc"
-	else:
-		dialogue_start = "start"
+	print("oi?")
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
 	#speak.emit()
 

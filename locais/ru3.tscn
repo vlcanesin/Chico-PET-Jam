@@ -1,6 +1,4 @@
-
 [gd_scene load_steps=16 format=3 uid="uid://dbdy352vu5amv"]
-
 
 [ext_resource type="Texture2D" uid="uid://bv2aykxg50tv" path="res://assets/sprites/localidades/corredor_ru3.png" id="1_6ia3r"]
 [ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="2_eme87"]
@@ -10,12 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cqexrnq8q4bs" path="res://npc/antonio/antonio_novo.tscn" id="3_xphwq"]
 [ext_resource type="PackedScene" uid="uid://chb25bncs4wd8" path="res://npc/npcs_ru3/rosa_ru3.tscn" id="5_wma1d"]
 [ext_resource type="PackedScene" uid="uid://c4tmtk5sfvq1i" path="res://npc/npcs_ru3/vivi_ru3.tscn" id="6_x8und"]
-
 [ext_resource type="Script" path="res://locais/UI.gd" id="8_prbu1"]
 [ext_resource type="PackedScene" uid="uid://c74bpv2deaixx" path="res://inventory/inventoryGui.tscn" id="9_uyio7"]
 [ext_resource type="Script" path="res://inventory/inventoryGui.gd" id="10_mk8e8"]
 [ext_resource type="PackedScene" uid="uid://cepicnrc56pes" path="res://quests/QuestMenu.tscn" id="11_666c4"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qufse"]
 size = Vector2(286, 142)
@@ -95,17 +91,13 @@ position = Vector2(7572, 338)
 position = Vector2(7385, 337)
 
 [node name="UI" type="CanvasLayer" parent="."]
-
 script = ExtResource("8_prbu1")
 
 [node name="inventoryGui" parent="UI" instance=ExtResource("9_uyio7")]
-
 offset_left = 40.0
 offset_top = 26.0
 offset_right = 40.0
 offset_bottom = 26.0
-
 script = ExtResource("10_mk8e8")
 
 [node name="QuestMenu" parent="." instance=ExtResource("11_666c4")]
-
