@@ -4,6 +4,8 @@ set LogicGlobals.enable_collision_actionables = false
 
 Bernardo: Meu TRI!!! Volta aqui, macaco!
 
+set LogicGlobals.unlock_tri = true
+
 set bernardo_should_run = true
 set in_dialogue = false
 => END

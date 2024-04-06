@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dylrd4cv0ie2c"]
+
+[ext_resource type="Script" path="res://finais/montanha_final.gd" id="1_c00lm"]
+[ext_resource type="Texture2D" uid="uid://3cw6uhyaouyu" path="res://assets/finais/montanha.png" id="2_2svf1"]
+
+[node name="MontanhaFinal" type="Node2D"]
+script = ExtResource("1_c00lm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575, 324)
+scale = Vector2(1.82445, 0.721788)
+texture = ExtResource("2_2svf1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 289.0
+offset_top = 612.0
+offset_right = 700.0
+offset_bottom = 652.0
+text = "Final da montanha..."

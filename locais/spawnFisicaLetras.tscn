@@ -1,24 +1,24 @@
-[gd_scene load_steps=24 format=3 uid="uid://d3857yr2eyjnp"]
+[gd_scene load_steps=25 format=3 uid="uid://d3857yr2eyjnp"]
 
 [ext_resource type="Texture2D" uid="uid://xh8e0lpg11qy" path="res://assets/sprites/localidades/fisica.png" id="1_ak7ap"]
 [ext_resource type="PackedScene" uid="uid://r6tpqlaxacs2" path="res://chico/chico.tscn" id="2_34yms"]
 [ext_resource type="PackedScene" uid="uid://qrksu8tbyb85" path="res://common/height_actionable.tscn" id="2_xfo38"]
 [ext_resource type="Script" path="res://locais/boundl_eft.gd" id="3_ru378"]
+[ext_resource type="PackedScene" uid="uid://c1cmn04k5c4ts" path="res://common/dialogue_actionable.tscn" id="5_1k71b"]
 [ext_resource type="PackedScene" uid="uid://c74bpv2deaixx" path="res://inventory/inventoryGui.tscn" id="5_b0gpo"]
 [ext_resource type="Script" path="res://locais/UI.gd" id="5_pbu2o"]
 [ext_resource type="PackedScene" uid="uid://c3q0nr25ltj0k" path="res://npc/npcs_calculo/walter_calculo.tscn" id="5_wtpws"]
 [ext_resource type="PackedScene" uid="uid://bcn5aghu6po44" path="res://npc/npcs_calculo/marcelo_calculo.tscn" id="6_046g8"]
 [ext_resource type="Script" path="res://inventory/inventoryGui.gd" id="6_a64pp"]
+[ext_resource type="Resource" uid="uid://ncrmao51v22s" path="res://locais/multidao_fisica.dialogue" id="6_v85cf"]
 [ext_resource type="PackedScene" uid="uid://cepicnrc56pes" path="res://quests/QuestMenu.tscn" id="7_cpf5m"]
+[ext_resource type="Script" path="res://locais/bound_right.gd" id="7_hm5tm"]
+[ext_resource type="Script" path="res://locais/actionable_multidao.gd" id="7_opday"]
+[ext_resource type="Script" path="res://locais/sleep.gd" id="10_gpcfr"]
 [ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="11_2uau5"]
 [ext_resource type="PackedScene" uid="uid://dxywnd5c3r3m0" path="res://inventory/itemsPrefabs/cafe.tscn" id="11_qop13"]
 [ext_resource type="PackedScene" uid="uid://q8c8p6dbqabf" path="res://npc/multidao_fisica/multidao.tscn" id="12_m0am6"]
 [ext_resource type="Script" path="res://locais/CafeControl.gd" id="13_as6dh"]
-[ext_resource type="PackedScene" uid="uid://cwxksp43pjd3q" path="res://inventory/itemsPrefabs/lapis.tscn" id="15_mpg5x"]
-[ext_resource type="PackedScene" uid="uid://30rcsuqtxlq8" path="res://npc/npcs_letras/funcionaria_letras1.tscn" id="17_qqjmx"]
-[ext_resource type="PackedScene" uid="uid://cet3wwgxlhv7e" path="res://npc/npcs_letras/funcionaria_letras2.tscn" id="18_jl2xy"]
-[ext_resource type="Script" path="res://locais/WaterActionable.gd" id="18_jnnxj"]
-[ext_resource type="PackedScene" uid="uid://dupqdlypoonad" path="res://inventory/itemsPrefabs/agua.tscn" id="19_2flbg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlms7"]
 size = Vector2(20, 267)
@@ -26,11 +26,14 @@ size = Vector2(20, 267)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0rns"]
 size = Vector2(155, 828)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8tjd"]
-size = Vector2(193, 59)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uigf"]
+size = Vector2(291, 276)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf0qh"]
-size = Vector2(430, 254.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8tjd"]
+size = Vector2(193, 234.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dme70"]
+size = Vector2(263, 146.191)
 
 [node name="SpawnFisicaLetras" type="Node2D"]
 
@@ -76,31 +79,16 @@ height = 160
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable5"]
 shape = SubResource("RectangleShape2D_rlms7")
 
-[node name="HeightActionable6" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
-position = Vector2(5981, 715.91)
-height = 200
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable6"]
-shape = SubResource("RectangleShape2D_rlms7")
-
-[node name="HeightActionable7" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
-position = Vector2(7220, 725.367)
-height = 200
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable7"]
-position = Vector2(0, -0.411654)
-shape = SubResource("RectangleShape2D_rlms7")
-
 [node name="HeightActionable8" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
 position = Vector2(7241, 653.324)
-height = 180
+height = 160
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable8"]
 shape = SubResource("RectangleShape2D_rlms7")
 
 [node name="HeightActionable9" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
 position = Vector2(7340, 654.311)
-height = 180
+height = 160
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable9"]
 shape = SubResource("RectangleShape2D_rlms7")
@@ -139,6 +127,47 @@ position = Vector2(7601, 475.683)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable14"]
 shape = SubResource("RectangleShape2D_rlms7")
 
+[node name="HeightActionable15" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
+position = Vector2(11323, 714.511)
+height = 160
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable15"]
+shape = SubResource("RectangleShape2D_rlms7")
+
+[node name="HeightActionable16" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
+position = Vector2(11202, 654.311)
+height = 120
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable16"]
+shape = SubResource("RectangleShape2D_rlms7")
+
+[node name="HeightActionable17" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
+position = Vector2(11301, 654.311)
+height = 120
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable17"]
+shape = SubResource("RectangleShape2D_rlms7")
+
+[node name="HeightActionable18" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
+position = Vector2(11082, 595.097)
+height = 60
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable18"]
+shape = SubResource("RectangleShape2D_rlms7")
+
+[node name="HeightActionable19" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
+position = Vector2(11182, 595.098)
+height = 60
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable19"]
+shape = SubResource("RectangleShape2D_rlms7")
+
+[node name="HeightActionable20" parent="Spawn/HeightCollection" instance=ExtResource("2_xfo38")]
+position = Vector2(11060, 595.097)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/HeightCollection/HeightActionable20"]
+shape = SubResource("RectangleShape2D_rlms7")
+
 [node name="WallCollection" type="Node2D" parent="Spawn"]
 
 [node name="BoundLeft" type="StaticBody2D" parent="Spawn/WallCollection"]
@@ -158,9 +187,19 @@ position = Vector2(-119, -77)
 [node name="Multidao3" parent="Spawn/WallCollection/BoundLeft" instance=ExtResource("12_m0am6")]
 position = Vector2(-99, 114)
 
+[node name="Actionable" parent="Spawn/WallCollection/BoundLeft" instance=ExtResource("5_1k71b")]
+dialogue_resource = ExtResource("6_v85cf")
+trigger_thought = "pensar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/WallCollection/BoundLeft/Actionable"]
+position = Vector2(135.5, 128)
+shape = SubResource("RectangleShape2D_5uigf")
+script = ExtResource("7_opday")
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="Spawn/WallCollection"]
-position = Vector2(5331, -81.9122)
+position = Vector2(5293, 0.986899)
 scale = Vector2(1, 0.986894)
+script = ExtResource("7_hm5tm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/WallCollection/StaticBody2D2"]
 position = Vector2(0, -1)
@@ -177,6 +216,26 @@ new_position = Vector2(2887, 433)
 position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_f8tjd")
 
+[node name="SceneActionable2" parent="Spawn" instance=ExtResource("11_2uau5")]
+position = Vector2(5465, 195.405)
+scale = Vector2(1, 0.986894)
+scene_path = "res://finais/tri_final.tscn"
+direction = "seta-dir"
+new_position = Vector2(2887, 433)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/SceneActionable2"]
+position = Vector2(0.5, 88.75)
+shape = SubResource("RectangleShape2D_f8tjd")
+
+[node name="SleepActionable" type="Area2D" parent="Spawn"]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("10_gpcfr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn/SleepActionable"]
+position = Vector2(-1508.5, 63.0957)
+shape = SubResource("RectangleShape2D_dme70")
+
 [node name="Chico" parent="." instance=ExtResource("2_34yms")]
 position = Vector2(4303, 435)
 
@@ -189,9 +248,6 @@ z_index = 2
 position = Vector2(2169, 366)
 
 [node name="QuestMenu" parent="." instance=ExtResource("7_cpf5m")]
-z_index = 1
-offset_left = 1.0
-offset_right = 1.0
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("5_pbu2o")
@@ -208,27 +264,3 @@ script = ExtResource("13_as6dh")
 
 [node name="cafe" parent="CafeControl" instance=ExtResource("11_qop13")]
 position = Vector2(498, 447)
-
-[node name="LapisControl" type="Node2D" parent="."]
-
-[node name="lapis" parent="LapisControl" instance=ExtResource("15_mpg5x")]
-position = Vector2(9372, 168)
-
-[node name="Funcionarias_da_Letras" type="Node2D" parent="."]
-
-[node name="FuncionariaLetras1" parent="Funcionarias_da_Letras" instance=ExtResource("17_qqjmx")]
-position = Vector2(6458, 499)
-
-[node name="FuncionariaLetras2" parent="Funcionarias_da_Letras" instance=ExtResource("18_jl2xy")]
-position = Vector2(6259, 503)
-
-[node name="WaterActionable" type="Area2D" parent="Funcionarias_da_Letras"]
-position = Vector2(6352, 671)
-script = ExtResource("18_jnnxj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Funcionarias_da_Letras/WaterActionable"]
-position = Vector2(2, 6.75)
-shape = SubResource("RectangleShape2D_kf0qh")
-
-[node name="agua" parent="Funcionarias_da_Letras/WaterActionable/CollisionShape2D" instance=ExtResource("19_2flbg")]
-position = Vector2(-6, 214.25)

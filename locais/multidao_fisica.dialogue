@@ -1,0 +1,7 @@
+~ start
+set in_dialogue = true
+
+Chico (Você): AuauA, au Au! Auaua uaU, auaua aU auAu... (Nossa, quanta gente! Eles devem estar saindo da aula, as coisas devem se acalmar daqui a pouco...)
+
+set in_dialogue = false
+=> END

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cepicnrc56pes"]
+[gd_scene load_steps=37 format=3 uid="uid://cepicnrc56pes"]
 
 [ext_resource type="FontFile" uid="uid://bo0gtln8hpyk" path="res://assets/fonts/Rev Mini Pixel.ttf" id="1_b5rl1"]
 [ext_resource type="Script" path="res://addons/markdownlabel/markdownlabel.gd" id="2_1euvc"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bt3yfwkanf7kq" path="res://assets/sprites/IconesMenu/quadro_botao.png" id="11_h4jqy"]
 [ext_resource type="Script" path="res://quests/ProvaCalculo.gd" id="13_78c1j"]
 [ext_resource type="Script" path="res://quests/Estudar.gd" id="14_0l4ip"]
+[ext_resource type="Script" path="res://quests/PegueTRI.gd" id="15_gyyeo"]
 
 [sub_resource type="Theme" id="Theme_lcvnd"]
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
@@ -305,14 +306,7 @@ offset_right = 273.0
 offset_bottom = 261.0
 bbcode_enabled = true
 text = "[b]- Pegue o TRI \"emprestado\"[/b]"
-script = ExtResource("2_1euvc")
-markdown_text = "**- Pegue o TRI \"emprestado\"**"
-h1 = SubResource("Resource_mubox")
-h2 = SubResource("Resource_qs4xu")
-h3 = SubResource("Resource_vcig3")
-h4 = SubResource("Resource_uujun")
-h5 = SubResource("Resource_mjfe0")
-h6 = SubResource("Resource_hqulx")
+script = ExtResource("15_gyyeo")
 
 [node name="BotaoQuests" type="NinePatchRect" parent="."]
 visible = false

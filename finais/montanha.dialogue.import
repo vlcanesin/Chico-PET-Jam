@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://eyorq1fi7wu0"
+path="res://.godot/imported/montanha.dialogue-0b34ba63993f2e98d3e3a776769f6680.tres"
+
+[deps]
+
+source_file="res://finais/montanha.dialogue"
+dest_files=["res://.godot/imported/montanha.dialogue-0b34ba63993f2e98d3e3a776769f6680.tres"]
+
+[params]
+
+defaults=true

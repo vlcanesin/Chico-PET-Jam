@@ -25,6 +25,7 @@ var is_barking: bool = false
 @onready var actionable_finder: Area2D = $ActionableFinder
 @onready var height_finder: Area2D = $HeightFinder
 @onready var instant_finder: Area2D = $InstantFinder
+@onready var mimir_finder: Area2D = $MimirFinder
 @onready var sleep_timer: Timer = $SleepTimer
 @onready var MIJO_timer: Timer = $MIJOTimer
 @onready var bark_timer: Timer = $BarkTimer
@@ -36,7 +37,7 @@ func _unhandled_input(_event):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0 and not (actionables[0].has_method("only_in_bark") or actionables[0].has_method("only_in_pee")):
 			actionables[0].action()
-	if Input.is_key_pressed(KEY_M) and not is_sleeping and MIJO_timer.time_left <= 0.01 and LogicGlobals.unlock_MIJAR:
+	if Input.is_key_pressed(KEY_M) and not is_sleeping and MIJO_timer.time_left <= 0.01:
 		MIJO_sound.play()
 		is_sleeping = false
 		is_MIJANDO = true
@@ -63,13 +64,12 @@ func _unhandled_input(_event):
 
 func _ready():
 	is_sleeping = true
-	sleep_timer.start(0)  # Começa dormindo
+	#sleep_timer.start(0)  # Começa dormindo
 	_walk_sprite.play("sleep")
 	_bark_bark.visible = false
 	_thought_node.visible = false
 	position = LogicGlobals.chico_start_position
 	default_height = self.position.y
-	LogicGlobals.unlock_calc_study = true
 
 func _process(delta):
 	_update_global_var_position()
@@ -197,6 +197,9 @@ func _on_sleep_timer_timeout():
 	is_sleeping = true
 	_fix_orientation()
 	_walk_sprite.play("sleep")
+	var actionables = mimir_finder.get_overlapping_areas()
+	if actionables.size() > 0:
+		actionables[0].action()
 
 func _on_MIJO_timer_timeout():
 	MIJO_timer.stop()
@@ -212,4 +215,3 @@ func _on_bark_timer_timeout():
 func _on_hitbox_area_entered(area):
 	if area.has_method("collect"):
 		area.collect(inventory)
-

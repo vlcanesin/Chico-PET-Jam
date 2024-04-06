@@ -9,6 +9,10 @@ var dist_traveled: float = 0.0
 
 var grow: bool = false
 
+func _ready():
+	if LogicGlobals.chico_iswith_tri:
+		position.y = 10000
+
 func _process(delta):
 	if follows_sagui:
 		var dx = SPEED*delta
@@ -30,3 +34,6 @@ func _on_collision_actionable_collision():
 
 func _on_npctri_arrived_at_tri():
 	position.y = 10000
+
+func _on_tri_area_entered(area):
+	LogicGlobals.chico_iswith_tri = true

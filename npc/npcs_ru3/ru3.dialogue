@@ -1,5 +1,4 @@
 ~ start
-~ without_calc
 set in_dialogue = true
 
 set rosa_speak = true

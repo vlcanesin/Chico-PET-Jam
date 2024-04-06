@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bepmua7nn05gg"]
+
+[ext_resource type="Texture2D" uid="uid://cv3yioso2cmmh" path="res://assets/finais/fim_dorme.png" id="1_ri1i4"]
+[ext_resource type="FontFile" uid="uid://bo0gtln8hpyk" path="res://assets/fonts/Rev Mini Pixel.ttf" id="2_fwojh"]
+
+[sub_resource type="Theme" id="Theme_ry6s1"]
+default_font = ExtResource("2_fwojh")
+default_font_size = 36
+
+[node name="MimirFinal_tscn" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 324)
+scale = Vector2(2.025, 2.025)
+texture = ExtResource("1_ri1i4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 282.0
+offset_top = 26.0
+offset_right = 576.0
+offset_bottom = 144.0
+theme = SubResource("Theme_ry6s1")
+text = "Final desbloqueado: 
+Um dia normal"
