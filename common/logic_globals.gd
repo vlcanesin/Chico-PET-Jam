@@ -5,6 +5,9 @@ var unlock_calc_pencil: bool = false
 var unlock_water: bool = false
 var unlock_tri: bool = false
 
+var can_Get_Water: bool = false
+var unlock_MIJAR: bool = false
+
 var enable_collision_actionables: bool = true
 
 var chico_start_position: Vector2 = Vector2(4303, 435)
