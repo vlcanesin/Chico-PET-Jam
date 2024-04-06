@@ -193,7 +193,7 @@ shape = SubResource("RectangleShape2D_5uigf")
 script = ExtResource("7_opday")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Spawn/WallCollection"]
-position = Vector2(5294, 0.986899)
+position = Vector2(5672, -4.93446)
 scale = Vector2(1, 0.986894)
 script = ExtResource("7_hm5tm")
 

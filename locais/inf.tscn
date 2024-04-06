@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dm687nmo3yssh"]
+[gd_scene load_steps=31 format=3 uid="uid://dm687nmo3yssh"]
 
 [ext_resource type="Texture2D" uid="uid://bynpflvyq7o0t" path="res://assets/sprites/localidades/inf.png" id="1_8vryw"]
 [ext_resource type="Script" path="res://locais/inf.gd" id="1_528ty"]
@@ -22,6 +22,8 @@
 [ext_resource type="Script" path="res://locais/UI.gd" id="17_d1vvb"]
 [ext_resource type="PackedScene" uid="uid://c74bpv2deaixx" path="res://inventory/inventoryGui.tscn" id="18_2rfet"]
 [ext_resource type="Script" path="res://inventory/inventoryGui.gd" id="19_k2fbh"]
+[ext_resource type="PackedScene" uid="uid://c1cmn04k5c4ts" path="res://common/dialogue_actionable.tscn" id="23_bo7vs"]
+[ext_resource type="Resource" uid="uid://eyorq1fi7wu0" path="res://finais/montanha.dialogue" id="24_sit7t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ttan"]
 size = Vector2(155, 828)
@@ -45,6 +47,12 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6c64j"]
+size = Vector2(248, 179)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gb4mo"]
+size = Vector2(293, 152)
 
 [node name="Inf" type="Node2D"]
 script = ExtResource("1_528ty")
@@ -177,5 +185,23 @@ offset_top = 26.0
 offset_right = 40.0
 offset_bottom = 26.0
 script = ExtResource("19_k2fbh")
+
+[node name="SceneActionable2" parent="." instance=ExtResource("3_xqw2u")]
+position = Vector2(508, 570)
+scene_path = "res://finais/montanha_final.tscn"
+direction = "seta-esq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneActionable2"]
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_6c64j")
+
+[node name="Actionable" parent="." instance=ExtResource("23_bo7vs")]
+position = Vector2(944, 513)
+dialogue_resource = ExtResource("24_sit7t")
+trigger_thought = "pensar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(-139, 55)
+shape = SubResource("RectangleShape2D_gb4mo")
 
 [connection signal="area_entered" from="AntonControl/anton" to="AntonControl" method="_on_anton_area_entered"]
