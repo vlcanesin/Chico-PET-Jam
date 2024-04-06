@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://bi88xgc2haqb5"]
+
+[ext_resource type="Script" path="res://menu/instrucoes.gd" id="1_h1iu4"]
+[ext_resource type="FontFile" uid="uid://bo0gtln8hpyk" path="res://assets/fonts/Rev Mini Pixel.ttf" id="2_0aqs8"]
+[ext_resource type="Theme" uid="uid://br0vke5mmbyt" path="res://quests/back.tres" id="3_wloun"]
+[ext_resource type="Texture2D" uid="uid://p8q0hsotjpe5" path="res://assets/sprites/IconesMenu/left-arrow.svg" id="4_7x3l3"]
+
+[sub_resource type="Theme" id="Theme_le180"]
+default_font = ExtResource("2_0aqs8")
+default_font_size = 80
+
+[sub_resource type="Theme" id="Theme_i6ds7"]
+default_font = ExtResource("2_0aqs8")
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_c74ty"]
+default_font = ExtResource("2_0aqs8")
+default_font_size = 50
+
+[node name="Instrucoes" type="Node2D"]
+script = ExtResource("1_h1iu4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 348.0
+offset_top = 90.0
+offset_right = 823.0
+offset_bottom = 180.0
+theme = SubResource("Theme_le180")
+text = "Instruções"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 87.0
+offset_top = 209.0
+offset_right = 1081.0
+offset_bottom = 268.0
+theme = SubResource("Theme_i6ds7")
+text = "space - interação (para pensamentos)"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 220.0
+offset_top = 276.0
+offset_right = 965.0
+offset_bottom = 335.0
+theme = SubResource("Theme_i6ds7")
+text = "<- -> : movimentação no mapa
+"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+offset_left = 499.0
+offset_top = 339.0
+offset_right = 738.0
+offset_bottom = 398.0
+theme = SubResource("Theme_i6ds7")
+text = "L : latir
+"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+offset_left = 511.0
+offset_top = 411.0
+offset_right = 692.0
+offset_bottom = 470.0
+theme = SubResource("Theme_c74ty")
+theme_override_colors/default_color = Color(0.592157, 0.592157, 0.592157, 1)
+text = "M: ???
+"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 70.0
+offset_bottom = 70.0
+theme = ExtResource("3_wloun")
+action_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Back"]
+position = Vector2(23.25, 23.25)
+scale = Vector2(0.059375, 0.059375)
+texture = ExtResource("4_7x3l3")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

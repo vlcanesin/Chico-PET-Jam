@@ -36,15 +36,10 @@ layout_mode = 2
 theme = ExtResource("4_7tfmg")
 text = "Novo Jogo"
 
-[node name="continuarBotao" type="Button" parent="VBoxContainer"]
+[node name="instrucoes" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_7tfmg")
-text = "Continuar"
-
-[node name="galeriaBotao" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_7tfmg")
-text = "Galeria"
+text = "Instruções"
 
 [node name="sairBotao" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -59,6 +54,5 @@ texture = ExtResource("5_g4dwh")
 position = Vector2(672, 425)
 
 [connection signal="pressed" from="VBoxContainer/novoJogoBotao" to="." method="_on_novo_jogo_botao_pressed"]
-[connection signal="pressed" from="VBoxContainer/continuarBotao" to="." method="_on_continuar_botao_pressed"]
-[connection signal="pressed" from="VBoxContainer/galeriaBotao" to="." method="_on_galeria_botao_pressed"]
+[connection signal="pressed" from="VBoxContainer/instrucoes" to="." method="_on_instrucoes_pressed"]
 [connection signal="pressed" from="VBoxContainer/sairBotao" to="." method="_on_sair_botao_pressed"]
