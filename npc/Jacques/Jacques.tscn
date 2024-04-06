@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://poprokiioptp"]
+
+[ext_resource type="Texture2D" uid="uid://ykuwymt8radd" path="res://assets/sprites/jacques/jacques_idle1.png" id="1_hy0bi"]
+[ext_resource type="Script" path="res://npc/Jacques/Jacques.gd" id="1_yu6m2"]
+[ext_resource type="Texture2D" uid="uid://blrhdsw3i1vlk" path="res://assets/sprites/jacques/jacques_idle2.png" id="2_pq27w"]
+[ext_resource type="Texture2D" uid="uid://ctnaqkbwoyf87" path="res://assets/sprites/jacques/jacques_talk1.png" id="3_1qbpe"]
+[ext_resource type="Texture2D" uid="uid://c882oh7eqr0hs" path="res://assets/sprites/jacques/jacques_talk2.png" id="4_2gdgg"]
+[ext_resource type="PackedScene" uid="uid://c1cmn04k5c4ts" path="res://common/dialogue_actionable.tscn" id="5_e81gf"]
+[ext_resource type="Resource" uid="uid://cie200bbtssm1" path="res://npc/Jacques/jacques.dialogue" id="7_8yexq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdi6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hy0bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pq27w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1qbpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2gdgg")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lttb7"]
+size = Vector2(207, 346)
+
+[node name="Jacques" type="Node2D"]
+script = ExtResource("1_yu6m2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fdi6c")
+animation = &"idle"
+frame_progress = 0.902918
+
+[node name="Actionable" parent="." instance=ExtResource("5_e81gf")]
+dialogue_resource = ExtResource("7_8yexq")
+trigger_thought = "interagir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(1.5, 23)
+shape = SubResource("RectangleShape2D_lttb7")

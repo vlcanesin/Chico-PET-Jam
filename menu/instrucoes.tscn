@@ -29,12 +29,12 @@ theme = SubResource("Theme_le180")
 text = "Instruções"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = 87.0
+offset_left = 75.0
 offset_top = 209.0
-offset_right = 1081.0
+offset_right = 1108.0
 offset_bottom = 268.0
 theme = SubResource("Theme_i6ds7")
-text = "space - interação (para pensamentos)"
+text = "Espaço - interação (para pensamentos)"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 offset_left = 220.0

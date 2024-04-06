@@ -1,0 +1,9 @@
+~ start
+set in_dialogue = true
+
+Jacques: Vamos alunos, a prova já começou!
+
+set LogicGlobals.in_calc_final = true
+
+set in_dialogue = false
+=> END

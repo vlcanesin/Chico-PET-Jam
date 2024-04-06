@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dbdy352vu5amv"]
+[gd_scene load_steps=19 format=3 uid="uid://dbdy352vu5amv"]
 
 [ext_resource type="Texture2D" uid="uid://bv2aykxg50tv" path="res://assets/sprites/localidades/corredor_ru3.png" id="1_6ia3r"]
 [ext_resource type="PackedScene" uid="uid://b0f4fn6hajw1l" path="res://common/scene_actionable.tscn" id="2_eme87"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cepicnrc56pes" path="res://quests/QuestMenu.tscn" id="11_666c4"]
 [ext_resource type="PackedScene" uid="uid://b8okgrof3l4o3" path="res://npc/fernando_fabricio/Fernando.tscn" id="13_12mlw"]
 [ext_resource type="PackedScene" uid="uid://dp8nv0pfywyvc" path="res://npc/fernando_fabricio/Fabricio.tscn" id="14_g0rok"]
+[ext_resource type="PackedScene" uid="uid://poprokiioptp" path="res://npc/Jacques/Jacques.tscn" id="15_vlpg6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qufse"]
 size = Vector2(286, 142)
@@ -109,3 +110,6 @@ position = Vector2(1769, 375)
 
 [node name="Fabricio" parent="." instance=ExtResource("14_g0rok")]
 position = Vector2(1926, 385)
+
+[node name="Jacques" parent="." instance=ExtResource("15_vlpg6")]
+position = Vector2(10322, 370)

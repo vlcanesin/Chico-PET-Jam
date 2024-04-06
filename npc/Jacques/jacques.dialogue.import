@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cie200bbtssm1"
+path="res://.godot/imported/jacques.dialogue-27b6b8fbed5e73da9da04227289aff31.tres"
+
+[deps]
+
+source_file="res://npc/Jacques/jacques.dialogue"
+dest_files=["res://.godot/imported/jacques.dialogue-27b6b8fbed5e73da9da04227289aff31.tres"]
+
+[params]
+
+defaults=true
