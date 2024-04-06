@@ -1,22 +1,60 @@
 ~ start
+
 set in_dialogue = true
 
 set jao_speak = true
 set luigi_speak = false
-Joao: Aquele cachorro tá carregando um lápis?
+Joao: Tu vai na roda de poesia hoje, na toca da letras?
 
 set jao_speak = false
 set luigi_speak = true
-Luigi: É o que parece.
+Luigi: Eu não tenho nenhum poema pronto pra ler.
 
 set jao_speak = true
 set luigi_speak = false
-Joao: Por que diabos um cachorro carregaria um lápis???
+Joao: A ideia é ser ao vivo. Freestyle.
+Joao: Vai ter uma mesa e um lápis pra escrever o poema na hora.
 
 set jao_speak = false
 set luigi_speak = true
-Luigi: É um cachorro. Não é como se ele conseguisse usar uma caneta.
+Luigi: E papel?
+
+set jao_speak = true
+set luigi_speak = false
+Joao: Tem que trazer, ué. Quem vem pra faculdade sem papel?
+
+set jao_speak = false
+set luigi_speak = true
+Luigi: Mas eles fornecem lápis? Quem vem pra faculdade sem lápis?
+
+set jao_speak = true
+set luigi_speak = false
+Joao: Tu nunca foi monitor né? Tem gente que vem pra prova sem lápis.
+
+set jao_speak = false
+set luigi_speak = true
+Luigi:  ...de repente eu sinto minha síndrome de impostor evaporando.
+
+set LogicGlobals.unlock_calc_pencil = true
 
 set in_dialogue = false
 set luigi_speak = false
+=> END
+~ without_calc
+set in_dialogue = true
+
+set jao_speak = true
+set luigi_speak = false
+Joao: Sabe onde tá sendo o Café com Pesquisa?
+
+set jao_speak = false
+set luigi_speak = true
+Luigi: No CEI.
+
+set jao_speak = true
+set luigi_speak = false
+Joao: Ô porcaria, ninguém sabe onde é!
+
+set in_dialogue = false
+set jao_speak = false
 => END

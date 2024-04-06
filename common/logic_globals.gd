@@ -7,18 +7,30 @@ var unlock_calc_pencil: bool = false
 var unlock_water: bool = false
 var unlock_tri: bool = false
 
+
+var can_Get_Water: bool = false
+var unlock_MIJAR: bool = false
 var calc_study_completed: bool = false
 var calc_pencil_completed: bool = false
 
+<<<<<<< HEAD
 var in_calc_final: bool = false
 var in_montanha_final: bool = false
 var in_tri_final: bool = false
 var in_mimir_final: bool = false
+=======
+>>>>>>> b45c34ccdc6d829ba054ed87d76ac0b958d81ddc
 
 var enable_collision_actionables: bool = true
 
 var chico_start_position: Vector2 = Vector2(4303, 435)
+<<<<<<< HEAD
 var chico_speed: float = 300.0
+=======
+
+var chico_speed: float = 1000.0
+
+>>>>>>> b45c34ccdc6d829ba054ed87d76ac0b958d81ddc
 var chico_already_seen_sagui: bool = false
 var chico_already_ALGOAQUI: bool = false
 var chico_position: Vector2 = Vector2()

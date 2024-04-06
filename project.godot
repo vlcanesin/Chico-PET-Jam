@@ -71,6 +71,7 @@ toggleInventory={
 
 locale/translations_pot_files=PackedStringArray("res://npc/npcs_calculo/calculo.dialogue", "res://npc/tri/cena_tri.dialogue", "res://npc/npcs_ru3/ru3.dialogue", "res://npc/guardinha/guardinha.dialogue", "res://npc/claudio_diniz/claudio_diniz.dialogue", "res://npc/npcs_inf/inf.dialogue", "res://chico/rottweiler.dialogue", "res://locais/multidao_fisica.dialogue", "res://finais/montanha.dialogue")
 
+
 [layer_names]
 
 2d_physics/layer_2="Dialogue"

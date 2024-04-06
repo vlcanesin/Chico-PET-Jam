@@ -28,6 +28,8 @@ func _adjust_position():
 		on_susto = true
 		on_idle = false
 
+
+
 func _on_actionable_heard_bark():
 	_sprite_state = "susto"
 	_timer.start(SUSTO_TIME)
